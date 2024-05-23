@@ -1,0 +1,18 @@
+{
+  "name": "tonyzeb-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx eleventy --serve",
+    "dev": "tailwindcss -i ./src/styles.css -o ./_site/main_styles.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "tailwindcss": "^3.4.3"
+  }
+}

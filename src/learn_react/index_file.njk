@@ -1,0 +1,26 @@
+---
+layout: layouts/base.html
+title: Musings
+---
+{% include "nav.njk" %}
+{% macro listItem(itemName, itemDate, itemLink) %}
+    <li>
+        <a href="{{itemLink}}" class="flex justify-between items-center py-4 px-2 hover:bg-tony_BG-200 rounded">
+        <span class="pr-1 text-tony_text-200 font-Raleway text-sm tracking-wide overflow-hidden overflow-ellipsis whitespace-nowrap sm:block sm:truncate">{{ itemName }}</span>
+        <div class="border-t border-tony_stroke-100 flex-grow mx-1"></div>
+        <span class="pl-1 text-tony_text-300 font-Raleway font-light text-sm">{{ itemDate }}</span>
+        </a>
+    </li>
+{% endmacro %}
+
+<div class="mx-auto max-w-xl py-4 mb-8">
+    <h1 class="font-Playfair text-2xl font-semibold text-tony_text-100 text-2xl mb-1 px-2 tracking-wide">The React Way</h1>
+    <h6 class="px-2">
+        Documenting my journey of learning React.js
+    </h6>
+
+    <ul class="mt-8">
+        <h1 class="text-tony_text-300 font-Raleway text-xl">Coming soon!</h1>
+    </ul>
+
+</div>

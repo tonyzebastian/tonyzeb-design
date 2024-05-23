@@ -1,0 +1,29 @@
+---
+layout: layouts/base.html
+title: Musings
+---
+{% include "nav.njk" %}
+{% macro listItem(itemName, itemDate, itemLink) %}
+    <li>
+        <a href="{{itemLink}}" class="flex justify-between items-center py-4 px-2 hover:bg-tony_BG-200 rounded">
+        <span class="pr-1 text-tony_text-200 font-Raleway font-light text-sm tracking-wide overflow-hidden overflow-ellipsis whitespace-nowrap sm:block sm:truncate">{{ itemName }}</span>
+        <div class="border-t border-tony_stroke-100 flex-grow mx-1"></div>
+        <span class="pl-1 text-tony_text-300 font-Raleway font-light text-sm">{{ itemDate }}</span>
+        </a>
+    </li>
+{% endmacro %}
+
+<div class="mx-auto max-w-xl py-4 mb-8">
+    <h1 class="mb-1 px-2">Musings</h1>
+    <h6 class="px-2">
+        Snippets on design, art, cinematography and life. 
+    </h6>
+
+    <ul class="mt-8">
+        {{ listItem('Reduce perceived wait times through visual delight', 'Jan 2024', '/page1.html') }}
+        {{ listItem('Mnemonic Signages', 'Jan 2024', '/page2.html') }}
+        {{ listItem('365 days of drawing - Some learnings', 'Jan 2024', '/page3.html') }}
+        {{ listItem('15 Months of remote work: A Recap', 'Jan 2024', '/page4.html') }}
+        {{ listItem('Reviving a legacy system at Infosys', 'Nov 2018', '/Musings/reviving_legacy_system/index.html') }}
+    </ul>
+</div>
