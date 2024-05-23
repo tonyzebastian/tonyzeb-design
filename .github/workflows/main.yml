@@ -24,6 +24,7 @@ jobs:
         run: |
           npm install
           npx @11ty/eleventy
+          npx tailwindcss
       - uses: actions/upload-pages-artifact@v2
 
   deploy:
