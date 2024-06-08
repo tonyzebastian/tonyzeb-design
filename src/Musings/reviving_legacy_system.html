@@ -1,13 +1,15 @@
 ---
 layout: layouts/base.html
 title: Reviving a legacy system at Infosys
+description: As companies grow, asset management becomes crucial for smooth operations. Smaller firms manage with MS Excel or plug and play solutions, but multinational companies need dedicated systems due to their complexity. Large companies often build custom systems as off-the-shelf solutions fall short. This case study outlines how Infosys' asset management team revamped their legacy system to boost efficiency, cut costs, and enhance control and accountability.
+keywords: Infosys, Asset Management, Legacy System, SAP, Software System, Asset Logistics System, Amanat, SEZ, Asset Movement, Software Assets, Hardware Assets, Facilities Department, SAP Team, Corporate Accounting Group, Tax Department, Security Department, SLAs, Workflow, Compliance, Asset IDs, Assetization, Allocation, Deallocation, Extension, Integration, Data Duplication, Access Control, Security Features, Notifications, Feedback, Data Corruption, Service Level Agreements, AMS, Application Architecture, User Interface, Role Management, Application Development, Training, Release, Reassess, Rectify
 ---
 {% include "nav.njk" %}
 
 <div class="mx-auto max-w-xl p-8  bg-tony_BG-200 border border-tony_stroke-100 rounded mb-8">
     <h1 class="mb-2">Reviving a legacy system at Infosys</h1>
     <h6 class="mb-8 text-tony_text-300">
-        7 min read. Nov 2018
+        7 min read . Nov 2018
     </h6>
  
     <section class="mb-8">
@@ -57,10 +59,10 @@ title: Reviving a legacy system at Infosys
         <p>
         The complexities and departments mentioned above evolved over time. Whenever a new requirement emerged, it was either added to the existing system or a new system was created. This resulted in three different systems to manage assets:
         </p>
-        <ul class="pl-2 space-y-2">
-            <li><strong>Amanat:</strong> Manages the assetization of all asset types. It integrates with the SAP system to retrieve Purchase Order (PO) details necessary for determining the asset type and category. It also handles the allocation, deallocation, and extension of hardware assets (facility assets typically don't get allocated).</li>
-            <li><strong>Asset Logistics System (ALS):</strong> Manages the movement of hardware and facility assets, both inward and outward. It integrates with the Amanat system to obtain asset details.</li>
-            <li><strong>Software System:</strong> Manages everything related to software assets, integrating with the SAP system to get PO details for identifying software type and category.</li>
+        <ul class="list-decimal list-inside pl-2 space-y-2 counter">
+            <li><div><strong>Amanat:</strong> Manages the assetization of all asset types. It integrates with the SAP system to retrieve Purchase Order (PO) details necessary for determining the asset type and category. It also handles the allocation, deallocation, and extension of hardware assets (facility assets typically don't get allocated).</div></li>
+            <li><div><strong>Asset Logistics System (ALS):</strong> Manages the movement of hardware and facility assets, both inward and outward. It integrates with the Amanat system to obtain asset details.</div></li>
+            <li><div><strong>Software System:</strong> Manages everything related to software assets, integrating with the SAP system to get PO details for identifying software type and category.</div></li>
         </ul>
     </section>
 
@@ -78,14 +80,14 @@ title: Reviving a legacy system at Infosys
         <p>
         The Asset team identified all known internal issues and conducted one-on-one meetings and group discussions with various departments and hierarchies to uncover additional underlying issues. The major pain points were:
         </p>
-        <ul class="pl-2 space-y-2">
-            <li><strong>Integration with SAP System:</strong> Asset IDs, created in Amanat and the software system based on purchase orders (PO) from SAP, form the base data. The partial integration between Amanat-SAP and Software System-SAP leads to incomplete assetization details. Consequently, the team must manually add asset IDs from the back-end, making the process prone to human error.</li>
-            <li><strong>Hazy Integration Between Asset Systems:</strong> The integration between Amanat, Asset Logistics System (ALS), and the Software System is weak, leading to frequent breakages. These systems often operate in silos, requiring manual back-end updates for cross-data requirements.</li>
-            <li><strong>Outdated Workflows and Processes:</strong> Compliance requirements have evolved, changing workflows and processes. However, the system hasn't been updated accordingly, resulting in many processes being handled outside the system through email approvals, which are manually updated later.</li>
-            <li><strong>Lack of Feedback/Notifications:</strong> The system doesn't notify relevant parties upon the completion of approval processes. Users must manually check the system for updates, leading to reliance on email and direct chat. This lack of records causes audit problems later.</li>
-            <li><strong>Data Duplication and Corruption:</strong> Regular back-end updates cause data duplication and corruption. This requires continuous checks and rectification, adding extra manpower and cost to the company.</li>
-            <li><strong>Crippled Access Control and Security Features:</strong> There are around 25 roles across the three systems, with many repetitive roles having slight variations. No approval mechanism exists for role access, and many application pages are not properly tested, making them vulnerable to external attacks.</li>
-            <li><strong>No Service Level Agreements (SLAs):</strong>  The current systems lack defined SLAs for processes, leading to indefinite delays. Requestors often rely on email reminders to get tasks completed.</li>
+        <ul class="list-decimal list-inside pl-2 space-y-2 counter">
+            <li><div><strong>Integration with SAP System:</strong> Asset IDs, created in Amanat and the software system based on purchase orders (PO) from SAP, form the base data. The partial integration between Amanat-SAP and Software System-SAP leads to incomplete assetization details. Consequently, the team must manually add asset IDs from the back-end, making the process prone to human error.</div></li>
+            <li><div><strong>Hazy Integration Between Asset Systems:</strong> The integration between Amanat, Asset Logistics System (ALS), and the Software System is weak, leading to frequent breakages. These systems often operate in silos, requiring manual back-end updates for cross-data requirements.</div></li>
+            <li><div><strong>Outdated Workflows and Processes:</strong> Compliance requirements have evolved, changing workflows and processes. However, the system hasn't been updated accordingly, resulting in many processes being handled outside the system through email approvals, which are manually updated later.</div></li>
+            <li><div><strong>Lack of Feedback/Notifications:</strong> The system doesn't notify relevant parties upon the completion of approval processes. Users must manually check the system for updates, leading to reliance on email and direct chat. This lack of records causes audit problems later.</div></li>
+            <li><div><strong>Data Duplication and Corruption:</strong> Regular back-end updates cause data duplication and corruption. This requires continuous checks and rectification, adding extra manpower and cost to the company.</div></li>
+            <li><div><strong>Crippled Access Control and Security Features:</strong> There are around 25 roles across the three systems, with many repetitive roles having slight variations. No approval mechanism exists for role access, and many application pages are not properly tested, making them vulnerable to external attacks.</div></li>
+            <li><div><strong>No Service Level Agreements (SLAs):</strong>  The current systems lack defined SLAs for processes, leading to indefinite delays. Requestors often rely on email reminders to get tasks completed.</div></li>
         </ul>
     </section>
 
@@ -123,12 +125,12 @@ title: Reviving a legacy system at Infosys
             <p>
             The new system will adopt a modular structure, with Asset IDs serving as the base data and integration with the SAP system being pivotal. Master databases will be established for Hardware, Software, and Facility asset IDs, along with an employee details database updated from the HR system. Each module will have its own database, governed by specific rules and restrictions.
         </p>
-        <ul class="pl-2 space-y-2">
-            <li><strong>Inward Module:</strong> This handles various movements to an Infosys Campus, such as delivery of new assets, receipt of repaired assets, or transfers from other campuses. Workflows will vary based on asset type, owner, and reason for inwarding.</li>
-            <li><strong>Assetization Module:</strong> Utilising Purchase Order (PO) details and associated inward requests, this module generates assetization requests. Software assets can be assetized without a physical delivery, with asset IDs automatically assigned based on PO details.</li>
-            <li><strong>Allocation/Deallocation/Extension (Hardware):</strong> Assets are allocated to employees, each type having distinct workflows. For instance, desktops can be directly allocated, while laptops require manager approval and security gate pass for off-campus use. Automatic extension/deallocation occurs based on employee status changes.</li>
-            <li><strong>Software Module:</strong> This module oversees software-related processes, including License Management, Compliance, Version Control, Catalog Management, and allocation/deallocation/extension.</li>
-            <li><strong>Outwarding/Movement Module:</strong> Responsible for all campus-to-outside movements, like asset repairs, inter-campus transfers, or asset disposal. Workflows adjust based on asset type, owner, movement type, and reason, ensuring allocated assets are not inadvertently moved. Deallocation precedes any movement request for allocated assets.</li>
+        <ul class="list-decimal list-inside pl-2 space-y-2 counter">
+            <li><div><strong>Inward Module:</strong> This handles various movements to an Infosys Campus, such as delivery of new assets, receipt of repaired assets, or transfers from other campuses. Workflows will vary based on asset type, owner, and reason for inwarding.</div></li>
+            <li><div><strong>Assetization Module:</strong> Utilising Purchase Order (PO) details and associated inward requests, this module generates assetization requests. Software assets can be assetized without a physical delivery, with asset IDs automatically assigned based on PO details.</div></li>
+            <li><div><strong>Allocation/Deallocation/Extension (Hardware):</strong> Assets are allocated to employees, each type having distinct workflows. For instance, desktops can be directly allocated, while laptops require manager approval and security gate pass for off-campus use. Automatic extension/deallocation occurs based on employee status changes.</div></li>
+            <li><div><strong>Software Module:</strong> This module oversees software-related processes, including License Management, Compliance, Version Control, Catalog Management, and allocation/deallocation/extension.</div></li>
+            <li><div><strong>Outwarding/Movement Module:</strong> Responsible for all campus-to-outside movements, like asset repairs, inter-campus transfers, or asset disposal. Workflows adjust based on asset type, owner, movement type, and reason, ensuring allocated assets are not inadvertently moved. Deallocation precedes any movement request for allocated assets.</div></li>
         </ul>
         </div>
 
@@ -156,7 +158,7 @@ title: Reviving a legacy system at Infosys
             <p>
             Once a module is developed and tested, it's released to stakeholders. Before the release, users are trained on the application's features. Detailed help documents are provided for reference.
             <br>
-            Module releases are phased, starting with 1–2 campuses and selected stakeholder groups. Feedback is gathered and issues addressed before wider release.
+            Module releases are phased, starting with 1-2 campuses and selected stakeholder groups. Feedback is gathered and issues addressed before wider release.
             </p>
         </div>
 
