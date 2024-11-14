@@ -1,47 +1,79 @@
-import React from 'react';
-import Link from 'next/link';
-import { Home, Tangent, FlaskConical, Camera, Signature, CircleUser } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+'use client'
 
-const navItems = [
-    { icon: Home, label: 'Home', link: '/' },
-    { icon: Tangent, label: 'Craft', link: '/craft' },
-    { icon: FlaskConical, label: 'Projects', link: '/projects' },
-    { icon: Camera, label: 'Visuals', link: '/visuals' },
-    { icon: Signature, label: 'Musings', link: '/musings' },
-    { icon: CircleUser, label: 'About', link: '/about' },
-  ];
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { usePathname } from 'next/navigation'
+import { LinearBlur } from 'progressive-blur'
 
+export default function NavBar() {
+  const pathname = usePathname()
+  const [mounted, setMounted] = useState(false)
 
-const NavBar = () => {
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const navItems = [
+    { name: 'Projects', href: '/projects' },
+    { name: 'Musings', href: '/musings' },
+    { name: 'Visuals', href: '/visuals' },
+    { name: 'About', href: '/about' },
+  ]
+
+  if (!mounted) {
+    return null
+  }
+
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white dark:bg-gray-800 rounded-full shadow-lg px-6 py-3 flex items-center space-x-4 border border-gray-200 dark:border-gray-700">
-      <TooltipProvider>
-        {navItems.map((item) => (
-          <Tooltip key={item.label}>
-                <TooltipTrigger asChild>
-                    <Link
-                        key={item.label}
-                        href={item.link}
-                        className={cn(
-                            "p-2 rounded-full transition-colors duration-200",
-                            "hover:bg-gray-100 dark:hover:bg-gray-700",
-                            "focus:outline-none focus:ring-2 focus:ring-primary"
-                        )}
-                        >
-                        <item.icon className="w-5 h-5" />
-                        <span className="sr-only">{item.label}</span>
-                    </Link>
-                </TooltipTrigger>
-                <TooltipContent>
-                <p>{item.label}</p>
-                </TooltipContent>
-          </Tooltip>
-        ))}
-      </TooltipProvider>
-    </nav>
-  );
-};
+    <div className="sticky bottom-0 pt-2 pb-6 z-10 flex items-center justify-center"
+      style={{ 
+      paddingTop: '10px',
+      marginTop: '-10px' 
+    }}>
 
-export default NavBar;
+    <LinearBlur
+      side="bottom"
+      steps={8}
+      strength={64}
+      falloffPercentage={100}
+      style={{
+        position: "absolute",
+        inset: 0,
+        zIndex: -1,
+      }}
+    />
+
+      <nav className="flex justify-center">
+        <div className="flex bg-tony_BG-200 p-1 border border-tony_stroke-200 rounded-full shadow-lg">
+          <Link href="/" className="block mr-4">
+            <Image
+              src="/images/profile_pic.jpg"
+              alt="Avatar"
+              width={36}
+              height={36}
+              className={`rounded-full hover:border ${pathname === '/' ? 'border border-tony_accent-100 border-active' : ''}`}
+            />
+          </Link>
+          
+          {navItems.map((item) => {
+            const isActive = pathname === item.href
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`
+                  flex items-center justify-center px-4 py-2 rounded-full font-Raleway text-sm font-normal
+                  transition-colors duration-200 leading-4 hover:text-tony_text-200
+                  ${isActive ? 'bg-tony_BG-100 text-tony_accent-100' : 'text-tony_text-300'}
+                `}
+              >
+                {item.name}
+              </Link>
+            )
+          })}
+        </div>
+      </nav>
+    </div>
+  )
+}
