@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "next": "^18.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "feather-icons": "^4.29.2",
-    "next": "14.2.15",
     "progressive-blur": "^1.0.0",
     "react": "^18",
     "react-dom": "^18",
@@ -23,6 +23,7 @@
     "three": "^0.169.0"
   },
   "devDependencies": {
+    "next": "^18.0.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.15",
     "postcss": "^8",
