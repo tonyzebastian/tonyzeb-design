@@ -18,7 +18,7 @@ export default function infosys_legacy() {
         
             <section class="mb-8 mx-6">
                 <p>
-                As companies grow, asset management becomes crucial for smooth operations. Smaller firms manage with MS Excel or plug and play solutions, but multinational companies need dedicated systems due to their complexity. Large companies often build custom systems as off-the-shelf solutions fall short. This case study outlines how Infosys' asset management team revamped their legacy system to boost efficiency, cut costs, and enhance control and accountability.
+                As companies grow, asset management becomes crucial for smooth operations. Smaller firms manage with MS Excel or plug and play solutions, but multinational companies need dedicated systems due to their complexity. Large companies often build custom systems as off-the-shelf solutions fall short. This case study outlines how Infosys&apos; asset management team revamped their legacy system to boost efficiency, cut costs, and enhance control and accountability.
                 </p>
             </section>
 
@@ -64,7 +64,7 @@ export default function infosys_legacy() {
                 The complexities and departments mentioned above evolved over time. Whenever a new requirement emerged, it was either added to the existing system or a new system was created. This resulted in three different systems to manage assets:
                 </p>
                 <ul class="list-decimal list-inside pl-2 space-y-2 counter">
-                    <li><strong>Amanat:</strong> Manages the assetization of all asset types. It integrates with the SAP system to retrieve Purchase Order (PO) details necessary for determining the asset type and category. It also handles the allocation, deallocation, and extension of hardware assets (facility assets typically don't get allocated).</li>
+                    <li><strong>Amanat:</strong> Manages the assetization of all asset types. It integrates with the SAP system to retrieve Purchase Order (PO) details necessary for determining the asset type and category. It also handles the allocation, deallocation, and extension of hardware assets (facility assets typically don&apos;t get allocated).</li>
                     <li><strong>Asset Logistics System (ALS):</strong> Manages the movement of hardware and facility assets, both inward and outward. It integrates with the Amanat system to obtain asset details.</li>
                     <li><strong>Software System:</strong> Manages everything related to software assets, integrating with the SAP system to get PO details for identifying software type and category.</li>
                 </ul>
@@ -75,7 +75,7 @@ export default function infosys_legacy() {
                 <p>
                 Over time, as new features and processes were added, the systems began to show breakages, slowdowns, and other critical performance issues. It reached a point where further development of the existing systems could no longer resolve these issues.
                 <br/>
-                Additionally, an external compliance team identified major problems and recommended that Infosys's top management rethink their asset management process. Consequently, the management directed the asset team to identify all underlying issues and propose a comprehensive solution.
+                Additionally, an external compliance team identified major problems and recommended that Infosys&apos;s top management rethink their asset management process. Consequently, the management directed the asset team to identify all underlying issues and propose a comprehensive solution.
                 </p>
             </section>
 
@@ -87,8 +87,8 @@ export default function infosys_legacy() {
                 <ul class="list-decimal list-inside pl-2 space-y-2 counter">
                     <li><strong>Integration with SAP System:</strong> Asset IDs, created in Amanat and the software system based on purchase orders (PO) from SAP, form the base data. The partial integration between Amanat-SAP and Software System-SAP leads to incomplete assetization details. Consequently, the team must manually add asset IDs from the back-end, making the process prone to human error.</li>
                     <li><strong>Hazy Integration Between Asset Systems:</strong> The integration between Amanat, Asset Logistics System (ALS), and the Software System is weak, leading to frequent breakages. These systems often operate in silos, requiring manual back-end updates for cross-data requirements.</li>
-                    <li><strong>Outdated Workflows and Processes:</strong> Compliance requirements have evolved, changing workflows and processes. However, the system hasn't been updated accordingly, resulting in many processes being handled outside the system through email approvals, which are manually updated later.</li>
-                    <li><strong>Lack of Feedback/Notifications:</strong> The system doesn't notify relevant parties upon the completion of approval processes. Users must manually check the system for updates, leading to reliance on email and direct chat. This lack of records causes audit problems later.</li>
+                    <li><strong>Outdated Workflows and Processes:</strong> Compliance requirements have evolved, changing workflows and processes. However, the system hasn&apos;t been updated accordingly, resulting in many processes being handled outside the system through email approvals, which are manually updated later.</li>
+                    <li><strong>Lack of Feedback/Notifications:</strong> The system doesn&apos;t notify relevant parties upon the completion of approval processes. Users must manually check the system for updates, leading to reliance on email and direct chat. This lack of records causes audit problems later.</li>
                     <li><strong>Data Duplication and Corruption:</strong> Regular back-end updates cause data duplication and corruption. This requires continuous checks and rectification, adding extra manpower and cost to the company.</li>
                     <li><strong>Crippled Access Control and Security Features:</strong> There are around 25 roles across the three systems, with many repetitive roles having slight variations. No approval mechanism exists for role access, and many application pages are not properly tested, making them vulnerable to external attacks.</li>
                     <li><strong>No Service Level Agreements (SLAs):</strong> The current systems lack defined SLAs for processes, leading to indefinite delays. Requestors often rely on email reminders to get tasks completed.</li>
@@ -120,7 +120,7 @@ export default function infosys_legacy() {
                     <br/>
                     The stakeholders reviewed the documentation and provided feedback, suggesting changes and new additions. These suggestions were then refined into workflows and processes. Detailed discussions with the stakeholders helped prioritize the importance of each step, leading to the consolidation of steps and the elimination of redundant processes.
                     <br/>
-                    Additionally, the team conducted sessions with employees at different levels within each stakeholder group to understand their usage of the system and the real-time problems they faced. This approach helped uncover ground realities and assess the employees' technical literacy, providing new insights that contributed to improving the Information Architecture.
+                    Additionally, the team conducted sessions with employees at different levels within each stakeholder group to understand their usage of the system and the real-time problems they faced. This approach helped uncover ground realities and assess the employees&apos; technical literacy, providing new insights that contributed to improving the Information Architecture.
                     </p>
                 </div>
 
@@ -143,7 +143,7 @@ export default function infosys_legacy() {
                     <p>
                     Infosys employs an internal design system for its applications, which will serve as the foundation for the AMS (Asset Management System) UI and interactions, albeit with some customizations.
                     <br/>
-                    Streamlining roles is crucial; currently, there are over 25 roles across the three systems, with redundancies and duplications. By consolidating roles, we've reduced the count to 15.
+                    Streamlining roles is crucial; currently, there are over 25 roles across the three systems, with redundancies and duplications. By consolidating roles, we&apos;ve reduced the count to 15.
                     <br/>
                     AMS roles will be overseen by a centralized system managing roles for all internal applications, ensuring proper configuration and access. Access permissions will be granted exclusively by top officials within each stakeholder group.
                     </p>
@@ -160,7 +160,7 @@ export default function infosys_legacy() {
                 <div>
                     <h3 class="pt-4">Training & Release</h3>
                     <p>
-                    Once a module is developed and tested, it's released to stakeholders. Before the release, users are trained on the application's features. Detailed help documents are provided for reference.
+                    Once a module is developed and tested, it&apos;s released to stakeholders. Before the release, users are trained on the application&apos;s features. Detailed help documents are provided for reference.
                     <br/>
                     Module releases are phased, starting with 1-2 campuses and selected stakeholder groups. Feedback is gathered and issues addressed before wider release.
                     </p>

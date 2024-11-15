@@ -19,8 +19,8 @@ export default function day_drawing() {
           </p>
 
           <ol class="list-decimal list-inside pl-2 space-y-2 counter">
-              <li>As expected, my drawing skills levelled up - In comparison with last year's drawing, there is a massive improvement in colour usage and overall line quality.</li>
-              <li>The average time taken to go from the ideation stage to a presentable or decent state decreased drastically. The latest illustrations have more details compared with last year's.</li>
+              <li>As expected, my drawing skills levelled up - In comparison with last year&apos;s drawing, there is a massive improvement in colour usage and overall line quality.</li>
+              <li>The average time taken to go from the ideation stage to a presentable or decent state decreased drastically. The latest illustrations have more details compared with last year&apos;s.</li>
               <li>As I progressed through this project, drawing something every day acted as fuel for all other day-to-day activities. It is much easier to enter the flow state now.</li>
               <li>This project allowed me to experiment with different styles of illustration. I now understand what style works for me and the areas that require improvement.</li>
               <li>On the flip side of things, there is burnout - I almost lost interest in drawing altogether. Some days I drew just for the sake of doing it, which had an overall negative effect.</li>

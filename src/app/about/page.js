@@ -15,7 +15,7 @@ export default function About() {
                 <p>
                     🏡 Born and brought up in <a href="https://www.kerala.com/pages/kerala-destination-thodupuzha" target="_blank" class="underline underline-offset-2">Thodupuzha</a>, a relaxed town nestled in the heart of Kerala.
                     <br/>
-                    📚 Holds a master's degree in management, but no longer interested in pursuing a managerial role. 
+                    📚 Holds a master&apos;s degree in management, but no longer interested in pursuing a managerial role. 
                     <br/>
                     🧑🏻‍💻 Business Analyst at Infosys → Freelance designer → Product designer at Hypersonix → Product designer at <a href="https://www.postman.com/" target="_blank" class="underline underline-offset-2">Postman</a>
                     <br/>
@@ -43,7 +43,7 @@ export default function About() {
                     <br/>
                     - Side projects give the oxygen to survive on your regular job.
                     <br/>
-                    - It's never too late to start a new hobby.
+                    - It&apos;s never too late to start a new hobby.
                     <br/>
                     - Allow events to influence you and your craft.
                 </p>
@@ -53,7 +53,7 @@ export default function About() {
             <section class="mb-8 mx-6">
                 <h4 class="mb-2">Start a conversation</h4>
                 <p>
-                    I’d love to talk to you! Here’s a list of ideas to start a conversation between us:
+                    I&apos;d love to talk to you! Here&apos;s a list of ideas to start a conversation between us:
                     <br/>
                     - Send me a photo or video that you took.
                     <br/>
