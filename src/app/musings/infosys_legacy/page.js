@@ -11,25 +11,25 @@ export default function infosys_legacy() {
 
         <div id="top" className="flex flex-col items-start justify-center mx-auto max-w-[648px] mt-12">
 
-            <h1 class="mb-2 mx-6 text-tony_accent-100">Reviving a legacy system at Infosys</h1>
-            <h6 class="mb-8 mx-6 text-tony_text-300">
+            <h1 className="mb-2 mx-6 text-tony_accent-100">Reviving a legacy system at Infosys</h1>
+            <h6 className="mb-8 mx-6 text-tony_text-300">
                 7 min read . Nov 2018
             </h6>
         
-            <section class="mb-8 mx-6">
+            <section className="mb-8 mx-6">
                 <p>
                 As companies grow, asset management becomes crucial for smooth operations. Smaller firms manage with MS Excel or plug and play solutions, but multinational companies need dedicated systems due to their complexity. Large companies often build custom systems as off-the-shelf solutions fall short. This case study outlines how Infosys&apos; asset management team revamped their legacy system to boost efficiency, cut costs, and enhance control and accountability.
                 </p>
             </section>
 
-            <section class="mb-8 mx-6">
-                <h2 class="mb-2">Large company, larger complexity</h2>
+            <section className="mb-8 mx-6">
+                <h2 className="mb-2">Large company, larger complexity</h2>
                 <p>
                 Infosys, a multinational based in Bangalore, India, employs around 250,000 people across 46 countries. With over eight development centers in India and smaller offices globally, Infosys manages a diverse range of assets, including software, hardware, land, buildings, intellectual property, and facilities like vehicles and furniture.
                 <br/>
                 Each type of asset at Infosys presents unique complexities and requires distinct accounting and management approaches. Some of these complexities include:
                 </p>
-                <ol class="list-decimal list-inside pl-2 space-y-2 counter">
+                <ol className="list-decimal list-inside pl-2 space-y-2 counter">
                     <li><strong>Partial Ownership:</strong> Assets can be co-owned by Infosys and clients, such as intellectual property.</li>
                     <li><strong>Rental Agreements:</strong>  Assets may be rented from or to customers. Infosys often buys assets for clients, transferring ownership upon project completion.</li>
                     <li><strong>Special Economic Zones (SEZ):</strong>  Assets in SEZs must comply with specific government regulations and guidelines.</li>
@@ -38,19 +38,19 @@ export default function infosys_legacy() {
                     <li><strong>Asset Movement:</strong> Both inward and outward movements of assets involve varied workflows and approval processes based on the reason for the move.</li>
                 </ol>
 
-                <p class="pt-6">
+                <p className="pt-6">
                     Adding to the mix, assets are owned by different departments within Infosys, each with its own hierarchy and approval mechanisms:
                 </p>
-                <ul class="list-decimal list-inside pl-2 space-y-2 counter">
+                <ul className="list-decimal list-inside pl-2 space-y-2 counter">
                     <li><strong>Hardware Assets:</strong> Items like desktops, laptops, and servers are managed by the Computer and Communication Department (CCD).</li>
                     <li><strong>Software Assets:</strong> Managed by the Software Department, a division under CCD.</li>
                     <li><strong>Facilitating Assets:</strong> Items such as tables, chairs, and desks are handled by the Facilities Department.</li>
                 </ul>
 
-                <p class="pt-6 space-y-2">
+                <p className="pt-6 space-y-2">
                 In addition, several other departments at Infosys play crucial roles in asset management:
                 </p>
-                <ul class="list-decimal list-inside pl-2 space-y-2 counter">
+                <ul className="list-decimal list-inside pl-2 space-y-2 counter">
                     <li><strong>SAP Team:</strong> Manages sales, purchases, and payments through the SAP system. The asset management system relies on data from the SAP system and vice versa.</li>
                     <li><strong>Corporate Accounting Group (CAG):</strong> Oversees the sale and purchase of assets from an accounting perspective. The CAG team maintains a dedicated system to track assets for accounting purposes and requires data from the asset management system.</li>
                     <li><strong>Tax Department:</strong> Handles all tax-related activities for buying, selling, and moving assets.</li>
@@ -58,20 +58,20 @@ export default function infosys_legacy() {
                 </ul>
             </section>
 
-            <section class="mb-8 mx-6">
-                <h2 class="mb-2">The Three Systems</h2>
+            <section className="mb-8 mx-6">
+                <h2 className="mb-2">The Three Systems</h2>
                 <p>
                 The complexities and departments mentioned above evolved over time. Whenever a new requirement emerged, it was either added to the existing system or a new system was created. This resulted in three different systems to manage assets:
                 </p>
-                <ul class="list-decimal list-inside pl-2 space-y-2 counter">
+                <ul className="list-decimal list-inside pl-2 space-y-2 counter">
                     <li><strong>Amanat:</strong> Manages the assetization of all asset types. It integrates with the SAP system to retrieve Purchase Order (PO) details necessary for determining the asset type and category. It also handles the allocation, deallocation, and extension of hardware assets (facility assets typically don&apos;t get allocated).</li>
                     <li><strong>Asset Logistics System (ALS):</strong> Manages the movement of hardware and facility assets, both inward and outward. It integrates with the Amanat system to obtain asset details.</li>
                     <li><strong>Software System:</strong> Manages everything related to software assets, integrating with the SAP system to get PO details for identifying software type and category.</li>
                 </ul>
             </section>
 
-            <section class="mb-8 mx-6">
-                <h2 class="mb-2">Problems!! Pause - Taking a step back</h2>
+            <section className="mb-8 mx-6">
+                <h2 className="mb-2">Problems!! Pause - Taking a step back</h2>
                 <p>
                 Over time, as new features and processes were added, the systems began to show breakages, slowdowns, and other critical performance issues. It reached a point where further development of the existing systems could no longer resolve these issues.
                 <br/>
@@ -79,12 +79,12 @@ export default function infosys_legacy() {
                 </p>
             </section>
 
-            <section class="mb-8 mx-6">
-                <h2 class="mb-2">Pain Areas</h2>
+            <section className="mb-8 mx-6">
+                <h2 className="mb-2">Pain Areas</h2>
                 <p>
                 The Asset team identified all known internal issues and conducted one-on-one meetings and group discussions with various departments and hierarchies to uncover additional underlying issues. The major pain points were:
                 </p>
-                <ul class="list-decimal list-inside pl-2 space-y-2 counter">
+                <ul className="list-decimal list-inside pl-2 space-y-2 counter">
                     <li><strong>Integration with SAP System:</strong> Asset IDs, created in Amanat and the software system based on purchase orders (PO) from SAP, form the base data. The partial integration between Amanat-SAP and Software System-SAP leads to incomplete assetization details. Consequently, the team must manually add asset IDs from the back-end, making the process prone to human error.</li>
                     <li><strong>Hazy Integration Between Asset Systems:</strong> The integration between Amanat, Asset Logistics System (ALS), and the Software System is weak, leading to frequent breakages. These systems often operate in silos, requiring manual back-end updates for cross-data requirements.</li>
                     <li><strong>Outdated Workflows and Processes:</strong> Compliance requirements have evolved, changing workflows and processes. However, the system hasn&apos;t been updated accordingly, resulting in many processes being handled outside the system through email approvals, which are manually updated later.</li>
@@ -95,8 +95,8 @@ export default function infosys_legacy() {
                 </ul>
             </section>
 
-            <section class="mb-8 mx-6">
-                <h2 class="mb-2">The Crucial Decision</h2>
+            <section className="mb-8 mx-6">
+                <h2 className="mb-2">The Crucial Decision</h2>
                 <p>
                 The Asset team shared their findings with top management and all relevant stakeholders. They highlighted the major pain points, emphasizing the integration issues, outdated workflows, lack of feedback mechanisms, data duplication, and system architecture problems.
                 <br/>
@@ -108,13 +108,13 @@ export default function infosys_legacy() {
                 </p>
             </section>
 
-            <section class="mb-8 mx-6">
-                <h2 class="mb-2">The Plan and Execution</h2>
+            <section className="mb-8 mx-6">
+                <h2 className="mb-2">The Plan and Execution</h2>
                 <p>
                 A step-by-step plan was created to achieve the proposal:
                 </p>
                 <div>
-                    <h3 class="my-2">Requirement Gathering & User Research</h3>
+                    <h3 className="my-2">Requirement Gathering & User Research</h3>
                     <p>
                     The existing three systems lacked proper documentation, so the first step was to thoroughly understand and document the current system. Once the documentation was complete, it was shared with different stakeholder groups to educate them on the existing features and processes.
                     <br/>
@@ -125,11 +125,11 @@ export default function infosys_legacy() {
                 </div>
 
                 <div>
-                    <h3 class="my-2">Application Architecture</h3>
+                    <h3 className="my-2">Application Architecture</h3>
                     <p>
                     The new system will adopt a modular structure, with Asset IDs serving as the base data and integration with the SAP system being pivotal. Master databases will be established for Hardware, Software, and Facility asset IDs, along with an employee details database updated from the HR system. Each module will have its own database, governed by specific rules and restrictions.
                 </p>
-                <ul class="list-decimal list-inside pl-2 space-y-2 counter">
+                <ul className="list-decimal list-inside pl-2 space-y-2 counter">
                     <li><strong>Inward Module:</strong> This handles various movements to an Infosys Campus, such as delivery of new assets, receipt of repaired assets, or transfers from other campuses. Workflows will vary based on asset type, owner, and reason for inwarding.</li>
                     <li><strong>Assetization Module:</strong> Utilising Purchase Order (PO) details and associated inward requests, this module generates assetization requests. Software assets can be assetized without a physical delivery, with asset IDs automatically assigned based on PO details.</li>
                     <li><strong>Allocation/Deallocation/Extension (Hardware):</strong> Assets are allocated to employees, each type having distinct workflows. For instance, desktops can be directly allocated, while laptops require manager approval and security gate pass for off-campus use. Automatic extension/deallocation occurs based on employee status changes.</li>
@@ -139,7 +139,7 @@ export default function infosys_legacy() {
                 </div>
 
                 <div>
-                    <h3 class="pt-4">User Interface and role management</h3>
+                    <h3 className="pt-4">User Interface and role management</h3>
                     <p>
                     Infosys employs an internal design system for its applications, which will serve as the foundation for the AMS (Asset Management System) UI and interactions, albeit with some customizations.
                     <br/>
@@ -151,14 +151,14 @@ export default function infosys_legacy() {
 
 
                 <div>
-                    <h3 class="pt-4">Application Development</h3>
+                    <h3 className="pt-4">Application Development</h3>
                     <p>
                     We first broke down the requirements into separate features. Then, we created wireframes for each feature and page. Once these wireframes were approved, we began the development phase. The application development follows the agile methodology.
                     </p>
                 </div>
 
                 <div>
-                    <h3 class="pt-4">Training & Release</h3>
+                    <h3 className="pt-4">Training & Release</h3>
                     <p>
                     Once a module is developed and tested, it&apos;s released to stakeholders. Before the release, users are trained on the application&apos;s features. Detailed help documents are provided for reference.
                     <br/>
@@ -167,15 +167,15 @@ export default function infosys_legacy() {
                 </div>
 
                 <div>
-                    <h3 class="pt-4">Reassess and Rectify</h3>
+                    <h3 className="pt-4">Reassess and Rectify</h3>
                     <p>
                     AMS faced several challenges typical of product development. Conflict arose among stakeholders despite initial agreement on requirements and architecture, causing delays. Changes to processes or requirements after module releases added extra work for the development team. Additionally, some users were reluctant to adopt the new system, necessitating further training.
                     </p>
                 </div>
             </section>
 
-            <section class="mb-6 mx-6">
-                <h2 class="mb-2">Conclusion</h2>
+            <section className="mb-6 mx-6">
+                <h2 className="mb-2">Conclusion</h2>
                 <p>
                 As of the end of 2019, the team had successfully completed 75% of the modules. A significant lesson learned from this project was navigating the complexities of revamping a product within a traditional organization with multiple layers of hierarchy and stakeholders.
                 </p>

@@ -8,17 +8,17 @@ export default function day_drawing() {
 
     return (
       <div id="top" className="flex flex-col items-start justify-center mx-auto max-w-[648px] mt-12">
-        <h1 class="mb-2 mx-6 text-tony_accent-100">Drawing everyday for 365 days: Some Learnings</h1>
-        <h6 class="mb-8 mx-6 text-tony_text-300">
+        <h1 className="mb-2 mx-6 text-tony_accent-100">Drawing everyday for 365 days: Some Learnings</h1>
+        <h6 className="mb-8 mx-6 text-tony_text-300">
           3 min read . Jun 2021
         </h6>
 
-        <section class="mb-6 mx-6">
+        <section className="mb-6 mx-6">
           <p>
             On 2nd May 2020, I decided to start a new project - draw something every day for a year. 365 days later, I completed the project, and these are some of my learnings and realizations.
           </p>
 
-          <ol class="list-decimal list-inside pl-2 space-y-2 counter">
+          <ol className="list-decimal list-inside pl-2 space-y-2 counter">
               <li>As expected, my drawing skills levelled up - In comparison with last year&apos;s drawing, there is a massive improvement in colour usage and overall line quality.</li>
               <li>The average time taken to go from the ideation stage to a presentable or decent state decreased drastically. The latest illustrations have more details compared with last year&apos;s.</li>
               <li>As I progressed through this project, drawing something every day acted as fuel for all other day-to-day activities. It is much easier to enter the flow state now.</li>
@@ -31,7 +31,7 @@ export default function day_drawing() {
 
           <p>
               And that summarizes this project. Thank you for taking the time to read through my experience.<br/>
-              You can find the entire drawing set on my <a href="https://pin.it/3PKGQjN2Y" target="_blank" class="underline underline-offset-2">Pinterest</a> board.
+              You can find the entire drawing set on my <a href="https://pin.it/3PKGQjN2Y" target="_blank" className="underline underline-offset-2">Pinterest</a> board.
           </p>
 
         </section>

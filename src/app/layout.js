@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import "./globals.css";
 import NavBar from '@/components/NavBar'
 
@@ -9,6 +10,7 @@ export default function RootLayout({ children }) {
                   {children}
               </main>
               <NavBar />
+              <SpeedInsights />
           </body>
       </html>
   );
