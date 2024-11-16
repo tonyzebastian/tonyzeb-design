@@ -45,7 +45,7 @@ export default function NavBar() {
       }}
     />
 
-      <nav className="flex justify-center">
+      <nav className="flex justify-center  overflow-x-auto whitespace-nowrap">
         <div className="flex bg-tony_BG-200 p-1 border border-tony_stroke-200 rounded-full shadow-lg">
           <Link href="/" className="block mr-4">
             <Image
@@ -54,6 +54,7 @@ export default function NavBar() {
               width={36}
               height={36}
               className={`rounded-full hover:border ${pathname === '/' ? 'border border-tony_accent-100 border-active' : ''}`}
+              style={{ minWidth: '36px', minHeight: '36px' }}
             />
           </Link>
           
