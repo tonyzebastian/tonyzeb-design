@@ -1,10 +1,26 @@
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'Musings',
-    description: 'A brief description of Tony Sebastian\'s work and interests.',
+    title: 'Musings ✦ tonyzebastian',
+    description: 'A visual product designer | Love to code | always tinkering with a side project',
     keywords: 'design, art, cinematography, photography, travel',
-  }
+  
+    twitter: {
+      card: 'summary_large_image',
+      site: '@tonyzebastian',
+      creator: '@tonyzebastian',
+      title: 'Tony Sebastian ✦ designer',
+      description: 'A visual product designer | Love to code | always tinkering with a side project',
+      image: 'https://tonyzeb.design/public/preview.png',
+    },
+    og: {
+      title: 'Tony Sebastian ✦ designer',
+      description: 'A visual product designer | Love to code | always tinkering with a side project',
+      url: 'https://tonyzeb.design/',
+      image: 'https://tonyzeb.design/public/preview.png',
+      locale: 'en_EN',
+    },
+}
 
 export default function Musings() {
     const musings = [

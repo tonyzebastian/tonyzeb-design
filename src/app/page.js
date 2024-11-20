@@ -2,9 +2,25 @@ import Image from 'next/image';
 import { Twitter, Linkedin } from 'react-feather';
 
 export const metadata = {
-  title: 'Tony Sebastian',
-  description: 'A brief description of Tony Sebastian\'s work and interests.',
+  title: 'Tony Sebastian ✦ designer',
+  description: 'A visual product designer | Love to code | always tinkering with a side project',
   keywords: 'design, art, cinematography, photography, travel',
+
+  twitter: {
+    card: 'summary_large_image',
+    site: '@tonyzebastian',
+    creator: '@tonyzebastian',
+    title: 'Tony Sebastian ✦ designer',
+    description: 'A visual product designer | Love to code | always tinkering with a side project',
+    image: 'https://tonyzeb.design/public/preview.png',
+  },
+  og: {
+    title: 'Tony Sebastian ✦ designer',
+    description: 'A visual product designer | Love to code | always tinkering with a side project',
+    url: 'https://tonyzeb.design/',
+    image: 'https://tonyzeb.design/public/preview.png',
+    locale: 'en_EN',
+  },
 }
 
 export default function HomePage() {

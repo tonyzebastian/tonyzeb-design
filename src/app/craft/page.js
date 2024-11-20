@@ -1,7 +1,11 @@
 "use client";
 import { Masonry } from "react-plock";
+import { metadata } from './metadata';
 
-export default function Visuals() {
+export default function Crafts() {
+  document.title = metadata.title;
+  document.description = metadata.description;
+  
   const items = [
     { src: '../images/Craft/1.gif', alt: 'Burn out' },
     { src: '../images/Craft/2.gif', alt: 'Decision Making' },
