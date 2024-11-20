@@ -1,10 +1,7 @@
 "use client";
 import { Masonry } from "react-plock";
-import { metadata } from './metadata';
 
 export default function Visuals() {
-  document.title = metadata.title;
-  document.description = metadata.description;
   
   const items = [
     { src: '../images/visuals/2.jpg', alt: 'Visual 2' },
