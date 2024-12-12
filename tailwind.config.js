@@ -30,7 +30,7 @@ module.exports = {
   			tony_accent: {
   				'100': '#00EFA6'
   			}
-		}		
+		}	
   	}
   },
   plugins: [require("tailwindcss-animate")],

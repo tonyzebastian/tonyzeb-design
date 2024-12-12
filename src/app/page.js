@@ -1,5 +1,6 @@
-import Image from 'next/image';
+import Logo from '@/components/ui/logo/Logo';
 import { Twitter, Linkedin } from 'react-feather';
+
 
 export const metadata = {
   title: 'Tony Sebastian ✦ designer',
@@ -24,10 +25,13 @@ export const metadata = {
 }
 
 export default function HomePage() {
+  
   return (
     <div className='h-[calc(100vh-80px)] flex items-center justify-center '>
       <div className="flex flex-col items-start justify-center mx-auto max-w-[500px]">
-        <Image src="/images/logo.svg" alt="logo" className="w-12 h-12 mb-4 mx-8" layout="fixed" width={48} height={48} />
+        <div className="mb-4 mx-8">
+          <Logo/>
+        </div>
         <h1 className="text-tony_accent-100 mx-8">Tony Sebastian</h1>
         <h3 className="mx-8">Product Designer</h3>
         <p className="mt-4 mx-8">

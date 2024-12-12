@@ -19,6 +19,7 @@
     "react-dom": "^18",
     "react-feather": "^2.0.10",
     "react-plock": "^3.2.0",
+    "styled-components": "^6.1.13",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.169.0"
