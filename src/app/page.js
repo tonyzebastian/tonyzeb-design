@@ -13,13 +13,13 @@ export const metadata = {
     creator: '@tonyzebastian',
     title: 'Tony Sebastian ✦ designer',
     description: 'A visual product designer | Love to code | always tinkering with a side project',
-    image: 'https://tonyzeb.design/public/preview.png',
+    image: 'https://tonyzeb.design/preview.png',
   },
   og: {
     title: 'Tony Sebastian ✦ designer',
     description: 'A visual product designer | Love to code | always tinkering with a side project',
     url: 'https://tonyzeb.design/',
-    image: 'https://tonyzeb.design/public/preview.png',
+    image: 'https://tonyzeb.design/preview.png',
     locale: 'en_EN',
   },
 }
