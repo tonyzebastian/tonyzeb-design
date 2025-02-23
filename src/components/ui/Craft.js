@@ -14,7 +14,7 @@ export default function Crafts() {
     { src: '../images/Craft/5.gif', alt: 'Postman Hero Animation' },
     { src: '../images/Craft/6.gif', alt: 'Postman Loading' },
     { src: '../images/Craft/3.gif', alt: 'Personal Hero Animation' },
-    { src: '../images/Craft/runner.gif', alt: 'Runner Onboarding' },
+    { src: '../images/Craft/Runner.gif', alt: 'Runner Onboarding' },
   ];
 
   return (
