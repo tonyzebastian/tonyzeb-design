@@ -25,9 +25,28 @@ export const metadata = {
 }
 
 export default function HomePage() {
+
+  const musings = [
+    { name: 'Figma Recap', date: 'Every edit, every design— At a glance', link: 'https://www.figmarecap.in/' },
+    { name: 'UI Glow', date: 'Interaction design explorations', link: 'https://www.uiglow.click/' },
+    { name: 'UX Nudges', date: 'A collection of nudges from apps', link: 'https://ux-nudge.web.app/' },
+    { name: 'Abstract Illustration Library', date: 'A library of free to use illustrations', link: 'https://abstract-library.framer.website/' },
+  ];
+
+  const createListItem = (itemName, itemDate, itemLink) => {
+      return (
+          <li key={itemLink}>
+          <Link href={itemLink} className="flex flex-col items-start py-4 px-4 hover:bg-tony_BG-200 rounded" target="_blank"> 
+              <span className="text-tony_text-200 font-Raleway font-medium text-sm tracking-wide overflow-hidden overflow-ellipsis whitespace-nowrap sm:block sm:truncate mb-1">{itemName}</span>
+              <span className="text-tony_text-300 font-Raleway font-light text-sm">{itemDate}</span>
+          </Link>
+          </li>
+      );
+  };
   
   return (
     <div className='h-[calc(100vh-80px)] flex items-center justify-center '>
+
       <div className="flex flex-col items-start justify-center mx-auto max-w-[500px]">
         <div className="mb-4 mx-8">
           <Logo/>
@@ -53,6 +72,7 @@ export default function HomePage() {
           </a>
         </div>
       </div>
+
     </div>
   );
 }

@@ -24,6 +24,7 @@ export const metadata = {
 
 export default function Projects() {
     const musings = [
+        { name: 'Figma Recap', date: 'Every edit, every design— At a glance', link: 'https://www.figmarecap.in/' },
         { name: 'UI Glow', date: 'Interaction design explorations', link: 'https://www.uiglow.click/' },
         { name: 'UX Nudges', date: 'A collection of nudges from apps', link: 'https://ux-nudge.web.app/' },
         { name: 'Abstract Illustration Library', date: 'A library of free to use illustrations', link: 'https://abstract-library.framer.website/' },
