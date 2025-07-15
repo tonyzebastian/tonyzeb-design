@@ -21,16 +21,16 @@ export const metadata = {
 
 export const projects = [
   { 
-    name: 'Figma Recap', 
-    date: 'Every edit, every design— At a glance', 
-    link: 'https://www.figmarecap.in/',
-    image: '/icons/figmarecap.png',
-  },
-  { 
     name: 'UI Glow', 
     date: 'Interaction design explorations', 
     link: 'https://www.uiglow.click/',
     image: '/icons/uiglow.png',
+  },
+  { 
+    name: 'Figma Recap', 
+    date: 'Every edit, every design— At a glance', 
+    link: 'https://www.figmarecap.in/',
+    image: '/icons/figmarecap.png',
   },
   { 
     name: 'UX Nudges', 
@@ -74,13 +74,13 @@ export const experience = [
 export const designAreas = [
   {
     title: "Infosys",
-    image: "/icons/abstract.png",
+    image: "/icons/infosys.png",
     isExternal: true,
     link: 'https://www.infosys.com/',
   },
   {
     title: "Chatwoot",
-    image: "/icons/uiglow.png",
+    image: "/icons/chatwoot.png",
     isExternal: true,
     link: 'https://www.chatwoot.com/',
   },
@@ -109,4 +109,11 @@ export const bio = {
     twitter: "https://x.com/tonyzebastian"
   }
 };
+
+export const now =[
+  {description: "Most days, I'm thinking about how things move and how to build those interactions with code. Currently learning through Animation on Dev and Not a Number."},
+  {description: "Using tools like Midjourney, ChatGPT, and new video generators to push ideas further. Treating them as creative collaborators, not just shortcuts."},
+  {description: "Thinking in systems and learning product thinking to better understand how features, feedback, and business goals connect. It helps me design with clarity and ownership."},
+  {description: "Writing more code, and trying to write it better. As AI becomes more integrated in design, I want to understand how things work—not just rely on tools to guess for me."}
+];
 

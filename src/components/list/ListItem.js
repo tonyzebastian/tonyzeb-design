@@ -22,23 +22,23 @@ const ListItem = ({
       className="block"
     >
       <div 
-        className="flex items-center justify-between py-3 rounded group -mx-4 px-4 hover:bg-slate-50 "
+        className="flex flex-col md:flex-row items-start md:items-center justify-between py-3 rounded -mx-4 px-4 md:hover:bg-slate-50 md:hover:border-l md:hover:border-r"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div className="group-hover:[&>*]:hover">
+        <div className="md:group-hover:[&>*]:hover mb-2 md:mb-0">
           <Title 
             image={image} 
             title={title} 
             isExternal={isExternal} 
-            isHovered={isHovered}  
+            isHovered={isHovered && window.innerWidth >= 768}  
           />
         </div>
-        <div className="group-hover:[&>*]:hover">
+        <div className="md:group-hover:[&>*]:hover">
           <SubText 
             primaryText={primaryText} 
             secondaryText={secondaryText}
-            isHovered={isHovered}
+            isHovered={isHovered && window.innerWidth >= 768}
           />
         </div>
       </div>
