@@ -15,9 +15,8 @@ export default function NavBar() {
   }, [])
 
   const navItems = [
+    { name: 'Home', href: '/' },
     { name: 'Craft', href: '/craft' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Musings', href: '/musings' },
     { name: 'Visuals', href: '/visuals' },
     { name: 'About', href: '/about' },
   ]
@@ -47,16 +46,6 @@ export default function NavBar() {
 
       <nav className="flex justify-center  overflow-x-auto whitespace-nowrap">
         <div className="flex bg-tony_BG-200 p-1 border border-tony_stroke-200 rounded-full shadow-lg">
-          <Link href="/" className="block mr-4">
-            <Image
-              src="/images/profile_pic.jpg"
-              alt="Avatar"
-              width={36}
-              height={36}
-              className={`rounded-full hover:border ${pathname === '/' ? 'border border-tony_accent-100 border-active' : ''}`}
-              style={{ minWidth: '36px', minHeight: '36px' }}
-            />
-          </Link>
           
           {navItems.map((item) => {
             const isActive = pathname === item.href
