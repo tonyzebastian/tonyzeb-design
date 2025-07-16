@@ -86,7 +86,7 @@ export const designAreas = [
   },
   {
     title: "Scribd",
-    image: "/icons/figmarecap.png",
+    image: "/icons/scribd.png",
     isExternal: true,
     link: 'https://www.scribd.com/',
   }
@@ -156,7 +156,7 @@ export const aboutBio = [
 
 export const aboutFunThings = [
   {
-    text: "Love to illustrate. Did a 365 day drawing challenge in 2022",
+    text: "- Love to illustrate. Did a 365 day drawing challenge in 2022.",
     links: [
       {
         text: "drawing challenge",
@@ -165,11 +165,29 @@ export const aboutFunThings = [
     ]
   },
   {
-    text: "Gives me great joy telling stories through animation",
+    text: "- Gives me great joy telling stories through animation.",
     links: [
       {
         text: "stories",
         href: "https://vimeo.com/tonyzebastian"
+      }
+    ]
+  },
+  {
+    text: "- Aspiring cinematographer.",
+    links: [
+      {
+        text: "cinematographer.",
+        href: "https://www.instagram.com/tonyzebastian/"
+      }
+    ]
+  },
+  {
+    text: "- Takes lot of pictures.",
+    links: [
+      {
+        text: "pictures.",
+        href: "https://www.pexels.com/@tonyzebastian/"
       }
     ]
   }
@@ -183,7 +201,7 @@ export const aboutPrinciples = [
 ];
 
 export const aboutConversation = {
-  intro: "I'd love to talk to you! Here's a list of ideas to start a conversation between us:",
+  intro: "Here's a list of ideas to start a conversation between us:",
   topics: [
     "Send me a photo or video that you took.",
     "Tell me about your camera setup.",

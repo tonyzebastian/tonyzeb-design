@@ -1,20 +1,21 @@
 "use client";
+
 import { Masonry } from "react-plock";
 import { useState } from "react";
 
-export default function Crafts() {
+export default function AI() {
   const [selectedItem, setSelectedItem] = useState(null);
   
   const items = [
-    { src: '../images/Craft/1.gif', alt: 'Burn out' },
-    { src: '../images/Craft/2.gif', alt: 'Decision Making' },
-    { src: '../images/Craft/omni_bar.gif', alt: 'Omni Bar' },
-    { src: '../images/Craft/powerpass.gif', alt: 'Power Pass' },
-    { src: '../images/Craft/4.gif', alt: 'Graph Interaction' },
-    { src: '../images/Craft/5.gif', alt: 'Postman Hero Animation' },
-    { src: '../images/Craft/6.gif', alt: 'Postman Loading' },
-    { src: '../images/Craft/3.gif', alt: 'Personal Hero Animation' },
-    { src: '../images/Craft/Runner.gif', alt: 'Runner Onboarding' },
+    { src: '../images/AI/bangalore auto.png', alt: 'beautiful bangalore auto' },
+    { src: '../images/AI/cyclist.png', alt: 'genz cyclist' },
+    { src: '../images/AI/elephant.png', alt: 'Cool elephant' },
+    { src: '../images/AI/lady.png', alt: 'Power Lady' },
+    { src: '../images/AI/zebra crossing.png', alt: 'Zebras crossing a zebra crossing' },
+    { src: '../images/AI/writing_1.png', alt: 'motivation' },
+    { src: '../images/AI/snakes.png', alt: 'motivation' },
+    { src: '../images/AI/writing_2.png', alt: 'motivation' },
+    { src: '../images/AI/figma.png', alt: 'motivation' }
   ];
 
   return (

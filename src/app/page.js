@@ -133,7 +133,7 @@ export default function HomePage() {
           <div className="mt-6 mb-8">
             <h2 className="mb-2">Contact</h2>
             <div className="text-slate-700">
-            Reach me at <HighlightLink href='https://twitter.com/tonyzebastian'> @tonyzebastian </HighlightLink> or{' '}
+            Reach me at <HighlightLink href='https://www.linkedin.com/in/tonyzebastian/'> @tonyzebastian </HighlightLink> or{' '}
             <CopyEmailLink />
             </div>
           </div>

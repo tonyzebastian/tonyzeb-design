@@ -25,11 +25,11 @@ export default function About() {
 
     return (
         <div className="flex flex-col items-center justify-center mx-auto max-w-2xl px-8">
-            <div className='-ml-8'>
+            <div className='-ml-12'>
                 <ImageReveal 
-                    leftImage="/images/profile_pic.jpg"
-                    middleImage="/images/profile_pic.jpg"
-                    rightImage="/images/profile_pic.jpg"
+                    leftImage="/images/about/left.jpg"
+                    middleImage="/images/about/middle.jpg"
+                    rightImage="/images/about/right.jpg"
                 />
             </div>
 

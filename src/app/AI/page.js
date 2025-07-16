@@ -1,4 +1,4 @@
-import Crafts from "./Craft"; 
+import Crafts from "./AI"; 
  
 export const metadata = {
   title: 'Crafts ✦ designer',
@@ -6,7 +6,7 @@ export const metadata = {
   keywords: 'design, art, cinematography, photography, travel',
 };
  
-export default function MyCrafts() {
+export default function WithAI() {
   return <Crafts />;
 }
 
