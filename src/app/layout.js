@@ -2,7 +2,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Instrument_Serif } from 'next/font/google';
 import { GeistSans } from 'geist/font/sans';
 import "./globals.css";
-import NavBar from '@/components/NavBar'
+import NavBar from '@/components/NavBar';
+
 
 const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
               </main>
               <NavBar />
               <SpeedInsights />
+              
           </body>
       </html>
   );

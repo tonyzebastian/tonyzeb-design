@@ -1,32 +1,42 @@
 import ListItem from '@/components/list/ListItem';
 import Title from '@/components/list/Title';
 import { metadata, projects, experience, musings, bio, designAreas, now } from '@/lib/content';
+import HighlightLink from '@/components/ui/HighlightLink';
+import CopyEmailLink from '@/components/ui/CopyEmailLink';
+import { Badge } from "@/components/ui/badge";
+import PulsingDot from '@/components/ui/PulsingDot';
 
 export { metadata };
 
 export default function HomePage() {
   return (
-    <div className='pt-12 pl-4'>
+    <div className='pt-12'>
       <div className="mx-auto max-w-2xl px-8">
         
         {/* Header Section */}
-        <div className="mb-12 flex flex-col items-center justify-center">
+        <div className="mb-6 flex flex-col items-center justify-center">
           <div className="mb-4">
             <img 
               src="/hero.gif" 
               alt="Hero animation" 
-              className="max-w-xl mt-4"
+              className="max-w-lg mt-4"
             />
           </div>
           <h1 className="font-serif text-center">Hello! I am Tony, a software designer.</h1> 
-          <h3 className="mt-3 text-center max-w-xl">{bio.intro}</h3>
+          <div className='flex flex-col items-center gap-3'>
+            <h3 className="mt-3 text-center max-w-xl ">{bio.intro}</h3>
+            <Badge variant="outline" className="flex items-center">
+              <PulsingDot />
+              Available for work
+            </Badge>
+          </div>
         </div>
 
         {/* Body */}
         <div className='flex flex-col gap-6'>
 
           {/* Projects Section */}
-          <div className="mb-12">
+          <div className="my-6">
             <h2 className="mb-2">Projects</h2>
             <div className="space-y-1">
               {projects.map(project => (
@@ -44,7 +54,7 @@ export default function HomePage() {
           </div>
 
           {/* Experience Section */}
-          <div className="mb-12">
+          <div className="my-6">
             <h2 className="mb-2">Experience</h2>
             <div className="space-y-1">
               {experience.map(experience => (
@@ -81,7 +91,7 @@ export default function HomePage() {
 
 
           {/* Musings Section */}
-          <div className="mb-12">
+          <div className="my-6">
             <h2 className="mb-2">Musings</h2>
             <div className="space-y-1">
               {musings.map(musing => (
@@ -98,23 +108,34 @@ export default function HomePage() {
           </div>
 
           {/* Now Section */}
-          <div className="mb-12">
+          <div className="my-6">
             <h2 className="mb-2">Now</h2>
             <div className="space-y-4">
               {now.map((item, index) => (
                 <p key={index} className="text-slate-700">
-                  {item.description}
+                  {Array.isArray(item.description) ? (
+                    item.description.map((part, i) => (
+                      typeof part === 'string' ? part : (
+                        <HighlightLink key={i} href={part.href}>
+                          {part.text}
+                        </HighlightLink>
+                      )
+                    ))
+                  ) : (
+                    item.description
+                  )}
                 </p>
               ))}
             </div>
           </div>
 
           {/* Contact Section */}
-          <div className="mb-12">
+          <div className="mt-6 mb-8">
             <h2 className="mb-2">Contact</h2>
-            <p className="text-slate-700">
-              Reach me at <a href="https://twitter.com/tonyzebastian" className="underline hover:text-slate-900 transition-colors" target="_blank" rel="noopener noreferrer">@tonyzebastian</a> or <a href="mailto:tonyzeb.design@gmail.com" className="underline hover:text-slate-900 transition-colors">tonyzeb.design@gmail.com</a>
-            </p>
+            <div className="text-slate-700">
+            Reach me at <HighlightLink href='https://twitter.com/tonyzebastian'> @tonyzebastian </HighlightLink> or{' '}
+            <CopyEmailLink />
+            </div>
           </div>
 
         </div>

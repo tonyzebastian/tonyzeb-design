@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { LinearBlur } from 'progressive-blur'
 
@@ -17,7 +16,7 @@ export default function NavBar() {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Craft', href: '/craft' },
-    { name: 'Visuals', href: '/visuals' },
+    { name: 'Snaps', href: '/visuals' },
     { name: 'About', href: '/about' },
   ]
 
@@ -44,9 +43,8 @@ export default function NavBar() {
       }}
     />
 
-      <nav className="flex justify-center  overflow-x-auto whitespace-nowrap">
-        <div className="flex bg-tony_BG-200 p-1 border border-tony_stroke-200 rounded-full shadow-lg">
-          
+      <nav className="flex justify-center whitespace-nowrap">
+        <div className="flex bg-white p-1 gap-2 border border-stone-200 rounded-full shadow-lg">
           {navItems.map((item) => {
             const isActive = pathname === item.href
             return (
@@ -54,9 +52,9 @@ export default function NavBar() {
                 key={item.name}
                 href={item.href}
                 className={`
-                  flex items-center justify-center px-4 py-2 rounded-full font-Raleway text-sm font-normal
-                  transition-colors duration-200 leading-4 hover:text-tony_text-200
-                  ${isActive ? 'bg-tony_BG-100 text-tony_accent-100' : 'text-tony_text-300'}
+                  flex items-center justify-center gap-2 px-3 py-2 rounded-full font-sans text-sm
+                  transition-colors duration-200 hover:bg-blue-50 hover:text-blue-800
+                  ${isActive ? 'bg-blue-100 text-slate-900 font-medium' : 'text-slate-800 font-normal'}
                 `}
               >
                 {item.name}

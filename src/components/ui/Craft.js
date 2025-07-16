@@ -50,7 +50,7 @@ export default function Crafts() {
             <img 
               src={selectedItem.src} 
               alt={selectedItem.alt}
-              className="w-full rounded-lg border border-2 bg-white"
+              className="w-full rounded-lg border-2 bg-white"
               style={{ maxHeight: "90vh", objectFit: "contain" }}
             />
             

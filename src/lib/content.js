@@ -110,10 +110,87 @@ export const bio = {
   }
 };
 
-export const now =[
-  {description: "Most days, I'm thinking about how things move and how to build those interactions with code. Currently learning through Animation on Dev and Not a Number."},
+
+
+export const now = [
+  {
+    description: [
+      "Most days, I'm thinking about how things move and how to build those interactions with code. Currently learning through ",
+      {
+        text: "Animation on the web",
+        href: "https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API"
+      },
+      " and ",
+      {
+        text: "Interactive svg animations",
+        href: "https://developer.mozilla.org/en-US/docs/Web/SVG/SVG_animation_with_SMIL"
+      },
+      "."
+    ]
+  },
   {description: "Using tools like Midjourney, ChatGPT, and new video generators to push ideas further. Treating them as creative collaborators, not just shortcuts."},
   {description: "Thinking in systems and learning product thinking to better understand how features, feedback, and business goals connect. It helps me design with clarity and ownership."},
   {description: "Writing more code, and trying to write it better. As AI becomes more integrated in design, I want to understand how things work—not just rely on tools to guess for me."}
 ];
 
+
+export const aboutBio = [
+  {
+    text: "Born and brought up in Thodupuzha, a relaxed town nestled in the heart of Kerala, India. Holds a master's degree in management, but no longer interested in pursuing a managerial role. Started career as a business Analyst at Infosys → Freelance designer → Product designer at Hypersonix → Product designer at Postman. Runs an art studio with my partner.",
+    links: [
+      {
+        text: "Thodupuzha",
+        href: "https://www.kerala.com/pages/kerala-destination-thodupuzha"
+      },
+      {
+        text: "Postman",
+        href: "https://www.postman.com/"
+      },
+      {
+        text: "art studio",
+        href: "https://www.instagram.com/juny_made_/"
+      }
+    ]
+  },
+];
+
+export const aboutFunThings = [
+  {
+    text: "Love to illustrate. Did a 365 day drawing challenge in 2022",
+    links: [
+      {
+        text: "drawing challenge",
+        href: "https://pin.it/3PKGQjN2Y"
+      }
+    ]
+  },
+  {
+    text: "Gives me great joy telling stories through animation",
+    links: [
+      {
+        text: "stories",
+        href: "https://vimeo.com/tonyzebastian"
+      }
+    ]
+  }
+];
+
+export const aboutPrinciples = [
+  "Consistency & effort outplays talent.",
+  "Side projects give the oxygen to survive on your regular job.",
+  "It's never too late to start a new hobby.",
+  "Allow events to influence you and your craft."
+];
+
+export const aboutConversation = {
+  intro: "I'd love to talk to you! Here's a list of ideas to start a conversation between us:",
+  topics: [
+    "Send me a photo or video that you took.",
+    "Tell me about your camera setup.",
+    "Ask me about my art journey.",
+    {
+      text: "Just say \"Hi\"!",
+      email: "tonyzebastian@gmail.com"
+    }
+  ]
+};
