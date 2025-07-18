@@ -36,7 +36,7 @@ export default function Visuals() {
           key={idx}
           src={src}
           alt={alt} 
-          className="rounded"
+          className="rounded hover:rounded-2xl hover:scale-[99%] transition-all ease-in-out"
           style={{ width: "100%", height: "auto" }} />
       )}
     />

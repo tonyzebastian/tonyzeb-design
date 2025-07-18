@@ -1,81 +1,92 @@
-"use client";
-
-import { Masonry } from "react-plock";
-import { useState } from "react";
+import MasonryGrid from "@/components/ui/MasonryGrid";
 
 export default function AI() {
-  const [selectedItem, setSelectedItem] = useState(null);
-  
   const items = [
-    { src: '../images/AI/bangalore auto.png', alt: 'beautiful bangalore auto' },
-    { src: '../images/AI/cyclist.png', alt: 'genz cyclist' },
-    { src: '../images/AI/elephant.png', alt: 'Cool elephant' },
-    { src: '../images/AI/lady.png', alt: 'Power Lady' },
-    { src: '../images/AI/zebra crossing.png', alt: 'Zebras crossing a zebra crossing' },
-    { src: '../images/AI/writing_1.png', alt: 'motivation' },
-    { src: '../images/AI/snakes.png', alt: 'motivation' },
-    { src: '../images/AI/writing_2.png', alt: 'motivation' },
-    { src: '../images/AI/figma.png', alt: 'motivation' }
+    { 
+      src: '../images/AI/bangalore auto.png', 
+      alt: 'Beautiful Bangalore Auto',
+      description: 'An AI-generated artwork capturing the essence of Bangalores iconic auto-rickshaw, blending traditional elements with modern artistic style.',
+      projectLink: 'wwww.google.com'
+    },
+    { 
+      src: '../images/AI/rook.png', 
+      alt: 'The rook Chair',
+      description: 'A tall wooden chair designed in the shape of a chess rook, crafted with rich, dark-stained wood. The cylindrical tower form features a single rectangular opening on one side, carved into the body, creating a cozy seating alcove with a smooth black cushion inside. The top of the rook has classic crenellated battlements. The design is minimalist and sculptural, blending furniture and chess iconography, set against a soft beige background. Soft shadows and even lighting, photographed in a clean product style. Square format.',
+      projectLink: 'wwww.google.com'
+    },
+    { 
+      src: '../images/AI/stellar_blends.gif', 
+      alt: 'Stellar Blends',
+      description: 'A mesmerizing AI-generated animation exploring the intersection of cosmic elements and fluid dynamics.',
+      projectLink: null
+    },
+    { 
+      src: '../images/AI/Claude.png', 
+      alt: 'Stellar Blends',
+      description: 'A mesmerizing AI-generated animation exploring the intersection of cosmic elements and fluid dynamics.',
+      projectLink: null
+    },
+    { 
+      src: '../images/AI/cyclist.png', 
+      alt: 'Gen-Z Cyclist',
+      description: 'A contemporary interpretation of urban cycling culture through AI-generated art, featuring modern youth aesthetics.',
+      projectLink: null
+    },
+    { 
+      src: '../images/AI/lovable.png', 
+      alt: 'Stellar Blends',
+      description: 'A mesmerizing AI-generated animation exploring the intersection of cosmic elements and fluid dynamics.',
+      projectLink: null
+    },
+    { 
+      src: '../images/AI/elephant.png', 
+      alt: 'Cool Elephant',
+      description: 'A whimsical AI creation depicting an elephant with a unique personality, showcasing the blend of nature and artistic expression.',
+      projectLink: null
+    },
+    { 
+      src: '../images/AI/gemini.png', 
+      alt: 'Stellar Blends',
+      description: 'A mesmerizing AI-generated animation exploring the intersection of cosmic elements and fluid dynamics.',
+      projectLink: null
+    },
+    { 
+      src: '../images/AI/lady.png', 
+      alt: 'Power Lady',
+      description: 'An empowering AI-generated portrait celebrating feminine strength and contemporary fashion.',
+      projectLink: null
+    },
+    { 
+      src: '../images/AI/zebra crossing.png', 
+      alt: 'Zebras crossing a zebra crossing',
+      description: 'A playful AI interpretation of zebras using their namesake crossing, combining literal and metaphorical elements in urban wildlife.',
+      projectLink: null
+    },
+    { 
+      src: '../images/AI/writing_1.png', 
+      alt: 'Creative Writing I',
+      description: 'AI-generated visualization exploring the art of creative writing and storytelling through visual metaphors.',
+      projectLink: null
+    },
+    { 
+      src: '../images/AI/snakes.png', 
+      alt: 'Abstract Snakes',
+      description: 'A mesmerizing AI artwork featuring serpentine forms in an abstract composition.',
+      projectLink: null
+    },
+    { 
+      src: '../images/AI/writing_2.png', 
+      alt: 'Creative Writing II',
+      description: 'Second in the series of AI-generated artworks examining the creative writing process through visual elements.',
+      projectLink: null
+    },
+    { 
+      src: '../images/AI/figma.png', 
+      alt: 'Figma Reimagined',
+      description: 'An AI-generated piece exploring design tools and creative processes in the digital age.',
+      projectLink: null
+    }
   ];
 
-  return (
-    <>
-      <div className="m-2">
-        <Masonry
-          items={items}
-          config={{
-            columns: [1, 2, 3],
-            gap: [24, 12, 6],
-            media: [640, 768, 1024],
-          }}
-          render={({ src, alt }, idx) => (
-            <img 
-              key={idx}
-              src={src}
-              alt={alt} 
-              className="rounded cursor-pointer"
-              style={{ width: "100%", height: "auto" }}
-              onClick={() => setSelectedItem({ src, alt })}
-            />
-          )}
-        />
-      </div>
-
-            {/* Spotlight Overlay */}
-            {selectedItem && (
-        <div 
-          className="fixed inset-0 bg-black/75 backdrop-blur-sm flex items-center justify-center z-50"
-          onClick={() => setSelectedItem(null)}
-        >
-          <div className="max-w-4xl w-full p-4 relative">
-            <img 
-              src={selectedItem.src} 
-              alt={selectedItem.alt}
-              className="w-full rounded-lg border-2 bg-white"
-              style={{ maxHeight: "90vh", objectFit: "contain" }}
-            />
-            
-            {/* Bottom Container for Alt Text and Close Button */}
-            <div className="mt-4 flex justify-between items-center">
-              {/* Alt Text */}
-              <div className="text-white">
-                <h2 className="font-Raleway font-medium text-lg">{selectedItem.alt}</h2>
-              </div>
-              
-              {/* Close Button */}
-              <button
-                className="px-4 h-8 border font-Raleway border-white text-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedItem(null);
-                }}
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
-  );
+  return <MasonryGrid items={items} />;
 }
