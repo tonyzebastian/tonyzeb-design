@@ -17,7 +17,6 @@ export default function NavBar() {
     { name: 'Home', href: '/' },
     { name: 'Craft', href: '/craft' },
     { name: 'AI', href: '/AI' },
-    { name: 'Snaps', href: '/visuals' },
     { name: 'About', href: '/about' },
   ]
 

@@ -3,18 +3,6 @@ import MasonryGrid from "@/components/ui/MasonryGrid";
 export default function Crafts() {
   const items = [
     { 
-      src: '../images/Craft/1.gif', 
-      alt: 'Burn out',
-      description: 'An engaging animation exploring the concept of professional burnout through dynamic visual metaphors.',
-      projectLink: null
-    },
-    { 
-      src: '../images/Craft/2.gif', 
-      alt: 'Decision Making',
-      description: 'Interactive visualization demonstrating the complexity of decision-making processes in modern interfaces.',
-      projectLink: null
-    },
-    { 
       src: '../images/Craft/omni_bar.gif', 
       alt: 'Omni Bar',
       description: 'A sophisticated search and command interface design showcasing seamless user interaction and real-time feedback.',
@@ -33,22 +21,10 @@ export default function Crafts() {
       projectLink: null
     },
     { 
-      src: '../images/Craft/5.gif', 
-      alt: 'Postman Hero Animation',
-      description: 'Hero section animation created for Postman, featuring engaging motion design that explains complex concepts simply.',
-      projectLink: 'https://www.postman.com'
-    },
-    { 
       src: '../images/Craft/6.gif', 
       alt: 'Postman Loading',
       description: 'Custom loading animation designed for Postman, balancing functionality with brand identity.',
       projectLink: 'https://www.postman.com'
-    },
-    { 
-      src: '../images/Craft/3.gif', 
-      alt: 'Personal Hero Animation',
-      description: 'A creative personal project showcasing advanced animation techniques and storytelling through motion.',
-      projectLink: null
     },
     { 
       src: '../images/Craft/Runner.gif', 

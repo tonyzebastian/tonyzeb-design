@@ -132,7 +132,7 @@ export default function HomePage() {
           {/* Contact Section */}
           <div className="mt-6 mb-8">
             <h2 className="mb-2">Contact</h2>
-            <div className="text-slate-700">
+            <div className="text-slate-700 font-sans text-sm">
             Reach me at <HighlightLink href='https://www.linkedin.com/in/tonyzebastian/'> @tonyzebastian </HighlightLink> or{' '}
             <CopyEmailLink />
             </div>

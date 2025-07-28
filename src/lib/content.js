@@ -136,27 +136,16 @@ export const now = [
 
 export const aboutBio = [
   {
-    text: "Born and brought up in Thodupuzha, a relaxed town nestled in the heart of Kerala, India. Holds a master's degree in management, but no longer interested in pursuing a managerial role. Started career as a business Analyst at Infosys → Freelance designer → Product designer at Hypersonix → Product designer at Postman. Runs an art studio with my partner.",
-    links: [
-      {
-        text: "Thodupuzha",
-        href: "https://www.kerala.com/pages/kerala-destination-thodupuzha"
-      },
-      {
-        text: "Postman",
-        href: "https://www.postman.com/"
-      },
-      {
-        text: "art studio",
-        href: "https://www.instagram.com/juny_made_/"
-      }
-    ]
+    text: "Hello there! I'm a designer who loves crafting delightful experiences by blending thoughtful product design with engaging motion.",
+  },
+  {
+    text: "My journey began with a master's in marketing, where I discovered my fascination with branding, positioning, product strategy, and ultimately design. I started out as a Business Analyst at Infosys, but quickly realized it wasn't the right fit for me. Driven by curiosity, I taught myself design, transitioned into freelancing, and dove deep into honing my craft. Today, with around 7 years of experience, I've grown from Freelance Designer → Product Designer at Hypersonix → now a Product Designer at Postman. Currently, I'm based in Bangalore, India, though my roots are in the charming town of Thodupuzha, Kerala.",
   },
 ];
 
 export const aboutFunThings = [
   {
-    text: "- Love to illustrate. Did a 365 day drawing challenge in 2022.",
+    text: "I'm an illustrator at heart—completed a 365-day drawing challenge in 2022.",
     links: [
       {
         text: "drawing challenge",
@@ -165,39 +154,54 @@ export const aboutFunThings = [
     ]
   },
   {
-    text: "- Gives me great joy telling stories through animation.",
+    text: "I dream of becoming a cinematographer someday.",
     links: [
       {
-        text: "stories",
-        href: "https://vimeo.com/tonyzebastian"
+        text: "cinematographer",
+        href: "https://www.youtube.com/@tonyzebastian"
       }
     ]
   },
   {
-    text: "- Aspiring cinematographer.",
-    links: [
-      {
-        text: "cinematographer.",
-        href: "https://www.instagram.com/tonyzebastian/"
-      }
-    ]
-  },
-  {
-    text: "- Takes lot of pictures.",
-    links: [
-      {
-        text: "pictures.",
-        href: "https://www.pexels.com/@tonyzebastian/"
-      }
-    ]
+    text: "Running is a hobby I recently picked up, I'm training for my first 10K in September!",
   }
 ];
 
 export const aboutPrinciples = [
-  "Consistency & effort outplays talent.",
-  "Side projects give the oxygen to survive on your regular job.",
-  "It's never too late to start a new hobby.",
-  "Allow events to influence you and your craft."
+  "Consistency and effort always beat talent.",
+  "It's never too late to pick up a new hobby.",
+  "Let life's events shape and inspire your creative journey.",
+  "Side projects are like oxygen—they keep your passion alive."
+];
+
+export const animation = [
+  {
+    text: "Animation lets me express emotions and ideas uniquely. I'm particularly fond of frame-by-frame animation, playful logo reveals, and creating narratives that tug at your heartstrings.",
+  },
+];
+
+export const junymade = [
+  {
+    text: "Juny Made is an art studio I run with my partner, specializing in creating personalized, handmade embroidered gifts and unique creative projects. Learn more about our studio from our Instagram page. ",
+    links: [
+      {
+        text: "Instagram page.",
+        href: "https://pin.it/3PKGQjN2Y"
+      }
+    ]
+  },
+];
+
+export const photography = [
+  {
+    text: "I spend a lot of time behind the lens, chasing beautiful moments in nature, capturing dynamic movement, and exploring abstract forms. More photos are added on Pexels.",
+    links: [
+      {
+        text: "Pexels.",
+        href: "https://pin.it/3PKGQjN2Y"
+      }
+    ]
+  },
 ];
 
 export const aboutConversation = {
