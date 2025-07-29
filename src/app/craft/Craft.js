@@ -6,13 +6,13 @@ export default function Crafts() {
       src: '../images/Craft/omni_bar.gif', 
       alt: 'Omni Bar',
       description: 'A sophisticated search and command interface design showcasing seamless user interaction and real-time feedback.',
-      projectLink: 'https://www.figma.com/file/example-omni-bar'
+      projectLink: null
     },
     { 
       src: '../images/Craft/powerpass.gif', 
       alt: 'Power Pass',
       description: 'Innovative animation for a power user feature, demonstrating smooth transitions and intuitive user feedback.',
-      projectLink: 'https://www.figma.com/file/example-powerpass'
+      projectLink: null
     },
     { 
       src: '../images/Craft/4.gif', 
@@ -24,13 +24,19 @@ export default function Crafts() {
       src: '../images/Craft/6.gif', 
       alt: 'Postman Loading',
       description: 'Custom loading animation designed for Postman, balancing functionality with brand identity.',
-      projectLink: 'https://www.postman.com'
+      projectLink: null
+    },
+    { 
+      src: '../images/Craft/fish.gif', 
+      alt: 'A School of fish',
+      description: 'An interactive school of fish with realistic movements.',
+      projectLink: 'https://www.uiglow.click/experiences/fish'
     },
     { 
       src: '../images/Craft/Runner.gif', 
       alt: 'Runner Onboarding',
       description: 'Engaging onboarding experience animation that guides users through features while maintaining visual interest.',
-      projectLink: 'https://www.figma.com/file/example-runner'
+      projectLink: null
     }
   ];
 

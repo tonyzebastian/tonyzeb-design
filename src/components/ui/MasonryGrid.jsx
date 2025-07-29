@@ -35,19 +35,19 @@ export default function MasonryGrid({ items, renderSpotlight = true, className =
           className="fixed inset-0 bg-black/75 backdrop-blur-sm flex items-center justify-center z-50"
           onClick={() => setSelectedItem(null)}
         >
-          <div className="max-w-6xl w-full p-4 relative flex gap-4 bg-slate-50 rounded-xl">
+          <div className="max-w-5xl w-full p-4 relative flex flex-col md:flex-row gap-4 bg-slate-50 rounded-xl items-start">
             {/* Image Container */}
-            <div className="flex-1">
+            <div className="flex-1 flex justify-center">
               <img 
                 src={selectedItem.src} 
                 alt={selectedItem.alt}
-                className="w-full rounded-xl bg-slate-50"
+                className="rounded-xl bg-slate-50 max-w-full"
                 style={{ maxHeight: "90vh", objectFit: "contain" }}
               />
             </div>
 
             {/* Content Container */}
-            <div className="w-96 flex flex-col">
+            <div className="w-full md:w-96 flex flex-col flex-shrink-0">
               <h2 className="mt-1 mb-4">{selectedItem.alt}</h2>
               
               {selectedItem.description && (

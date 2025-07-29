@@ -100,22 +100,30 @@ export default function ImageGridWithLightbox({ gridImages, lightboxImages = [],
             {/* Masonry Lightbox */}
             {showMasonryLightbox && shouldShowViewMore && (
                 <div 
-                    className="fixed inset-0 bg-black/75 backdrop-blur-sm flex items-center justify-center z-50"
+                    className="fixed inset-0 bg-black/75 backdrop-blur-sm flex flex-col items-center justify-center z-50"
                     onClick={() => setShowMasonryLightbox(false)}
                 >
-                    <div className="max-w-5xl w-full max-h-[90vh] overflow-y-auto p-4 bg-white rounded-xl" onClick={e => e.stopPropagation()}>
-                        <div className="flex justify-between items-center mb-6">
-                            <h2 className="text-xl font-sans">{title} Gallery</h2>
-                            <button
-                                className="px-4 py-2 text-sm border border-slate-300 rounded-lg hover:bg-slate-100"
-                                onClick={() => setShowMasonryLightbox(false)}
-                            >
-                                Close
-                            </button>
-                        </div>
+                    <div 
+                        className="max-w-7xl w-full max-h-[85vh] overflow-y-auto p-6 bg-white rounded-xl scrollbar-hide"
+                        onClick={e => e.stopPropagation()}
+                        style={{
+                            scrollbarWidth: 'none',
+                            msOverflowStyle: 'none'
+                        }}
+                    >
                         <MasonryGrid 
                             items={lightboxImages.map(src => ({ src, alt: title }))} 
                         />
+                    </div>
+                    
+                    {/* Close Button - Outside container */}
+                    <div className="mt-6">
+                        <button
+                            className="px-6 py-2 bg-white rounded-full text-sm font-medium hover:bg-white/90 transition-colors"
+                            onClick={() => setShowMasonryLightbox(false)}
+                        >
+                            Close
+                        </button>
                     </div>
                 </div>
             )}

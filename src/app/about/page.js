@@ -4,6 +4,40 @@ import { aboutBio, aboutFunThings, aboutPrinciples, aboutConversation, animation
 import ImageGridWithLightbox from '@/components/ui/ImageGridWithLightbox';
 import { galleryImages } from './config';
 
+export const metadata = {
+  title: 'About ✦ Tony Sebastian',
+  description: 'Learn more about Tony Sebastian - visual product designer, photographer, animator, and creative storyteller with a passion for craftsmanship',
+  keywords: 'about tony sebastian, product designer, photographer, animator, creative process, design philosophy, juny made, visual storytelling',
+  author: 'Tony Sebastian',
+  robots: 'index,follow',
+  alternates: {
+    canonical: 'https://tonyzeb.design/about',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@tonyzebastian',
+    creator: '@tonyzebastian',
+    title: 'About ✦ Tony Sebastian',
+    description: 'Learn more about Tony Sebastian - visual product designer, photographer, animator, and creative storyteller with a passion for craftsmanship',
+    image: 'https://tonyzeb.design/preview.png',
+    imageAlt: 'About Tony Sebastian - Designer, Photographer, and Creative Storyteller',
+  },
+  openGraph: {
+    title: 'About ✦ Tony Sebastian',
+    description: 'Learn more about Tony Sebastian - visual product designer, photographer, animator, and creative storyteller with a passion for craftsmanship',
+    url: 'https://tonyzeb.design/about',
+    siteName: 'Tony Sebastian',
+    images: [{
+      url: 'https://tonyzeb.design/preview.png',
+      alt: 'About Tony Sebastian - Designer, Photographer, and Creative Storyteller',
+      width: 1200,
+      height: 630,
+    }],
+    locale: 'en_US',
+    type: 'website',
+  },
+};
+
 export default function About() {
     const renderTextWithLinks = (item) => {
         if (!item.links) return item.text;
@@ -34,7 +68,7 @@ export default function About() {
                 />
             </div>
     
-            <div className="w-full gap-3 flex flex-col">
+            <div className="w-full gap-5 flex flex-col">
                 {/* Bio Section */}
                 <section className="mb-8">
                     <p className="text-slate-700">
@@ -148,7 +182,7 @@ export default function About() {
 
                 {/* Footer/Copyright */}
                 <section className="mb-8 text-center border-t pt-4 border-slate-200 ">
-                    <p className='text-slate-500'>Website built with React and Motion. Typefaces used are Geist and Inter.</p>
+                    <p className='text-slate-500 font-light tracking-widest'>Built with Next.js and Motion.dev | Typefaces -  Instrument Serif & Geist</p>
                     <p className="mt-1 text-slate-500">© Tony Sebastian, 2025</p>
                 </section>
             </div>

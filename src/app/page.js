@@ -1,12 +1,50 @@
 import ListItem from '@/components/list/ListItem';
 import Title from '@/components/list/Title';
-import { metadata, projects, experience, musings, bio, designAreas, now } from '@/lib/content';
+import {projects, experience, musings, bio, designAreas, now } from '@/lib/content';
 import HighlightLink from '@/components/ui/HighlightLink';
 import CopyEmailLink from '@/components/ui/CopyEmailLink';
 import { Badge } from "@/components/ui/badge";
 import PulsingDot from '@/components/ui/PulsingDot';
 
-export { metadata };
+export const metadata = {
+  title: 'Tony Sebastian ✦ designer',
+  description: 'A visual product designer | Love to code | always tinkering with a side project',
+  keywords: 'design, art, cinematography, photography, travel',
+  author: 'Tony Sebastian',
+  viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
+  robots: 'index,follow',
+  'mobile-web-app-capable': 'yes',
+  'apple-mobile-web-app-title': 'Tony Sebastian',
+  'apple-mobile-web-app-status-bar-style': 'black-translucent',
+  manifest: '/manifest.json',
+  alternates: {
+    canonical: 'https://tonyzeb.design',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@tonyzebastian',
+    creator: '@tonyzebastian',
+    title: 'Tony Sebastian ✦ designer',
+    description: 'A visual product designer | Love to code | always tinkering with a side project',
+    image: 'https://tonyzeb.design/preview.png',
+    imageAlt: 'Tony Sebastian - Visual Product Designer',
+  },
+  openGraph: {
+    title: 'Tony Sebastian ✦ designer',
+    description: 'A visual product designer | Love to code | always tinkering with a side project',
+    url: 'https://tonyzeb.design/',
+    siteName: 'Tony Sebastian',
+    images: [{
+      url: 'https://tonyzeb.design/preview.png',
+      alt: 'Tony Sebastian - Visual Product Designer',
+      width: 1200,
+      height: 630,
+    }],
+    locale: 'en_US',
+    type: 'website',
+  },
+
+};
 
 export default function HomePage() {
   return (
