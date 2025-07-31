@@ -9,7 +9,7 @@ export default function Crafts() {
       projectLink: null
     },
     { 
-      src: '../images/Craft/powerpass.gif', 
+      src: '../images/Craft/powerpass.mp4', 
       alt: 'Power Pass',
       description: 'Innovative animation for a power user feature, demonstrating smooth transitions and intuitive user feedback.',
       projectLink: null
@@ -27,16 +27,23 @@ export default function Crafts() {
       projectLink: null
     },
     { 
+      src: '../images/Craft/comet.mp4', 
+      alt: 'Comet Browser Dowload Animation',
+      description: 'Custom loading animation designed for Postman, balancing functionality with brand identity.',
+      projectLink: null
+    },
+    { 
       src: '../images/Craft/fish.gif', 
       alt: 'A School of fish',
       description: 'An interactive school of fish with realistic movements.',
       projectLink: 'https://www.uiglow.click/experiences/fish'
     },
     { 
-      src: '../images/Craft/Runner.gif', 
+      src: '../images/Craft/Runner.mp4', 
       alt: 'Runner Onboarding',
       description: 'Engaging onboarding experience animation that guides users through features while maintaining visual interest.',
-      projectLink: null
+      projectLink: null,
+      specialStyling: true
     }
   ];
 
