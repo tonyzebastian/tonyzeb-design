@@ -3,6 +3,12 @@ import MasonryGrid from "@/components/ui/MasonryGrid";
 export default function Crafts() {
   const items = [
     { 
+      src: '../images/Craft/slate_config.mp4', 
+      alt: 'A car configuration',
+      description: 'A sophisticated search and command interface design showcasing seamless user interaction and real-time feedback.',
+      projectLink: null
+    },
+    { 
       src: '../images/Craft/omni_bar.gif', 
       alt: 'Omni Bar',
       description: 'A sophisticated search and command interface design showcasing seamless user interaction and real-time feedback.',
