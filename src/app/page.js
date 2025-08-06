@@ -5,6 +5,7 @@ import HighlightLink from '@/components/ui/HighlightLink';
 import CopyEmailLink from '@/components/ui/CopyEmailLink';
 import { Badge } from "@/components/ui/badge";
 import PulsingDot from '@/components/ui/PulsingDot';
+import Hero from '@/components/Hero';
 
 export const metadata = {
   title: 'Tony Sebastian ✦ designer',
@@ -48,29 +49,12 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <div className='pt-12'>
-      <div className="mx-auto max-w-2xl px-8">
-        
-        {/* Header Section */}
-        <div className="mb-6 flex flex-col items-center justify-center">
-          <div className="mb-4">
-            <img 
-              src="/hero.gif" 
-              alt="Hero animation" 
-              className="max-w-lg mt-4"
-            />
-          </div>
-          <h1 className="font-serif text-center">Hello! I am Tony, a software designer.</h1> 
-          <div className='flex flex-col items-center gap-3'>
-            <h3 className="mt-3 text-center max-w-xl ">{bio.intro}</h3>
-            <Badge variant="outline" className="flex items-center">
-              <PulsingDot />
-              Available for work
-            </Badge>
-          </div>
-        </div>
+    <div>
+      {/* Hero Section */}
+      <Hero/>
 
-        {/* Body */}
+      {/* Main Content */}
+      <div className="mx-auto max-w-2xl px-8 pt-12 pb-16">
         <div className='flex flex-col gap-6'>
 
           {/* Projects Section */}
@@ -177,9 +161,7 @@ export default function HomePage() {
           </div>
 
         </div>
-
       </div>
-
     </div>
   );
 }

@@ -8,13 +8,13 @@ export default function remote_work() {
 
     return (
         <div id="top" className="flex flex-col items-start justify-center mx-auto max-w-[648px] mt-12">
-            <h1 className="mb-2 mx-6 text-tony_accent-100">15 Months of remote Work: A recap</h1>
-            <h6 className="mb-8 mx-6 text-tony_text-300">
+            <h1 className="mb-2 mx-6 text-green-500">15 Months of remote Work: A recap</h1>
+            <h6 className="mb-8 mx-6 text-slate-500">
                 7 min read . Nov 2020
             </h6>
         
             <section className="mb-8 mx-6">
-                <blockquote className="pl-2 italic border-l-2 font-Raleway leading-loose tracking-wide text-sm text-tony_text-300 border-tony_stroke-200 quote">
+                <blockquote className="pl-2 italic border-l-2 font-sans leading-loose tracking-wide text-sm text-slate-500 border-slate-400 quote">
                     &quot;So, where do you work from?&quot; <br/>
                     &quot;I work from home:&quot; <br/>
                     &quot;Oh, that&apos;s awesome! So you must be living the dream with lots of travel and fun. I envy you, man!&quot; <br/>
@@ -163,7 +163,7 @@ export default function remote_work() {
                 </p>
             </section>
 
-            <a href="#top" className="font-Raleway text-tony_accent-100 font-light tracking-wide text-sm hover hover:text-tony_text-100 mx-6 mb-6">Go to Top</a>
+            <a href="#top" className="font-sans text-green-500 font-light tracking-wide text-sm hover hover:text-slate-300 mx-6 mb-6">Go to Top</a>
 
         </div>
 )

@@ -11,8 +11,8 @@ export default function perceived_wait() {
 
     return (
       <div id="top" className="flex flex-col items-start justify-center mx-auto max-w-[648px] mt-12">
-        <h1 className="mb-2 mx-6 text-tony_accent-100">Reduce perceived wait times through visual delight</h1>
-        <h6 className="mb-8 mx-6 text-tony_text-300">
+        <h1 className="mb-2 mx-6 text-green-500">Reduce perceived wait times through visual delight</h1>
+        <h6 className="mb-8 mx-6 text-slate-500">
             4 min read . May 2024
         </h6>
 
@@ -21,11 +21,11 @@ export default function perceived_wait() {
                 Staring at a blank screen as an app slowly loads is a surefire way to lose user attention. Whether it&apos;s loading a webpage or launching an app, users expect speed and efficiency. However, the loading process can often be a point of frustration, especially when greeted with a blank screen or a mundane loading indicator.
             </p>
 
-            <blockquote className="mt-4 mb-2 pl-2 italic border-l-2 font-Raleway leading-loose tracking-wide text-sm text-tony_text-300 border-tony_stroke-200 quote">
+            <blockquote className="mt-4 mb-2 pl-2 italic border-l-2 font-sans leading-loose tracking-wide text-sm text-slate-500 border-slate-400 quote">
                 People can make rough decisions about a web page&apos;s visual appeal after being exposed to it for as little as 50 ms, which is 1/20 of a second.
             </blockquote>
 
-            <a href="https://www.nngroup.com/articles/powers-of-10-time-scales-in-ux/" target="_blank" className="px-2 py-1 border border-tony_stroke-100 rounded-md font-Raleway text-xs text-tony_accent-100 hover hover:border-tony_stroke-200 hover:text-blue-400">
+            <a href="https://www.nngroup.com/articles/powers-of-10-time-scales-in-ux/" target="_blank" className="px-2 py-1 border border-slate-300 rounded-md font-sans text-xs text-green-500 hover hover:border-slate-400 hover:text-blue-400">
                 Power of 10: Time Scales in User Experience
             </a>
 
@@ -42,20 +42,20 @@ export default function perceived_wait() {
             The Postman app currently opens with the standard loading indicator, providing no insight into the processes taking place behind the scenes. After a while the header is loaded and then the other UI elements of Postman. While this approach serves its purpose, it lacks personality and fails to keep users engaged during the waiting period. If by some reason the loading takes more time, it leads to frustration from the users.
         </p>
 
-        <blockquote className="mt-4 mb-2 pl-2 italic border-l-2 font-Raleway leading-loose tracking-wide text-sm text-tony_text-300 border-tony_stroke-200 quote">
+        <blockquote className="mt-4 mb-2 pl-2 italic border-l-2 font-sans leading-loose tracking-wide text-sm text-slate-500 border-slate-400 quote">
             If it takes longer than 0.1 seconds for the revised state to appear, then the response doesn&apos;t feel instantaneous — instead, it feels as if the computer is doing something to make the menu open.
         </blockquote>
 
-        <blockquote className="mt-4 mb-2 pl-2 italic border-l-2 font-Raleway leading-loose tracking-wide text-sm text-tony_text-300 border-tony_stroke-200 quote">
+        <blockquote className="mt-4 mb-2 pl-2 italic border-l-2 font-sans leading-loose tracking-wide text-sm text-slate-500 border-slate-400 quote">
             When the computer takes more than 0.1 second but less than 1 second to respond to your input, it feels like the computer is causing the result to appear. Although users notice the short delay, they stay focused on their current train of thought during the one-second interval.
         </blockquote>
 
 
-        <blockquote className="mt-4 mb-2 pl-2 italic border-l-2 font-Raleway leading-loose tracking-wide text-sm text-tony_text-300 border-tony_stroke-200 quote">
+        <blockquote className="mt-4 mb-2 pl-2 italic border-l-2 font-sans leading-loose tracking-wide text-sm text-slate-500 border-slate-400 quote">
             More than 10 seconds, and you break the flow. Users will often leave the site rather than trying to regain the groove once they&apos;ve started thinking about other things.
         </blockquote>
 
-        <a href="https://www.nngroup.com/articles/powers-of-10-time-scales-in-ux/" target="_blank" className="px-2 py-1 border border-tony_stroke-100 rounded-md font-Raleway text-xs text-tony_accent-100 hover hover:border-tony_stroke-200 hover:text-blue-400">
+        <a href="https://www.nngroup.com/articles/powers-of-10-time-scales-in-ux/" target="_blank" className="px-2 py-1 border border-slate-300 rounded-md font-sans text-xs text-green-500 hover hover:border-slate-400 hover:text-blue-400">
             Power of 10: Time Scales in User Experience
         </a>
 
@@ -106,7 +106,7 @@ export default function perceived_wait() {
 
     </section>
 
-    <a href="#top" className="font-Raleway text-tony_accent-100 font-light tracking-wide text-sm hover hover:text-tony_text-100 mx-6 mb-6">Go to Top</a>
+    <a href="#top" className="font-sans text-green-500 font-light tracking-wide text-sm hover hover:text-slate-300 mx-6 mb-6">Go to Top</a>
 
 </div>
 )

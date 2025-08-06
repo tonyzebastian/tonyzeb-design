@@ -39,7 +39,7 @@ h5 {
 }
 
 h6 {
-  @apply font-sans font-light text-tony_text-300 text-sm tracking-wide;
+  @apply font-sans font-light text-slate-500 text-sm tracking-wide;
 }
 
 /* Used for normal paragraphs*/
@@ -48,7 +48,7 @@ p {
 }
 
 strong {
-  @apply text-tony_text-200;
+  @apply text-slate-300;
 }
 
 li {
@@ -71,4 +71,14 @@ li {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+.hero-gradient {
+  background: linear-gradient(180deg, 
+    #FFF5E6 0%, 
+    rgba(255, 240, 235, 0.25) 50%, 
+    rgba(250, 235, 245, 0.5) 75%, 
+    rgba(245, 240, 255, 0.75) 87.5%, 
+    #FAFAFF 100%
+  );
 }

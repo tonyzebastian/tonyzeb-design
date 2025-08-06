@@ -4,8 +4,8 @@ export default function MnemonicSignages() {
     return (
         <div id="top" className="flex flex-col items-start justify-center mx-auto max-w-[648px] mt-12">
 
-            <h1 className="mb-2 mx-6 text-tony_accent-100">Mnemonic Signages</h1>
-            <h6 className="mb-8 mx-6 text-tony_text-300">
+            <h1 className="mb-2 mx-6 text-green-500">Mnemonic Signages</h1>
+            <h6 className="mb-8 mx-6 text-slate-500">
                 2 min read . Jan 2024
             </h6>
         
@@ -44,7 +44,7 @@ export default function MnemonicSignages() {
             <Image src="/images/musings/ui_mockups.png" alt="UI elements that resembles that of road signs" className="w-full max-w-full" layout="fixed" width={2100} height={470} />
             </section>
 
-            <a href="#top" className="font-Raleway text-tony_accent-100 font-light tracking-wide text-sm hover hover:text-tony_text-100 mx-6 mb-6">Go to Top</a>
+            <a href="#top" className="font-sans text-green-500 font-light tracking-wide text-sm hover hover:text-slate-300 mx-6 mb-6">Go to Top</a>
 
         </div>
     );
