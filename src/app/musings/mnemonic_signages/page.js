@@ -2,16 +2,16 @@ import Image from 'next/image';
 
 export default function MnemonicSignages() {
     return (
-        <div id="top" className="flex flex-col items-start justify-center mx-auto max-w-[648px] mt-12">
+        <div id="top" className="flex flex-col items-start justify-center mx-auto max-w-[648px] mt-12 mb-16">
 
-            <h1 className="mb-2 mx-6 text-green-500">Mnemonic Signages</h1>
+            <h1 className="mb-2 mx-6 text-slate-900">Mnemonic Signages</h1>
             <h6 className="mb-8 mx-6 text-slate-500">
                 2 min read . Jan 2024
             </h6>
         
             <section className="mb-6 mx-6">
                 <p>
-                    I used to have difficulty remembering where I parked my car in large parking lots. There were times when I walked across the entire lot to find my car. To solve this, I began taking pictures of the pillar near where I parked. Recently, while photographing a pillar, I noticed an interesting pattern where illustrations are displayed next to the alphabet. After some research, I discovered that these types of signages are known as <strong>Mnemonic Signages</strong>.
+                    I used to have difficulty remembering where I parked my car in large parking lots. There were times when I walked across the entire lot to find my car. To solve this, I began taking pictures of the pillar near where I parked. Recently, while photographing a pillar, I noticed an interesting pattern where illustrations are displayed next to the alphabet. After some research, I discovered that these types of signages are known as <strong className='text-slate-800'>Mnemonic Signages</strong>.
                 </p>
             </section>
 
@@ -43,8 +43,6 @@ export default function MnemonicSignages() {
             <section className="flex justify-center mb-6 mx-6">
             <Image src="/images/musings/ui_mockups.png" alt="UI elements that resembles that of road signs" className="w-full max-w-full" layout="fixed" width={2100} height={470} />
             </section>
-
-            <a href="#top" className="font-sans text-green-500 font-light tracking-wide text-sm hover hover:text-slate-300 mx-6 mb-6">Go to Top</a>
 
         </div>
     );

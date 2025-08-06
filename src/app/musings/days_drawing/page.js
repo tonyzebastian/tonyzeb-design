@@ -7,8 +7,8 @@ export const metadata = {
 export default function day_drawing() {
 
     return (
-      <div id="top" className="flex flex-col items-start justify-center mx-auto max-w-[648px] mt-12">
-        <h1 className="mb-2 mx-6 text-green-500">Drawing everyday for 365 days: Some Learnings</h1>
+      <div id="top" className="flex flex-col items-start justify-center mx-auto max-w-[648px] mt-12 mb-16">
+        <h1 className="mb-2 mx-6 text-slate-900">Drawing everyday for 365 days: Some Learnings</h1>
         <h6 className="mb-8 mx-6 text-slate-500">
           3 min read . Jun 2021
         </h6>
@@ -35,8 +35,6 @@ export default function day_drawing() {
           </p>
 
         </section>
-        <a href="#top" className="font-sans text-green-500 font-light tracking-wide text-sm hover hover:text-slate-300 mx-6 mb-6">Go to Top</a>
-
 </div>
 )
 }

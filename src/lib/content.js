@@ -24,7 +24,7 @@ export const projects = [
     name: 'Resume Builder', 
     date: 'The simplest resumer builder', 
     link: 'https://resume-builder-dun-rho.vercel.app/',
-    image: '/icons/uiglow.png',
+    image: '/icons/resume.png',
   },
   { 
     name: 'UI Glow', 
@@ -124,12 +124,12 @@ export const now = [
       "Most days, I'm thinking about how things move and how to build those interactions with code. Currently learning through ",
       {
         text: "Animation on the web",
-        href: "https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API"
+        href: "https://animations.dev/"
       },
       " and ",
       {
         text: "Interactive svg animations",
-        href: "https://developer.mozilla.org/en-US/docs/Web/SVG/SVG_animation_with_SMIL"
+        href: "https://www.svg-animations.how/"
       },
       "."
     ]

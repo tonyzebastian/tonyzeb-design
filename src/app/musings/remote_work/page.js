@@ -7,14 +7,14 @@ export const metadata = {
 export default function remote_work() {
 
     return (
-        <div id="top" className="flex flex-col items-start justify-center mx-auto max-w-[648px] mt-12">
-            <h1 className="mb-2 mx-6 text-green-500">15 Months of remote Work: A recap</h1>
+        <div id="top" className="flex flex-col items-start justify-center mx-auto max-w-[648px] mt-12 mb-16">
+            <h1 className="mb-2 mx-6 text-slate-900">15 Months of remote Work: A recap</h1>
             <h6 className="mb-8 mx-6 text-slate-500">
                 7 min read . Nov 2020
             </h6>
         
             <section className="mb-8 mx-6">
-                <blockquote className="pl-2 italic border-l-2 font-sans leading-loose tracking-wide text-sm text-slate-500 border-slate-400 quote">
+                <blockquote className="pl-2 italic border-l-2 font-sans leading-loose tracking-wide text-sm text-slate-800 border-slate-400 quote">
                     &quot;So, where do you work from?&quot; <br/>
                     &quot;I work from home:&quot; <br/>
                     &quot;Oh, that&apos;s awesome! So you must be living the dream with lots of travel and fun. I envy you, man!&quot; <br/>
@@ -162,8 +162,6 @@ export default function remote_work() {
                     Remote work is increasingly popular, especially among younger generations. However, it&apos;s important to recognize that both office and remote jobs have their pros and cons. Before diving in, take the time to research the company thoroughly and reflect on whether remote work aligns with your working style and preferences. <br/> Cheers to finding the right fit!
                 </p>
             </section>
-
-            <a href="#top" className="font-sans text-green-500 font-light tracking-wide text-sm hover hover:text-slate-300 mx-6 mb-6">Go to Top</a>
 
         </div>
 )

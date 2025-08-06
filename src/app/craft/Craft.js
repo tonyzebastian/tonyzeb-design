@@ -6,7 +6,7 @@ export default function Crafts() {
       src: '../images/Craft/slate_config.mp4', 
       alt: 'A car configuration',
       description: 'A sophisticated search and command interface design showcasing seamless user interaction and real-time feedback.',
-      projectLink: null
+      projectLink: 'https://www.uiglow.click/experiences/slate_cars',
     },
     { 
       src: '../images/Craft/omni_bar.gif', 
@@ -36,13 +36,13 @@ export default function Crafts() {
       src: '../images/Craft/comet.mp4', 
       alt: 'Comet Browser Dowload Animation',
       description: 'Custom loading animation designed for Postman, balancing functionality with brand identity.',
-      projectLink: null
+      projectLink: 'https://www.uiglow.click/svg-animations/comethero',
     },
     { 
       src: '../images/Craft/fish.gif', 
       alt: 'A School of fish',
       description: 'An interactive school of fish with realistic movements.',
-      projectLink: 'https://www.uiglow.click/experiences/fish'
+      projectLink: 'https://www.uiglow.click/experiences/fish',
     },
     { 
       src: '../images/Craft/Runner.mp4', 
