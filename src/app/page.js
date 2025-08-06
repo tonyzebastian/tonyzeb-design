@@ -56,10 +56,12 @@ export default function HomePage() {
       </div>
 
       {/* Main Content - Overlays hero on scroll */}
-      <div className="relative z-10 bg-white min-h-screen">
-        <div className="mx-auto max-w-2xl px-8 pt-12 pb-16">
-          <div className='flex flex-col gap-6'>
+      <div className="relative z-10 bg-white min-h-screen rounded-3xl shadow pt-4">
 
+        <div className=" mx-auto w-32 h-1.5 bg-slate-200/75 rounded-full"></div>
+
+        <div className="mx-auto max-w-2xl px-8  pb-16">
+          <div className='flex flex-col gap-6 pt-8'>
           {/* Projects Section */}
           <div className="my-6">
             <h2 className="mb-2">Projects</h2>

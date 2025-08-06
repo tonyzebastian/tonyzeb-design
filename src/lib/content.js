@@ -21,6 +21,12 @@ export const metadata = {
 
 export const projects = [
   { 
+    name: 'Resume Builder', 
+    date: 'The simplest resumer builder', 
+    link: 'https://resume-builder-dun-rho.vercel.app/',
+    image: '/icons/uiglow.png',
+  },
+  { 
     name: 'UI Glow', 
     date: 'Interaction design explorations', 
     link: 'https://www.uiglow.click/',

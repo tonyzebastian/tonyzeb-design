@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import MasonryGrid from './MasonryGrid';
 import { PlusSquare } from 'react-feather';
+import { X } from "lucide-react";
 
 export default function ImageGridWithLightbox({ gridImages, lightboxImages = [], title }) {
     const [showMasonryLightbox, setShowMasonryLightbox] = useState(false);
@@ -65,13 +66,21 @@ export default function ImageGridWithLightbox({ gridImages, lightboxImages = [],
             {/* Single Image Lightbox */}
             {selectedImageIndex !== null && (
                 <div 
-                    className="fixed inset-0 bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center z-50"
+                    className="fixed inset-0 bg-black/25 backdrop-blur-sm flex items-center justify-center z-50"
                     onClick={handleCloseSingleImageLightbox}
                 >
                     <div 
                         className="relative w-full max-w-4xl h-[70vh] mx-4"
                         onClick={e => e.stopPropagation()}
                     >
+                        {/* Close Button - Top right of image container */}
+                        <button
+                            className="absolute -top-12 right-0 p-2 hover:bg-slate-900 bg-slate-600 rounded-full transition-colors z-10"
+                            onClick={handleCloseSingleImageLightbox}
+                        >
+                            <X size={24} className="text-white" />
+                        </button>
+
                         {/* Image Container */}
                         <div className="relative w-full h-full overflow-hidden">
                             <Image
@@ -84,47 +93,40 @@ export default function ImageGridWithLightbox({ gridImages, lightboxImages = [],
                             />
                         </div>
                     </div>
-
-                    {/* Close Button - Now outside the image container */}
-                    <div className="mt-6">
-                        <button
-                            className="px-6 py-2 bg-white rounded-full text-sm font-medium hover:bg-white/90 transition-colors"
-                            onClick={handleCloseSingleImageLightbox}
-                        >
-                            Close
-                        </button>
-                    </div>
                 </div>
             )}
 
             {/* Masonry Lightbox */}
             {showMasonryLightbox && shouldShowViewMore && (
                 <div 
-                    className="fixed inset-0 bg-black/75 backdrop-blur-sm flex flex-col items-center justify-center z-50"
+                    className="fixed inset-0 bg-black/25 backdrop-blur-sm flex flex-col items-center justify-center z-50"
                     onClick={() => setShowMasonryLightbox(false)}
                 >
-                    <div 
-                        className="max-w-7xl w-full max-h-[85vh] overflow-y-auto p-6 bg-white rounded-xl scrollbar-hide"
-                        onClick={e => e.stopPropagation()}
-                        style={{
-                            scrollbarWidth: 'none',
-                            msOverflowStyle: 'none'
-                        }}
-                    >
-                        <MasonryGrid 
-                            items={lightboxImages.map(src => ({ src, alt: title }))} 
-                        />
-                    </div>
-                    
-                    {/* Close Button - Outside container */}
-                    <div className="mt-6">
-                        <button
-                            className="px-6 py-2 bg-white rounded-full text-sm font-medium hover:bg-white/90 transition-colors"
-                            onClick={() => setShowMasonryLightbox(false)}
+                        <div 
+                            className="relative max-w-7xl w-full max-h-[85vh] bg-white rounded-xl p-2 mb-16 2xl:mb-0 2xl:max-w-screen-2xl"
+                            onClick={e => e.stopPropagation()}
                         >
-                            Close
-                        </button>
-                    </div>
+                            {/* Close Button - Top right side */}
+                            <button
+                                className="absolute top-0 -right-16 p-2 hover:bg-slate-900 bg-slate-600 rounded-full transition-colors z-10"
+                                onClick={() => setShowMasonryLightbox(false)}
+                            >
+                                <X size={24} className="text-white" />
+                            </button>
+                            <div 
+                                className="w-full h-full overflow-y-auto scrollbar-hide rounded-xl"
+                                style={{
+                                    scrollbarWidth: 'none',
+                                    msOverflowStyle: 'none'
+                                }}
+                            >
+                                <MasonryGrid 
+                                    items={lightboxImages.map(src => ({ src, alt: title }))} 
+                                    spotlight={{ enabled: false }}
+                                    className=""
+                                />
+                            </div>
+                        </div>
                 </div>
             )}
         </>

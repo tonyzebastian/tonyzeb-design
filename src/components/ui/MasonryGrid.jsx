@@ -2,8 +2,9 @@
 
 import { Masonry } from "react-plock";
 import { useState } from "react";
+import { X } from "lucide-react";
 
-export default function MasonryGrid({ items, renderSpotlight = true, className = "m-2" }) {
+export default function MasonryGrid({ items, spotlight = { enabled: true }, className = "m-2" }) {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const isVideo = (src) => {
@@ -18,7 +19,7 @@ export default function MasonryGrid({ items, renderSpotlight = true, className =
       key: idx,
       className: `${baseClassName} ${specialClassName}`,
       style: { width: "100%", height: "auto" },
-      onClick: () => renderSpotlight && setSelectedItem(item)
+      onClick: () => spotlight.enabled && setSelectedItem(item)
     };
 
     if (isVideo(item.src)) {
@@ -58,13 +59,13 @@ export default function MasonryGrid({ items, renderSpotlight = true, className =
       </div>
 
       {/* Spotlight Overlay */}
-      {renderSpotlight && selectedItem && (
+      {spotlight.enabled && selectedItem && (
         <div 
-          className="fixed inset-0 bg-black/75 backdrop-blur-sm flex items-center justify-center z-50"
+          className="fixed inset-0 bg-black/25 backdrop-blur-sm flex items-center justify-center z-50"
           onClick={() => setSelectedItem(null)}
         >
           <div 
-            className="max-w-5xl w-full p-4 relative flex flex-col md:flex-row gap-4 bg-slate-50 rounded-xl items-start"
+            className="max-w-5xl w-full p-4 relative flex flex-col md:flex-row gap-4 bg-white rounded-xl items-start"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Media Container */}
@@ -91,36 +92,38 @@ export default function MasonryGrid({ items, renderSpotlight = true, className =
 
             {/* Content Container */}
             <div className="w-full md:w-96 flex flex-col flex-shrink-0">
-              <h2 className="mt-1 mb-4">{selectedItem.alt}</h2>
-              
-              {selectedItem.description && (
-                <p className="mb-8 mr-4">
-                  {selectedItem.description}
-                </p>
-              )}
-
-              <div className="mt-auto flex gap-4">
-                {selectedItem.projectLink && (
-                  <a
-                    href={selectedItem.projectLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-6 py-2 font-sans text-sm flex items-center tracking-wide bg-slate-700 rounded hover:bg-slate-600 text-slate-50 transition-colors"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    View Details
-                  </a>
-                )}
+              <div className="flex items-center justify-between mb-1">
+                <h2>{selectedItem.alt}</h2>
                 <button
-                  className="px-6 py-2 font-sans text-sm flex items-center tracking-wide border border-slate-300 rounded hover:bg-slate-100 transition-colors"
+                  className="p-2 hover:bg-slate-100 bg-slate-50 rounded-full transition-colors"
                   onClick={(e) => {
                     e.stopPropagation();
                     setSelectedItem(null);
                   }}
                 >
-                  Close
+                  <X size={20} className="text-slate-600" />
                 </button>
               </div>
+              
+              {selectedItem.description && (
+                <p className="mb-8">
+                  {selectedItem.description}
+                </p>
+              )}
+
+              {selectedItem.projectLink && (
+                <div>
+                  <a
+                    href={selectedItem.projectLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-2 font-sans text-sm inline-flex items-center tracking-wide bg-zinc-900 rounded hover:bg-zinc-800 text-slate-50 transition-colors w-auto"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    View Project
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>

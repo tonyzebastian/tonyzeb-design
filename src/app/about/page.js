@@ -59,7 +59,7 @@ export default function About() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center mx-auto max-w-2xl px-8">
+        <div className="flex flex-col items-center justify-center mx-auto max-w-2xl px-8 mb-16">
             <div className='-ml-12'>  {/* Removed -ml-12 */}
                 <ImageReveal 
                     leftImage="/images/about/left.jpg"
