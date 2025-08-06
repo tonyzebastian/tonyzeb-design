@@ -49,13 +49,16 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <div>
-      {/* Hero Section */}
-      <Hero/>
+    <div className="relative">
+      {/* Hero Section - Sticky Background */}
+      <div className="sticky top-0 z-0">
+        <Hero/>
+      </div>
 
-      {/* Main Content */}
-      <div className="mx-auto max-w-2xl px-8 pt-12 pb-16">
-        <div className='flex flex-col gap-6'>
+      {/* Main Content - Overlays hero on scroll */}
+      <div className="relative z-10 bg-white min-h-screen">
+        <div className="mx-auto max-w-2xl px-8 pt-12 pb-16">
+          <div className='flex flex-col gap-6'>
 
           {/* Projects Section */}
           <div className="my-6">
@@ -160,6 +163,7 @@ export default function HomePage() {
             </div>
           </div>
 
+          </div>
         </div>
       </div>
     </div>

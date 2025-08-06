@@ -9,10 +9,26 @@ import { LinearBlur } from 'progressive-blur'
 export default function DockNavigation() {
   const pathname = usePathname()
   const [mounted, setMounted] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     setMounted(true)
-  }, [])
+
+    // Only apply scroll behavior on home page
+    if (pathname === '/') {
+      const handleScroll = () => {
+        const scrollY = window.scrollY
+        // Show dock when scrolled more than 100px
+        setIsVisible(scrollY > 100)
+      }
+
+      window.addEventListener('scroll', handleScroll)
+      return () => window.removeEventListener('scroll', handleScroll)
+    } else {
+      // Always show dock on other pages
+      setIsVisible(true)
+    }
+  }, [pathname])
 
   const navItems = [
     { 
@@ -38,7 +54,9 @@ export default function DockNavigation() {
   }
 
   return (
-    <div className='fixed bottom-0 left-1/2 -translate-x-1/2 w-full'>
+    <div className={`fixed bottom-0 left-1/2 -translate-x-1/2 w-full z-50 transition-all duration-300 ${
+      isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+    }`}>
 
     <LinearBlur
       side="bottom"
