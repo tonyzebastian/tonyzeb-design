@@ -1,8 +1,8 @@
 import ImageReveal from '@/components/ui/ImageReveal';
 import HighlightLink from '@/components/ui/HighlightLink';
 import { aboutBio, aboutFunThings, aboutPrinciples, aboutConversation, animation, photography, junymade } from '@/lib/content';
-import ImageGridWithLightbox from '@/components/ui/ImageGridWithLightbox';
 import { galleryImages } from './config';
+import MasonryGridLightbox from '@/components/ui/MasonryGridLigthbox';
 
 export const metadata = {
   title: 'About ✦ Tony Sebastian',
@@ -118,10 +118,9 @@ export default function About() {
                             </span>
                         ))}
                     </p>
-                    <ImageGridWithLightbox 
-                        gridImages={galleryImages.animation.grid}
+
+                    <MasonryGridLightbox
                         lightboxImages={galleryImages.animation.lightbox}
-                        title="Animation"
                     />
                 </section>
     
@@ -136,10 +135,8 @@ export default function About() {
                             </span>
                         ))}
                     </p>
-                    <ImageGridWithLightbox 
-                        gridImages={galleryImages.junyMade.grid}
+                    <MasonryGridLightbox
                         lightboxImages={galleryImages.junyMade.lightbox}
-                        title="Juny Made"
                     />
                 </section>
     
@@ -154,10 +151,9 @@ export default function About() {
                             </span>
                         ))}
                     </p>
-                    <ImageGridWithLightbox 
-                        gridImages={galleryImages.photography.grid}
+                    <MasonryGridLightbox
                         lightboxImages={galleryImages.photography.lightbox}
-                        title="Photography"
+                        height={580}
                     />
                 </section>
     

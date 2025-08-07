@@ -1,17 +1,16 @@
 export const galleryImages = {
     animation: {
-        grid: [
+        lightbox: [
             '/images/about/animation/1.gif',
             '/images/about/animation/5.gif',
-            '/images/about/animation/3.gif',
+            '/images/about/animation/olympiade.gif',
             '/images/about/animation/chatwoot.gif',
             '/images/about/animation/wind.gif',
-            '/images/about/animation/polaroid.gif',
+            '/images/about/animation/polaroid.gif',  
         ],
-        lightbox: []
     },
     junyMade: {
-        grid: [
+        lightbox: [
             '/images/about/juny/1.jpg',
             '/images/about/juny/2.jpg',
             '/images/about/juny/3.jpg',
@@ -19,17 +18,9 @@ export const galleryImages = {
             '/images/about/juny/5.jpg',
             '/images/about/juny/6.jpg',
 
-        ],
-        lightbox: [] // Example of less than 5 images, no lightbox needed
+        ], // Example of less than 5 images, no lightbox needed
     },
     photography: {
-        grid: [
-            '/images/visuals/10.jpg',
-            '/images/visuals/14.jpg',
-            '/images/visuals/15.jpg',
-            '/images/visuals/16.jpg',
-            '/images/visuals/18.jpg',
-        ],
         lightbox: [
             '../images/visuals/2.jpg', 
             '../images/visuals/4.jpg',

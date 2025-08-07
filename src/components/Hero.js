@@ -105,7 +105,6 @@ export default function Hero() {
                 src="/hero_video.mp4"
                 className={`w-full h-full object-cover rounded-xl transition-opacity duration-500 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
                 muted={isMuted}
-                loop
                 playsInline
                 preload="auto"
                 onCanPlayThrough={handleVideoLoaded}
