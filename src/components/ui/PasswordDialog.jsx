@@ -34,15 +34,6 @@ export default function PasswordDialog({ isOpen, onClose, onSuccess, projectTitl
             <X size={20} className="text-slate-600" />
           </button>
         </div>
-        
-        <div className="mb-6">
-          <p className="text-slate-600 mb-2">
-            <strong>{projectTitle}</strong> is password protected.
-          </p>
-          <p className="text-sm text-slate-500">
-            Please enter the password to view this project.
-          </p>
-        </div>
 
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -51,7 +42,7 @@ export default function PasswordDialog({ isOpen, onClose, onSuccess, projectTitl
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter password"
-              className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent"
+              className="w-full px-3 py-2 border border-slate-300 rounded focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent"
               autoFocus
             />
             {error && (

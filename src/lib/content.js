@@ -55,7 +55,7 @@ export const projects = [
 export const experience = [
   { 
     name: 'Postman', 
-    date: 'Sr. Product designer', 
+    date: 'Senior Product Designer', 
     link: 'https://www.postman.com/',
     image: '/icons/postman.png',
     secondaryText: "Jun'22 - Jun'25",
@@ -63,14 +63,21 @@ export const experience = [
       {
         title: "New Trial Experiences",
         description: "Increasing awareness by 27% and conversion by 5%.",
-        images: ["/images/about/juny/1.jpg", "/images/about/juny/2.jpg", "/images/about/juny/3.jpg"],
+        images: ["/images/about/juny/1.jpg", "/images/projects/trial_02.mp4"],
         link: "/project/new-trial-experiences",
         requiresPassword: true
       },
       {
-        title: "API Observability in Postman",
-        description: "0 to 1 project that introduced observability in Postman",
-        images: ["/images/about/juny/4.jpg", "/images/about/juny/5.jpg", "/images/about/juny/6.jpg"],
+        title: "Mini Projects",
+        description: "Environment Experience, Secret Field, App loading interaction",
+        images: ["/images/about/juny/1.jpg", "/images/about/juny/2.jpg"],
+        link: "/project/new-trial-experiences",
+        requiresPassword: true
+      },
+      {
+        title: "Live Collections",
+        description: "0 to 1 project that introduced observability in Postman.",
+        images: ["/images/projects/live_collections_1.png",  "/images/projects/live_collections_2.png" ],
         link: "/project/api-observability",
         requiresPassword: true
       }
@@ -78,16 +85,15 @@ export const experience = [
   },
   { 
     name: 'Hypersonix', 
-    date: 'Product designer', 
+    date: 'Lead Product Designer', 
     link: 'https://hypersonix.ai/',
     image: '/icons/hypersonix.png',
     secondaryText: "Oct'20 - May'22",
     projects: [
       {
-        title: "Analytics Dashboard",
-        description: "Redesigned the API testing workflow to improve developer productivity and reduce cognitive load.",
-        images: ["/images/projects/hx_document.gif", "/images/projects/hx_onboarding.mp4", "/images/projects/hx_search.gif", "/images/projects/hx_hawkeye.gif"],
-        link: "/project/analytics-dashboard",
+        title: "My experience summary",
+        images: ["/images/projects/hx_onboarding.mp4", "/images/projects/hx_hawk.mp4"],
+        link: "/project/hypersonix",
         requiresPassword: false
       }
     ]

@@ -25,7 +25,7 @@ export default function ExperienceWithProjects({
         onMouseEnter={() => setIsLinkHovered(true)}
         onMouseLeave={() => setIsLinkHovered(false)}
       >
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 rounded -mx-4 px-4 ">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 rounded -mx-4 px-4 group">
           <Title 
             image={image} 
             title={name} 
@@ -33,8 +33,8 @@ export default function ExperienceWithProjects({
             fromFontWeight={600}
             isHovered={isLinkHovered}
           />
-          <p className="text-slate-600 text-sm mt-1 md:mt-0">
-            {date} <span className="text-xs  text-slate-400 mx-2">✦</span> {secondaryText}
+          <p className="text-slate-600 text-xs mt-1 md:mt-0 group-hover:text-slate-900">
+           {date} <span className="text-xs text-slate-400 mx-2">✦</span> {secondaryText}
           </p>
         </div>
       </Link>
@@ -53,7 +53,7 @@ export default function ExperienceWithProjects({
                     <path d="M13 12.5C11.4241 12.5 9.8637 12.1896 8.4078 11.5866C6.95189 10.9835 5.62902 10.0996 4.51472 8.98528C3.40041 7.87098 2.5165 6.54811 1.91344 5.0922C1.31039 3.63629 0.999999 2.07586 1 0.5" stroke="#E2E8F0" strokeLinecap="round"/>
                   </svg>
                 </div>
-                <div className="pl-2 hover:bg-slate-50 border border-transparent hover:border-slate-200 pb-2 -mb-2 pt-3 -mt-3 pr-2 -mr-2 rounded">
+                <div className="pl-2 hover:bg-slate-50 border border-transparent hover:border-slate-100 pb-2 -mb-2 pt-2 -mt-3 pr-2 -mr-2 rounded">
                   <ProjectSummary
                     ProjTitle={project.title}
                     ProjDesc={project.description}

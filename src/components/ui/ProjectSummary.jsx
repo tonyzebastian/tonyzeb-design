@@ -39,7 +39,7 @@ export default function ProjectSummary({
           <div className="flex items-center gap-2">
             <h3 className="text-sm text-slate-900">{ProjTitle}</h3>
             {requiresPassword && (
-              <Lock size={12} className="text-slate-400" />
+              <Lock size={12}  className="text-slate-400" />
             )}
           </div>
           <p className="text-slate-600 mt-1 text-xs">{ProjDesc}</p>
@@ -57,14 +57,14 @@ export default function ProjectSummary({
   return (
     <>
       <Link href={projectLink} onClick={handleClick} className="block">
-        <div className="space-y-4 cursor-pointer">
+        <div className="space-y-4 cursor-pointer group">
           <div>
             <div className="flex items-center gap-2">
-              <h3 className="text-sm text-slate-900 hover:text-slate-700 transition-colors">
+              <h3 className="text-sm text-slate-900 group-hover:font-semibold transition-all">
                 {ProjTitle}
               </h3>
               {requiresPassword && (
-                <Lock size={12} className="text-slate-400" />
+                <Lock size={12} strokeWidth={2.5} className="text-slate-600" />
               )}
             </div>
             <p className="text-slate-600 mt-1 text-xs">{ProjDesc}</p>
