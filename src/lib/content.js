@@ -58,26 +58,50 @@ export const experience = [
     date: 'Sr. Product designer', 
     link: 'https://www.postman.com/',
     image: '/icons/postman.png',
-    secondaryText: "Jun'22 - Jun'25"
+    secondaryText: "Jun'22 - Jun'25",
+    projects: [
+      {
+        title: "New Trial Experiences",
+        description: "Increasing awareness by 27% and conversion by 5%.",
+        images: ["/images/about/juny/1.jpg", "/images/about/juny/2.jpg", "/images/about/juny/3.jpg"],
+        link: "/project/new-trial-experiences",
+        requiresPassword: true
+      },
+      {
+        title: "API Observability in Postman",
+        description: "0 to 1 project that introduced observability in Postman",
+        images: ["/images/about/juny/4.jpg", "/images/about/juny/5.jpg", "/images/about/juny/6.jpg"],
+        link: "/project/api-observability",
+        requiresPassword: true
+      }
+    ]
   },
   { 
     name: 'Hypersonix', 
     date: 'Product designer', 
     link: 'https://hypersonix.ai/',
     image: '/icons/hypersonix.png',
-    secondaryText: "Oct'20 - May'22"
-  },
-  { 
-    name: 'AVRL', 
-    date: 'Visual designer', 
-    link: 'https://www.linkedin.com/company/advanced-voice-research-labs/',
-    image: '/icons/avrl.png',
-    secondaryText: "Jan'19 - Oct'20"
+    secondaryText: "Oct'20 - May'22",
+    projects: [
+      {
+        title: "Analytics Dashboard",
+        description: "Redesigned the API testing workflow to improve developer productivity and reduce cognitive load.",
+        images: ["/images/projects/hx_document.gif", "/images/projects/hx_onboarding.mp4", "/images/projects/hx_search.gif", "/images/projects/hx_hawkeye.gif"],
+        link: "/project/analytics-dashboard",
+        requiresPassword: false
+      }
+    ]
   },
 ];
 
 /* More experience Section */
 export const designAreas = [
+  {
+    title: "AVRL",
+    image: '/icons/avrl.png',
+    isExternal: true,
+    link: 'https://www.linkedin.com/company/advanced-voice-research-labs/',
+  },
   {
     title: "Infosys",
     image: "/icons/infosys.png",

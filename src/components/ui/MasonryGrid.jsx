@@ -4,7 +4,7 @@ import { Masonry } from "react-plock";
 import { useState } from "react";
 import { X } from "lucide-react";
 
-export default function MasonryGrid({ items, spotlight = { enabled: true }, className = "m-2" }) {
+export default function MasonryGrid({ items, spotlight = { enabled: true }, className = "m-2", hoverEffects = true, config = { columns: [1, 2, 3], gap: [24, 12, 6], media: [640, 768, 1024] } }) {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const isVideo = (src) => {
@@ -12,7 +12,8 @@ export default function MasonryGrid({ items, spotlight = { enabled: true }, clas
   };
 
   const renderMediaItem = (item, idx) => {
-    const baseClassName = "rounded cursor-pointer hover:scale-[99%] hover:rounded-3xl transition-all ease-in-out";
+    const hoverClassName = hoverEffects ? "hover:scale-[99%] hover:rounded-3xl cursor-pointer" : "";
+    const baseClassName = `rounded transition-all ease-in-out ${hoverClassName}`;
     const specialClassName = item.specialStyling ? "p-2 shadow" : "";
     
     const commonProps = {
@@ -49,11 +50,7 @@ export default function MasonryGrid({ items, spotlight = { enabled: true }, clas
       <div className={className}>
         <Masonry
           items={items}
-          config={{
-            columns: [1, 2, 3],
-            gap: [24, 12, 6],
-            media: [640, 768, 1024],
-          }}
+          config={config}
           render={renderMediaItem}
         />
       </div>

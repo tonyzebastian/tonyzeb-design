@@ -1,11 +1,10 @@
 import ListItem from '@/components/list/ListItem';
 import Title from '@/components/list/Title';
-import {projects, experience, musings, bio, designAreas, now } from '@/lib/content';
+import {projects, experience, musings, designAreas, now } from '@/lib/content';
 import HighlightLink from '@/components/ui/HighlightLink';
 import CopyEmailLink from '@/components/ui/CopyEmailLink';
-import { Badge } from "@/components/ui/badge";
-import PulsingDot from '@/components/ui/PulsingDot';
 import Hero from '@/components/Hero';
+import ExperienceWithProjects from '@/components/ui/ExperienceWithProjects';
 
 export const metadata = {
   title: 'Tony Sebastian ✦ designer',
@@ -64,7 +63,7 @@ export default function HomePage() {
           <div className='flex flex-col gap-6 pt-8'>
           {/* Projects Section */}
           <div className="my-6">
-            <h2 className="mb-2">Projects</h2>
+            <h2 className="mb-2">Pet Projects</h2>
             <div className="space-y-1">
               {projects.map(project => (
                 <ListItem 
@@ -82,17 +81,17 @@ export default function HomePage() {
 
           {/* Experience Section */}
           <div className="my-6">
-            <h2 className="mb-2">Experience</h2>
-            <div className="space-y-1">
-              {experience.map(experience => (
-                <ListItem 
-                  key={experience.link}
-                  image={experience.image}
-                  title={experience.name}
-                  isExternal={true}
-                  primaryText={experience.date}
-                  secondaryText={experience.secondaryText}
-                  href={experience.link}
+            <h2 className="mb-4">Experience</h2>
+            <div className="">
+              {experience.map(exp => (
+                <ExperienceWithProjects
+                  key={exp.link}
+                  name={exp.name}
+                  date={exp.date}
+                  link={exp.link}
+                  image={exp.image}
+                  secondaryText={exp.secondaryText}
+                  projects={exp.projects || []}
                 />
               ))}
               <div className="flex flex-col md:flex-row items-start md:items-center pt-2 gap-6 transition-all">

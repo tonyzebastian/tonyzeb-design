@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import MasonryGrid from './MasonryGrid';
 import { X } from "lucide-react";
 

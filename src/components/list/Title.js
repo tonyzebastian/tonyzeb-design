@@ -5,7 +5,7 @@ import Image from 'next/image';
 import VariableFontHoverByLetter from '@/components/fancy/text/variable-font-hover-by-letter';
 import { useState } from 'react';
 
-const Title = ({ image, title, isExternal, isHovered: parentIsHovered }) => {
+const Title = ({ image, title, isExternal, isHovered: parentIsHovered, fromFontWeight = 400 }) => {
   const [localIsHovered, setLocalIsHovered] = useState(false);
   const isHovered = parentIsHovered !== undefined ? parentIsHovered : localIsHovered;
 
@@ -30,7 +30,7 @@ const Title = ({ image, title, isExternal, isHovered: parentIsHovered }) => {
         <VariableFontHoverByLetter
           label={title}
           staggerDuration={0.03}
-          fromFontVariationSettings="'wght' 400, 'slnt' 0"
+          fromFontVariationSettings={`'wght' ${fromFontWeight}, 'slnt' 0`}
           toFontVariationSettings="'wght' 900, 'slnt' -10"
           isHovered={isHovered}
         />
