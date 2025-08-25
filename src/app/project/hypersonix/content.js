@@ -1,5 +1,5 @@
 export const hypersonixData = {
-  heading: "My Experience at Hypersonix",
+  heading: "Hypersonix AI",
 
   details: [
     { value: "Lead Product Designer" },
@@ -7,23 +7,23 @@ export const hypersonixData = {
   ],
   
   overview: {
-    description: "At Hypersonix, I worked as the Lead Product Designer alongside the Head of Design and a small team of junior designers. My role spanned from 0→1 explorations to scaling design systems and improving core product experiences. I was responsible for setting design direction, delivering end-to-end solutions, and mentoring junior designers, while collaborating closely with product and engineering teams.",
+    description: "At Hypersonix, I led product design alongside the Head of Design, driving 0→1 explorations, scaling the design system, and improving core product experiences. I set design direction, delivered end-to-end solutions, mentored junior designers, and collaborated closely with product and engineering.",
     // image: "/images/projects/hx_overview.png" // Optional overview image
   },
 
 
   projects: [
     {
-      title: "Enhancing Document Experience",
-      description: "Documents is a product that helps users to create, compare, save and share analytical reports from our core products. Reports can also be created using a search on connected data sources.",
+      title: "Documents 2.0",
+      description: "Documents is a product that helps users to create, compare, save and share analytical reports from our core products. Reports can also be created using a search on connected data sources. the current document feature had a lot of issues.",
       sections: [
         {
           name: "Problem",
-          content: "The UX was overloaded. Too much information and controls presented all at once. The interface lacked flexibility for comparing data, and users struggled with card creation, grouping, and managing layouts effectively.",
-          images: [
-            "/images/projects/hx_research_1.jpg",
-            "/images/projects/hx_research_2.jpg"
-          ]
+          content: [
+            "Unoptimized screen space: Only 60% allocated to data.",
+            "No card restructuring/grouping: Limited flexibility for comparison and decision-making.", 
+            "Friction in adding cards: Option was hard to find, and new cards started empty.",
+          ],
         },
         {
           name: "Solution",
@@ -34,8 +34,11 @@ export const hypersonixData = {
             "Enabled structured layouts and tab groups for easier comparison of data."
           ],
           images: [
-            "/images/projects/hx_design_system.png",
-            "/images/projects/hx_components.gif"
+
+            "/images/projects/hypersonix/hx_doc_03.mp4",
+            "/images/projects/hypersonix/hx_doc_04.mp4",
+            "/images/projects/hypersonix/hx_doc_05_1.mp4",
+            "/images/projects/hypersonix/hx_doc_08_1.mp4",
           ]
         },
         {
@@ -50,114 +53,94 @@ export const hypersonixData = {
       ]
     },
     {
-      title: "No-Code App Studio",
-      description: "This was a 0→1 exploration to reimagine how customers could customize Hypersonix's analytical platform without relying on heavy manual work from our teams.",
+      title: "New Onboarding Experience",
+      description: "Onboarding is the gateway to the product. It sets the tone for how users perceive, engage with, and ultimately adopt it. At Hypersonix, we needed a flow that not only welcomed users but also quickly conveyed the platform's value.",
       sections: [
         {
           name: "Problem",
           content: [
-            "Each customer required unique configurations — inputs, data sources, ETL processes, and analysis methods.",
-            "Customization was done manually by Hypersonix's forward deployment teams, making it time-consuming, inefficient, and hard to scale.",
+            "Onboarding was mechanical, tiring, and lacked a sense of progress.",
+            "Poor hierarchy of inputs made the flow confusing.",
+            "New users were unaware of features or how to use them effectively.",
           ],
-          images: [
-            "/images/projects/hx_research_1.jpg",
-            "/images/projects/hx_research_2.jpg"
-          ]
         },
         {
           name: "Solution",
           content: [
-            "Designed a predefined studio environment for each customer, tailored to their needs.",
-            "Gave customers self-serve customization through drag-and-drop modules and simple configuration options.", 
-            "Enabled them to adjust inputs, processes, and analysis directly, reducing dependency on Hypersonix teams.",
+            "Introduced selection-based reflection as the core concept",
+            "User inputs generated a live preview at each step.", 
+            "Provided instant feedback while training users on the final experience.",
           ],
           images: [
-            "/images/projects/hx_design_system.png",
-            "/images/projects/hx_components.gif"
+            "/images/projects/hypersonix/hx_onboard_01.mp4",
+            "/images/projects/hypersonix/hx_onboard_02_1.mp4"
           ]
         },
         {
           name: "Impact",
           content: [
-            "Simplified experimentation for customer data science teams.",
-            "Reduced internal effort and tech debt from repeated manual customizations.",
-            "Early prototypes tested with clients like KFC, Home Depot, and Snowflake showed strong interest."
+            "10% increase in feature awareness, validated through in-app surveys.",
+            "23% reduction in people skipping the onboarding."
           ]
         }
       ]
     },
     {
-      title: "New Onboarding Experience",
-      description: "Onboarding is a critical stage in the customer journey. It sets the tone for how users perceive and adopt a product. At Hypersonix, we needed an onboarding flow that not only welcomed users but also helped them understand the value of the platform quickly.",
+      title: "Sonic Design System",
+      description: "As Hypersonix scaled, inconsistent designs and inefficient handoffs slowed delivery. We needed a unified system to align design and engineering.",
       sections: [
         {
           name: "Problem",
           content: [
-            "Hypersonix had limited understanding of user personas entering the platform, which made personalization difficult.",
-            "New users did not know what features were available or how to use them effectively.",
+            "Inconsistencies between Figma and code led to redundant component builds.",
+            "Developers faced rework and inefficiency without standardized, reusable components.",
           ],
-          images: [
-            "/images/projects/hx_research_1.jpg",
-            "/images/projects/hx_research_2.jpg"
-          ]
         },
         {
           name: "Solution",
           content: [
-            "Designed a predefined studio environment for each customer, tailored to their needs.",
-            "Gave customers self-serve customization through drag-and-drop modules and simple configuration options.", 
-            "The existing flow was long, mechanical, and confusing, with empty landing screens after setup, No feedback or reflection while configuring Hyperspaces, and difficulty in modifying inputs due to unclear hierarchy.",
+            "Built Sonic, a Figma-based single source of truth with foundations, components, tokens, and docs.",
+            "Structured Figma for easy discoverability with thumbnails, statuses, and versioning.", 
+            "Started code implementation to align tokens and components in the product.",
           ],
           images: [
-            "/images/projects/hx_design_system.png",
-            "/images/projects/hx_components.gif"
+            "/images/projects/hypersonix/hx_sonic_01.jpg",
+            "/images/projects/hypersonix/hx_sonic_02.jpg",
+            "/images/projects/hypersonix/hx_sonic_03.jpg",
+            "/images/projects/hypersonix/hx_sonic_04.jpg"
           ]
         },
         {
           name: "Impact",
           content: [
-            "Introduced selection-based reflection as the core concept.",
-            "At every stage of onboarding, the user’s inputs generated a live preview of the final interface on the right-hand side.",
-            "This not only gave immediate feedback but also trained users on what to expect once onboarding was complete."
+            "Improved consistency and efficiency across teams.",
+            "Reduced duplicate work and sped up delivery.",
+            "Established a scalable foundation for product growth."
           ]
         }
       ]
     },
     {
-      title: "New Onboarding Experience",
-      description: "Onboarding is a critical stage in the customer journey. It sets the tone for how users perceive and adopt a product. At Hypersonix, we needed an onboarding flow that not only welcomed users but also helped them understand the value of the platform quickly.",
+      title: "Interaction Designs",
+      description: "As a data analytics company, our challenge was to make complex data intuitive and easy to consume. This meant experimenting with new interaction patterns, visual representations, and product concepts—some of which I’m sharing here.",
       sections: [
         {
-          name: "Problem",
-          content: [
-            "Hypersonix had limited understanding of user personas entering the platform, which made personalization difficult.",
-            "New users did not know what features were available or how to use them effectively.",
-          ],
+          name: "No Code App studio",
+          content: "This 0→1 exploration reimagined how customers could customize Hypersonix's analytical platform without heavy manual effort. Instead of relying on deployment teams for bespoke setups, we designed a self-serve studio with drag-and-drop modules and configuration options, enabling customers to adjust inputs, processes, and analysis directly. This simplified experimentation, reduced internal tech debt, and early prototypes with clients like KFC, Home Depot, and Snowflake showed strong interest.",
           images: [
-            "/images/projects/hx_research_1.jpg",
-            "/images/projects/hx_research_2.jpg"
+            "/images/projects/hypersonix/hx_nocode_03.mp4",
+            "/images/projects/hypersonix/hx_nocode_02.mp4",
           ]
         },
         {
-          name: "Solution",
-          content: [
-            "Designed a predefined studio environment for each customer, tailored to their needs.",
-            "Gave customers self-serve customization through drag-and-drop modules and simple configuration options.", 
-            "The existing flow was long, mechanical, and confusing, with empty landing screens after setup, No feedback or reflection while configuring Hyperspaces, and difficulty in modifying inputs due to unclear hierarchy.",
-          ],
+          name: "Hawkeye",
+          content:
+            "We envisioned a new insights platform designed to surface information in small, digestible bits that users could quickly act on. Instead of overwhelming them with dashboards full of metrics, the platform presented bite-sized insights upfront, each serving as an entry point. From there, users could drill down into details, explore causes, and uncover deeper patterns. The experience was structured into different sections, each tailored to a specific type of insight, supported by diverse visualizations that made complex data intuitive and engaging. ",
           images: [
-            "/images/projects/hx_design_system.png",
-            "/images/projects/hx_components.gif"
+            "/images/projects/hypersonix/hx_hawk_01.mp4",
+            "/images/projects/hx_hawk.mp4"
           ]
         },
-        {
-          name: "Impact",
-          content: [
-            "Introduced selection-based reflection as the core concept.",
-            "At every stage of onboarding, the user’s inputs generated a live preview of the final interface on the right-hand side.",
-            "This not only gave immediate feedback but also trained users on what to expect once onboarding was complete."
-          ],
-        }
       ]
     },
   ],

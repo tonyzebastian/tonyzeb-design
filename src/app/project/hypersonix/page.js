@@ -1,10 +1,11 @@
+'use client'
+
 import Image from 'next/image';
 import { hypersonixData } from './content';
+import { useState } from 'react';
+import { X } from 'lucide-react';
 
-export const metadata = {
-  title: 'Hypersonix Experience - Tony Sebastian',
-  description: 'My experience as Lead Product Designer at Hypersonix, working on AI-powered analytics for e-commerce',
-};
+
 
 function StatsSection({ stats }) {
   return (
@@ -19,6 +20,12 @@ function StatsSection({ stats }) {
 }
 
 function ProjectSection({ section, index }) {
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const isVideo = (src) => {
+    return /\.(mp4|mov|webm|ogg|avi)$/i.test(src);
+  };
+
   const renderContent = () => {
     // Handle both content and description fields for backward compatibility
     const content = section.content || section.description;
@@ -50,39 +57,86 @@ function ProjectSection({ section, index }) {
       {renderContent()}
       
       {section.images && section.images.length > 0 && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {section.images.map((image, imgIndex) => (
-            <div key={imgIndex} className="relative rounded-xl overflow-hidden">
-              {image.endsWith('.mp4') ? (
-                <video
-                  src={image}
-                  className="w-full h-auto rounded-xl"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                />
-              ) : image.endsWith('.gif') ? (
-                <Image
-                  src={image}
-                  alt={`${section.name} - Image ${imgIndex + 1}`}
-                  width={600}
-                  height={400}
-                  className="w-full h-auto rounded-xl"
-                  unoptimized
-                />
-              ) : (
-                <Image
-                  src={image}
-                  alt={`${section.name} - Image ${imgIndex + 1}`}
-                  width={600}
-                  height={400}
-                  className="w-full h-auto rounded-xl"
-                />
-              )}
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {section.images.map((image, imgIndex) => (
+              <div 
+                key={imgIndex} 
+                className="relative rounded-xl overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => setSelectedItem({ src: image, alt: `${section.name} - Image ${imgIndex + 1}` })}
+              >
+                {image.endsWith('.mp4') ? (
+                  <video
+                    src={image}
+                    className="w-full h-auto rounded-xl border border-slate-100"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                ) : image.endsWith('.gif') ? (
+                  <Image
+                    src={image}
+                    alt={`${section.name} - Image ${imgIndex + 1}`}
+                    width={600}
+                    height={400}
+                    className="w-full h-auto rounded-xl border border-slate-100"
+                    unoptimized
+                  />
+                ) : (
+                  <Image
+                    src={image}
+                    alt={`${section.name} - Image ${imgIndex + 1}`}
+                    width={600}
+                    height={400}
+                    className="w-full h-auto rounded-xl border border-slate-100"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Spotlight Overlay */}
+          {selectedItem && (
+            <div 
+              className="fixed inset-0 bg-black/25 backdrop-blur-sm flex items-center justify-center z-50"
+              onClick={() => setSelectedItem(null)}
+            >
+              <div 
+                className="relative bg-white rounded-xl p-4 max-w-fit max-h-[90vh] overflow-hidden"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Close Button */}
+                <button
+                  className="absolute top-2 right-2 p-2 hover:bg-slate-400 bg-slate-300 rounded-full transition-colors z-10"
+                  onClick={() => setSelectedItem(null)}
+                >
+                  <X size={20} className="text-slate-900" />
+                </button>
+
+                {/* Media Container */}
+                <div className="flex justify-center items-center">
+                  {isVideo(selectedItem.src) ? (
+                    <video
+                      src={selectedItem.src}
+                      className="rounded-xl max-w-[80vw] max-h-[70vh] w-auto h-auto"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    />
+                  ) : (
+                    <img 
+                      src={selectedItem.src} 
+                      alt={selectedItem.alt}
+                      className="rounded-xl max-w-[80vw] max-h-[80vh] w-auto h-auto object-contain"
+                    />
+                  )}
+                </div>
+              </div>
             </div>
-          ))}
-        </div>
+          )}
+        </>
       )}
     </div>
   );
@@ -118,24 +172,24 @@ export default function HypersonixPage() {
         {/* Page Heading */}
         <div className="mb-6">
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 flex-shrink-0">
+            <div className="w-16 h-16 flex-shrink-0">
               <Image
                 src="/icons/hypersonix.png"
                 alt="Hypersonix"
-                width={48}
-                height={48}
+                width={64}
+                height={64}
                 className="object-contain"
               />
             </div>
             
-            <div className="flex-1">
-              <h1 className="text-3xl md:text-3xl font-medium text-slate-900 mb-4">
+            <div className="flex flex-col gap-1">
+              <h1 className="text-3xl md:text-3xl font-medium text-slate-900 ">
                 {heading}
               </h1>
               
               {/* Details */}
               {details && (
-                <div className="text-base font-medium text-slate-900">
+                <div className="text-sm text-slate-600">
                   {details.map((detail, index) => (
                     <span key={index}>
                       {detail.value}

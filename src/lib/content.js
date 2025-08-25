@@ -33,6 +33,18 @@ export const projects = [
     image: '/icons/uiglow.png',
   },
   { 
+    name: 'ScriptFlow', 
+    date: 'GPT for your words and ElevenLabs for your voice', 
+    link: 'https://scriptflow.vercel.app/',
+    image: '/icons/scriptflow.png',
+  },
+  { 
+    name: 'Dot Motion', 
+    date: 'A photo dither animation tool', 
+    link: 'https://dither-app-two.vercel.app/',
+    image: '/icons/dotmotion.png',
+  },
+  { 
     name: 'Figma Recap', 
     date: 'Every edit, every design— At a glance', 
     link: 'https://www.figmarecap.in/',
@@ -63,14 +75,14 @@ export const experience = [
       {
         title: "New Trial Experiences",
         description: "Increasing awareness by 27% and conversion by 5%.",
-        images: ["/images/about/juny/1.jpg", "/images/projects/trial_02.mp4"],
+        images: ["/images/projects/trial_01.png", "/images/projects/trial_02.mp4"],
         link: "/project/new-trial-experiences",
         requiresPassword: true
       },
       {
         title: "Mini Projects",
         description: "Environment Experience, Secret Field, App loading interaction",
-        images: ["/images/about/juny/1.jpg", "/images/about/juny/2.jpg"],
+        images: ["/images/projects/mini_project_02.mp4", "/images/projects/mini_proj_01.png"],
         link: "/project/new-trial-experiences",
         requiresPassword: true
       },
@@ -91,7 +103,9 @@ export const experience = [
     secondaryText: "Oct'20 - May'22",
     projects: [
       {
-        title: "My experience summary",
+        title: "A summary of my experience",
+        description: "0 to 1 projects, design system, and product improvements.",
+        
         images: ["/images/projects/hx_onboarding.mp4", "/images/projects/hx_hawk.mp4"],
         link: "/project/hypersonix",
         requiresPassword: false

@@ -26,7 +26,7 @@ export default function PasswordDialog({ isOpen, onClose, onSuccess, projectTitl
     <div className="fixed inset-0 bg-black/25 backdrop-blur-sm flex items-center justify-center z-50">
       <div className="bg-white rounded-xl p-6 w-full max-w-md mx-4">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-semibold text-slate-900">Protected Project</h2>
+          <h2 className="text-lg font-medium text-slate-900">Password Required</h2>
           <button
             onClick={onClose}
             className="p-1 hover:bg-slate-100 rounded-full transition-colors"
@@ -52,17 +52,10 @@ export default function PasswordDialog({ isOpen, onClose, onSuccess, projectTitl
           
           <div className="flex gap-3">
             <button
-              type="button"
-              onClick={onClose}
-              className="flex-1 px-4 py-2 text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors"
-            >
-              Cancel
-            </button>
-            <button
               type="submit"
-              className="flex-1 px-4 py-2 bg-slate-900 text-white hover:bg-slate-800 rounded-lg transition-colors"
+              className="flex-1 px-6 py-2 font-sans text-sm  items-center tracking-wide bg-zinc-900 rounded hover:bg-zinc-800 text-slate-50 transition-colors w-auto"
             >
-              Access
+              Continue
             </button>
           </div>
         </form>
