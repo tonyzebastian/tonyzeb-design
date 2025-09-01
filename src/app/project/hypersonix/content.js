@@ -1,5 +1,5 @@
 export const hypersonixData = {
-  heading: "Hypersonix AI",
+  heading: "Summary of my experience at Hypersonix AI",
 
   details: [
     { value: "Lead Product Designer" },
@@ -7,7 +7,7 @@ export const hypersonixData = {
   ],
   
   overview: {
-    description: "At Hypersonix, I led product design alongside the Head of Design, driving 0→1 explorations, scaling the design system, and improving core product experiences. I set design direction, delivered end-to-end solutions, mentored junior designers, and collaborated closely with product and engineering.",
+    description: "At Hypersonix, I led product design alongside the Head of Design, driving 0 to 1 explorations, scaling the design system, and improving core product experiences. I set design direction, delivered end-to-end solutions, mentored junior designers, and collaborated closely with product and engineering.",
     // image: "/images/projects/hx_overview.png" // Optional overview image
   },
 
@@ -126,7 +126,11 @@ export const hypersonixData = {
       sections: [
         {
           name: "No Code App studio",
-          content: "This 0→1 exploration reimagined how customers could customize Hypersonix's analytical platform without heavy manual effort. Instead of relying on deployment teams for bespoke setups, we designed a self-serve studio with drag-and-drop modules and configuration options, enabling customers to adjust inputs, processes, and analysis directly. This simplified experimentation, reduced internal tech debt, and early prototypes with clients like KFC, Home Depot, and Snowflake showed strong interest.",
+          content: [
+            "This 0 to 1 exploration reimagined how customers could customize Hypersonix's analytical platform without heavy manual effort.",
+            "Instead of relying on deployment teams for bespoke setups, we designed a self-serve studio with drag-and-drop modules and configuration options, enabling customers to adjust inputs, processes, and analysis directly.",
+            "This simplified experimentation, reduced internal tech debt, and early prototypes with clients like KFC, Home Depot, and Snowflake showed strong interest."
+          ],
           images: [
             "/images/projects/hypersonix/hx_nocode_03.mp4",
             "/images/projects/hypersonix/hx_nocode_02.mp4",
@@ -134,8 +138,13 @@ export const hypersonixData = {
         },
         {
           name: "Hawkeye",
-          content:
-            "We envisioned a new insights platform designed to surface information in small, digestible bits that users could quickly act on. Instead of overwhelming them with dashboards full of metrics, the platform presented bite-sized insights upfront, each serving as an entry point. From there, users could drill down into details, explore causes, and uncover deeper patterns. The experience was structured into different sections, each tailored to a specific type of insight, supported by diverse visualizations that made complex data intuitive and engaging. ",
+          content: [
+            "We envisioned a new insights platform designed to surface information in small, digestible bits that users could quickly act on. ",
+            "Instead of overwhelming them with dashboards full of metrics, the platform presented bite-sized insights upfront, each serving as an entry point.",
+            "From there, users could drill down into details, explore causes, and uncover deeper patterns.",
+            " The experience was structured into different sections, each tailored to a specific type of insight, supported by diverse visualizations that made complex data intuitive and engaging. ",
+          ],
+
           images: [
             "/images/projects/hypersonix/hx_hawk_01.mp4",
             "/images/projects/hx_hawk.mp4"

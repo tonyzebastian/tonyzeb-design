@@ -145,6 +145,11 @@ function ProjectSection({ section, index }) {
 function ProjectCard({ project, projectIndex }) {
   return (
     <div className="mb-16">
+      {/* Project Tag */}
+      <h3 className="text-sm font-medium text-slate-500 uppercase tracking-wide mb-4">
+        Project {projectIndex + 1}
+      </h3>
+      
       <div className="mb-8">
         <h2 className="text-lg font-bold text-slate-900 mb-3">{project.title}</h2>
         <p className="text-slate-900 text-sm leading-relaxed">{project.description}</p>
@@ -170,35 +175,21 @@ export default function HypersonixPage() {
     <div className="min-h-screen bg-white">
       <div className="mx-auto max-w-4xl px-8 py-16">
         {/* Page Heading */}
-        <div className="mb-6">
-          <div className="flex items-start gap-4">
-            <div className="w-16 h-16 flex-shrink-0">
-              <Image
-                src="/icons/hypersonix.png"
-                alt="Hypersonix"
-                width={64}
-                height={64}
-                className="object-contain"
-              />
-            </div>
+        <div className="mb-8">
+          <div className="mb-6">
+            <h2 className="text-3xl font-serif font-medium text-slate-900 mb-1">{heading}</h2>
             
-            <div className="flex flex-col gap-1">
-              <h1 className="text-3xl md:text-3xl font-medium text-slate-900 ">
-                {heading}
-              </h1>
-              
-              {/* Details */}
-              {details && (
-                <div className="text-sm text-slate-600">
-                  {details.map((detail, index) => (
-                    <span key={index}>
-                      {detail.value}
-                      {index < details.length - 1 && <span className="mx-3">|</span>}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
+            {/* Project Details */}
+            {details && (
+              <div className="text-sm text-slate-800 font-medium tracking-wider">
+                {details.map((detail, index) => (
+                  <span key={index}>
+                    {detail.value}
+                    {index < details.length - 1 && <span className="mx-3">|</span>}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 

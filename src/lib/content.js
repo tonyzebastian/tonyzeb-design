@@ -83,7 +83,7 @@ export const experience = [
         title: "Mini Projects",
         description: "Environment Experience, Secret Field, App loading interaction",
         images: ["/images/projects/mini_project_02.mp4", "/images/projects/mini_proj_01.png"],
-        link: "/project/new-trial-experiences",
+        link: "/project/miniprojects",
         requiresPassword: true
       },
       {

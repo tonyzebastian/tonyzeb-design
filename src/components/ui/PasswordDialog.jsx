@@ -6,7 +6,7 @@ export default function PasswordDialog({ isOpen, onClose, onSuccess, projectTitl
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   
-  const correctPassword = 'postman2024'; // Simple password - you can change this
+  const correctPassword = 'newjob2025'; // Simple password - you can change this
 
   const handleSubmit = (e) => {
     e.preventDefault();
