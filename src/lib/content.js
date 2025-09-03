@@ -76,7 +76,7 @@ export const experience = [
         title: "New Trial Experiences",
         description: "Increasing awareness by 27% and conversion by 5%.",
         images: ["/images/projects/trial_01.png", "/images/projects/trial_02.mp4"],
-        link: "/project/new-trial-experiences",
+        link: "/project/newtrialexp",
         requiresPassword: true
       },
       {

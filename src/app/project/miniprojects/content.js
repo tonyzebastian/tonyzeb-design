@@ -2,23 +2,22 @@ export const postminidata = {
   // Page-level configuration
   page: {
     title: "Mini Projects",
-    description: "A collection of mini projects I worked on during my time at Postman that made a huge impact."
+    description: "A collection of mini projects I worked on during my time at Postman that made a huge impact.",
+    role: "Lead Product Designer",
+    company: "Postman",
+    logo: "/icons/postman.png",
   },
 
   // Projects data
   projects: [
     {
       title: "Improving Environment usage experience",
-      role: "Lead Product Designer", 
-      duration: "3 months",
       sections: [
         {
-          //name: "Brief",
           description: "Environments are critical for making collections usable, but the current experience often caused confusion, errors, and delays. This project focused on simplifying that experience and making environments more seamlessly connected to collections."
         },
         {
-          name: "Problem Space",
-          heading: "Existing experience of consuming environments",
+          heading: "Previous experience",
           description: "Environments are a core part of Postman, used daily by millions of developers and teams. They're often the first step in making a collection usable for others, acting as the bridge between setup and successful execution. There were some obvious gaps in the current experience.",
           images: ["/images/projects/miniprojects/mini_pin_env_01.png"],
           cards: [
@@ -41,7 +40,7 @@ export const postminidata = {
           ]
         },
         {
-          name: "Solution",
+          heading: "Solution",
           subsections: [
             {
               title: "Pinned environments",
@@ -64,10 +63,10 @@ export const postminidata = {
           heading: "Impact (3 months)",
           bulletPoints: [
             "28% reduction in unresolved variable errors for forks of public collections.",
-            "56k Pinned Environments.", 
-            "2.4% faster time to first successful request.",
-          ],
-        },
+            "56k Pinned Environments.",
+            "2.4% faster time to first successful request."
+          ]
+        }
       ]
     }
   ]
