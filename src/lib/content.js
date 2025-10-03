@@ -152,6 +152,23 @@ export const musings = [
   { name: 'Reviving a legacy system at Infosys', date: 'Nov 2018', link: '/musings/infosys_legacy'}
 ];
 
+export const aiImages = [
+  { src: '/images/AI/bangalore auto.png' },
+  { src: '/images/AI/rook.png' },
+  { src: '/images/AI/stellar_blends.gif' },
+  { src: '/images/AI/Claude.png' },
+  { src: '/images/AI/cyclist.png' },
+  { src: '/images/AI/lovable.png' },
+  { src: '/images/AI/elephant.png' },
+  { src: '/images/AI/gemini.png' },
+  { src: '/images/AI/lady.png' },
+  { src: '/images/AI/zebra crossing.png' },
+  { src: '/images/AI/writing_1.png' },
+  { src: '/images/AI/snakes.png' },
+  { src: '/images/AI/writing_2.png' },
+  { src: '/images/AI/figma.png' }
+];
+
 export const bio = {
   intro: "I like to build things. I'm into design, art and cinematography. Believes in consistency, side projects and letting life shape my craft.",
   social: {

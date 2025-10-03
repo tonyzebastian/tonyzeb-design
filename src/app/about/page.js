@@ -84,27 +84,25 @@ export default function About() {
                 {/* Fun Things Section */}
                 <section className="mb-8">
                     <h4 className="mb-2">What I do for fun</h4>
-                    <p className="text-slate-700">
+                    <ul className="text-slate-700 list-disc pl-5 space-y-2 marker:text-slate-600">
                         {aboutFunThings.map((item, index) => (
-                            <span key={index}>
+                            <li key={index}>
                                 {renderTextWithLinks(item)}
-                                <br/>
-                            </span>
+                            </li>
                         ))}
-                    </p>
+                    </ul>
                 </section>
     
                 {/* Principles Section */}
                 <section className="mb-8">
                     <h4 className="mb-2">Personal principles</h4>
-                    <p>
+                    <ul className="text-slate-700 list-disc pl-5 space-y-2 marker:text-slate-600">
                         {aboutPrinciples.map((principle, index) => (
-                            <span key={index}>
-                                - {principle}
-                                <br/>
-                            </span>
+                            <li key={index}>
+                                {principle}
+                            </li>
                         ))}
-                    </p>
+                    </ul>
                 </section>
     
                 {/* Animation Section */}
@@ -160,20 +158,18 @@ export default function About() {
                 {/* Conversation Section */}
                 <section className="mb-12">
                     <h4 className="mb-2">Start a conversation</h4>
-                    <p>
-                        {aboutConversation.intro}
-                        <br/>
+                    <p className="text-slate-700 mb-2">{aboutConversation.intro}</p>
+                    <ul className="text-slate-700 list-disc pl-5 space-y-2 marker:text-slate-600">
                         {aboutConversation.topics.map((topic, index) => (
-                            <span key={index}>
-                                - {typeof topic === 'string' ? (
+                            <li key={index}>
+                                {typeof topic === 'string' ? (
                                     topic
                                 ) : (
                                     <>Just say <HighlightLink href={`mailto:${topic.email}`}>"Hi"!</HighlightLink></>
                                 )}
-                                <br/>
-                            </span>
+                            </li>
                         ))}
-                    </p>
+                    </ul>
                 </section>
 
                 {/* Footer/Copyright */}

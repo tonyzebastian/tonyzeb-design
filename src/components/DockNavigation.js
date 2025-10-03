@@ -46,7 +46,7 @@ export default function DockNavigation() {
       title: 'About', 
       href: '/about', 
       icon: <img src="/images/nav/about.png" alt="About" className='h-full w-full object-contain' />
-    },
+    }
   ]
 
   if (!mounted) {

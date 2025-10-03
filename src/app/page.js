@@ -1,17 +1,24 @@
 import ListItem from '@/components/list/ListItem';
 import Title from '@/components/list/Title';
-import {projects, experience, musings, designAreas, now } from '@/lib/content';
+import {projects, experience, musings, designAreas, now, aiImages } from '@/lib/content';
 import HighlightLink from '@/components/ui/HighlightLink';
 import CopyEmailLink from '@/components/ui/CopyEmailLink';
 import Hero from '@/components/Hero';
 import ExperienceWithProjects from '@/components/ui/ExperienceWithProjects';
+import MasonryGridLightbox from '@/components/ui/MasonryGridLigthbox';
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1.0,
+  maximumScale: 1.0,
+  userScalable: false,
+};
 
 export const metadata = {
   title: 'Tony Sebastian ✦ designer',
   description: 'A visual product designer | Love to code | always tinkering with a side project',
   keywords: 'design, art, cinematography, photography, travel',
   author: 'Tony Sebastian',
-  viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
   robots: 'index,follow',
   'mobile-web-app-capable': 'yes',
   'apple-mobile-web-app-title': 'Tony Sebastian',
@@ -121,7 +128,7 @@ export default function HomePage() {
             <h2 className="mb-2">Musings</h2>
             <div className="space-y-1">
               {musings.map(musing => (
-                <ListItem 
+                <ListItem
                   key={musing.link}
                   title={musing.name}
                   isExternal={false}
@@ -131,6 +138,15 @@ export default function HomePage() {
                 />
               ))}
             </div>
+          </div>
+
+          {/* AI Section */}
+          <div className="my-6">
+            <h2 className="mb-2">AI</h2>
+            <MasonryGridLightbox
+              lightboxImages={aiImages.map(img => img.src)}
+              height={390}
+            />
           </div>
 
           {/* Now Section */}

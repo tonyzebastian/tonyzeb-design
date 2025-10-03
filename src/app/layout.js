@@ -21,7 +21,6 @@ export default function RootLayout({ children }) {
               </main>
               <DockNavigation />
               <SpeedInsights />
-              
           </body>
       </html>
   );
