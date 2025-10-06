@@ -65,32 +65,18 @@ export const projects = [
 ];
 
 export const experience = [
-  { 
-    name: 'Postman', 
-    date: 'Senior Product Designer', 
+  {
+    name: 'Postman',
+    date: 'Senior Product Designer',
     link: 'https://www.postman.com/',
     image: '/icons/postman.png',
     secondaryText: "Jun'22 - Jun'25",
     projects: [
       {
-        title: "New Trial Experiences",
-        description: "Increasing awareness by 27% and conversion by 5%.",
-        images: ["/images/projects/trial_01.png", "/images/projects/trial_02.mp4"],
-        link: "/project/newtrialexp",
-        requiresPassword: true
-      },
-      {
-        title: "Mini Projects",
-        description: "Environment Experience, Secret Field, App loading interaction",
-        images: ["/images/projects/mini_project_02.mp4", "/images/projects/mini_proj_01.png"],
-        link: "/project/miniprojects",
-        requiresPassword: true
-      },
-      {
-        title: "Live Collections",
-        description: "0 to 1 project that introduced observability in Postman.",
-        images: ["/images/projects/live_collections_1.png",  "/images/projects/live_collections_2.png" ],
-        link: "/project/api-observability",
+        title: "Projects",
+        description: "New Trial experiences, API Observability & more.",
+        images: ["/images/projects/live_collections_1.png", "/images/projects/trial_02.mp4"],
+        link: "/project/postman",
         requiresPassword: true
       }
     ]
@@ -104,7 +90,7 @@ export const experience = [
     projects: [
       {
         title: "A summary of my experience",
-        description: "0 to 1 projects, design system, and product improvements.",
+        description: "0 to 1 projects, Design system, App studio & more.",
         
         images: ["/images/projects/hx_onboarding.mp4", "/images/projects/hx_hawk.mp4"],
         link: "/project/hypersonix",
@@ -152,6 +138,11 @@ export const musings = [
   { name: 'Reviving a legacy system at Infosys', date: 'Nov 2018', link: '/musings/infosys_legacy'}
 ];
 
+export const aiWorkflow = [
+  { name: 'Creative workflow', date: 'Oct 2025', link: '/musings/perceived_wait'},
+  { name: 'Technical workflow for vibe coding', date: 'Oct 2025', link: '/musings/mnemonic_signages' }
+];
+
 export const aiImages = [
   { src: '/images/AI/bangalore auto.png' },
   { src: '/images/AI/rook.png' },
@@ -182,7 +173,7 @@ export const bio = {
 export const now = [
   {
     description: [
-      "Most days, I'm thinking about how things move and how to build those interactions with code. Currently learning through ",
+      "I spend a lot of time thinking about motion - how things move, feel, respond and build those interactions through code. Currently learning through ",
       {
         text: "Animation on the web",
         href: "https://animations.dev/"
@@ -195,18 +186,21 @@ export const now = [
       "."
     ]
   },
-  {description: "Using tools like Midjourney, ChatGPT, and new video generators to push ideas further. Treating them as creative collaborators, not just shortcuts."},
-  {description: "Thinking in systems and learning product thinking to better understand how features, feedback, and business goals connect. It helps me design with clarity and ownership."},
-  {description: "Writing more code, and trying to write it better. As AI becomes more integrated in design, I want to understand how things work—not just rely on tools to guess for me."}
+  {description: "As a creative, I love experimenting with tools like Midjourney, Veo, Kling and more to explore ideas faster and push them further."},
+  {description: "Developing a systems mindset and stronger product sense to better connect insights to design decisions."},
+  {description: "Writing more code, and trying to write it better. As AI becomes integral to design, I'm learning how systems work and how to guide them through better prompts."}
 ];
 
 
 export const aboutBio = [
   {
-    text: "Hello there! I'm a designer who loves crafting delightful experiences by blending thoughtful product design with engaging motion.",
+    text: "Hey, I'm Tony, a designer who loves bringing ideas to life through thoughtful design, a bit of code, and a touch of motion.",
   },
   {
-    text: "My journey began with a master's in marketing, where I discovered my fascination with branding, positioning, product strategy, and ultimately design. I started out as a Business Analyst at Infosys, but quickly realized it wasn't the right fit for me. Driven by curiosity, I taught myself design, transitioned into freelancing, and dove deep into honing my craft. Today, with around 7 years of experience, I've grown from Freelance Designer → Product Designer at Hypersonix → now a Product Designer at Postman. Currently, I'm based in Bangalore, India, though my roots are in the charming town of Thodupuzha, Kerala.",
+    text: " My path into design wasn't linear. I started with a master's in marketing, got curious about how products are built, and eventually taught myself design. I went from being a Business Analyst at Infosys to freelancing, then to building digital products at Hypersonix, and now designing at Postman.",
+  },
+  {
+    text: "I've spent the past 7 years exploring the intersection of craft, systems thinking, and technology, creating experiences that not only look good but feel right. I'm currently based in Bangalore, though I still carry a bit of my hometown, Thodupuzha, Kerala, wherever I go.",
   },
 ];
 
@@ -230,7 +224,7 @@ export const aboutFunThings = [
     ]
   },
   {
-    text: "Running is a hobby I recently picked up, I'm training for my first 10K in September!",
+    text: "Running is a hobby I picked up 2025. Planning to do a half marathon in 2026.",
   }
 ];
 
@@ -243,16 +237,16 @@ export const aboutPrinciples = [
 
 export const animation = [
   {
-    text: "Animation lets me express emotions and ideas uniquely. I'm particularly fond of frame-by-frame animation, playful logo reveals, and creating narratives that tug at your heartstrings.",
+    text: "Animation lets me express emotions and ideas uniquely. I'm particularly fond of frame-by-frame animation, playful logo reveals, and creating small moments that connect with with people.",
   },
 ];
 
 export const junymade = [
   {
-    text: "Juny Made is an art studio I run with my partner, specializing in creating personalized, handmade embroidered gifts and unique creative projects. Learn more about our studio from our Instagram page. ",
+    text: "Juny Made is an art studio I run with my partner, specializing in creating personalized, handmade embroidered gifts and unique creative projects. Follow us on Instagram. ",
     links: [
       {
-        text: "Instagram page.",
+        text: "Instagram.",
         href: "https://pin.it/3PKGQjN2Y"
       }
     ]
@@ -261,7 +255,7 @@ export const junymade = [
 
 export const photography = [
   {
-    text: "I spend a lot of time behind the lens, chasing beautiful moments in nature, capturing dynamic movement, and exploring abstract forms. More photos are added on Pexels.",
+    text: "I spend a lot of time behind the lens, chasing beautiful moments in nature, capturing dynamic movement, and exploring abstract forms. Follow me on Pexels.",
     links: [
       {
         text: "Pexels.",

@@ -1,6 +1,6 @@
 import ListItem from '@/components/list/ListItem';
 import Title from '@/components/list/Title';
-import {projects, experience, musings, designAreas, now, aiImages } from '@/lib/content';
+import {projects, experience, musings, designAreas, now, aiImages, aiWorkflow } from '@/lib/content';
 import HighlightLink from '@/components/ui/HighlightLink';
 import CopyEmailLink from '@/components/ui/CopyEmailLink';
 import Hero from '@/components/Hero';
@@ -142,7 +142,19 @@ export default function HomePage() {
 
           {/* AI Section */}
           <div className="my-6">
-            <h2 className="mb-2">AI</h2>
+            <h2 className="mb-2">Gen AI</h2>
+            <div className="space-y-1 mb-4">
+              {aiWorkflow.map(musing => (
+                <ListItem
+                  key={musing.link}
+                  title={musing.name}
+                  isExternal={false}
+                  primaryText={musing.date}
+                  secondaryText={musing.secondaryText}
+                  href={musing.link}
+                />
+              ))}
+            </div>
             <MasonryGridLightbox
               lightboxImages={aiImages.map(img => img.src)}
               height={390}

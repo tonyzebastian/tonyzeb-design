@@ -1,16 +1,21 @@
 'use client'
 
 import Image from 'next/image';
-import { useState, useCallback } from 'react';
-import { X } from 'lucide-react';
+import { useState, useCallback, useEffect } from 'react';
+import { X, ArrowRight } from 'lucide-react';
+import { useRouter, useSearchParams } from 'next/navigation';
 
+// ============================================================================
+// UTILITY FUNCTIONS
+// ============================================================================
 
-// Utility Functions
 const isVideo = (src) => /\.(mp4|mov|webm|ogg|avi)$/i.test(src);
 const isGif = (src) => src.endsWith('.gif');
-const getIcon = (iconType) => ICON_CONFIG[iconType] || ICON_CONFIG.default;
 
-// Shared Components
+// ============================================================================
+// MEDIA COMPONENTS
+// ============================================================================
+
 const MediaItem = ({ src, alt, width, height, onClick, className = "" }) => {
   const baseClasses = "w-full h-auto rounded-xl border border-slate-100";
   const combinedClasses = `${baseClasses} ${className}`;
@@ -46,11 +51,11 @@ const MediaOverlay = ({ selectedItem, onClose }) => {
   if (!selectedItem) return null;
 
   return (
-    <div 
+    <div
       className="fixed inset-0 bg-black/25 backdrop-blur-sm flex items-center justify-center z-50"
       onClick={onClose}
     >
-      <div 
+      <div
         className="relative bg-white rounded-xl p-4 max-w-fit max-h-[90vh] overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
@@ -72,8 +77,8 @@ const MediaOverlay = ({ selectedItem, onClose }) => {
               playsInline
             />
           ) : (
-            <img 
-              src={selectedItem.src} 
+            <img
+              src={selectedItem.src}
               alt={selectedItem.alt}
               className="rounded-xl max-w-[80vw] max-h-[80vh] w-auto h-auto object-contain"
             />
@@ -83,6 +88,60 @@ const MediaOverlay = ({ selectedItem, onClose }) => {
     </div>
   );
 };
+
+// ============================================================================
+// DIALOG WRAPPER
+// ============================================================================
+
+const DialogWrapper = ({ isOpen, onClose, children }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+
+      const handleEsc = (e) => {
+        if (e.key === 'Escape') onClose();
+      };
+
+      window.addEventListener('keydown', handleEsc);
+
+      return () => {
+        document.body.style.overflow = 'unset';
+        window.removeEventListener('keydown', handleEsc);
+      };
+    }
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div
+      className="fixed inset-0 bg-black/25 backdrop-blur-sm flex items-center justify-center z-[100] p-4"
+      onClick={onClose}
+    >
+      <div
+        className="relative bg-white rounded-xl w-full max-w-6xl max-h-[90vh] overflow-hidden flex flex-col"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-10 p-2 bg-slate-100 hover:bg-slate-200 rounded-full transition-colors"
+        >
+          <X size={20} className="text-slate-900" />
+        </button>
+
+        {/* Content */}
+        <div className="flex-1 overflow-y-auto">
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ============================================================================
+// HEADER COMPONENTS
+// ============================================================================
 
 const ProjectDetails = ({ pageData }) => {
   if (!(pageData.role || pageData.duration || pageData.company)) {
@@ -119,148 +178,33 @@ const ProjectDetails = ({ pageData }) => {
   );
 };
 
-// Main Components
-export function CaseStudyPage({ pageData, projects }) {
-  return (
-    <div className="min-h-screen bg-white">
-      <div className="mx-auto max-w-4xl px-8 py-16">
-        {/* Page Header */}
-        <header className="mb-8">
-          <div className="mb-6">
-            <h1 className="text-4xl font-serif font-medium text-slate-900 mb-3">
-              {pageData.title}
-            </h1>
-            <ProjectDetails pageData={pageData} />
-          </div>
-        </header>
-
-        {/* Page Description */}
-        {pageData.description && (
-          <section className="mb-12">
-            <p className="text-slate-900 text-sm leading-relaxed">
-              {pageData.description}
-            </p>
-          </section>
-        )}
-
-        {/* Projects */}
-        <main>
-          {projects.map((project, index) => (
-            <ProjectSection 
-              key={project.title || index}
-              project={project}
-              index={index}
-              isLast={index === projects.length - 1}
-              showProjectTag={projects.length > 1}
-            />
-          ))}
-        </main>
-      </div>
+const PageHeader = ({ pageData }) => (
+  <header className="mb-8">
+    <div className="mb-6">
+      <h1 className="text-4xl font-serif font-medium text-slate-900 mb-3">
+        {pageData.title}
+      </h1>
+      <ProjectDetails pageData={pageData} />
     </div>
-  );
-}
-
-const ProjectSection = ({ project, index, isLast, showProjectTag }) => (
-  <article className={`mb-20 ${!isLast ? 'border-b border-slate-300 border-dashed pb-16' : ''}`}>
-    {/* Project Tag */}
-    {showProjectTag && (
-      <h2 className="text-sm font-medium text-slate-500 uppercase tracking-wide mb-4">
-        Project {index + 1}
-      </h2>
-    )}
-    
-    {/* Project Title */}
-    <div className="mb-4">
-      <h3 className="text-xl font-sans font-bold text-slate-900">
-        {project.title}
-      </h3>
-    </div>
-    
-    {/* Sections */}
-    <div className="space-y-12">
-      {project.sections.map((section, sectionIndex) => (
-        <SectionLayout 
-          key={sectionIndex} 
-          section={section}
-        />
-      ))}
-    </div>
-  </article>
+  </header>
 );
 
-export function SectionLayout({ section }) {
-  const [selectedItem, setSelectedItem] = useState(null);
-  
-  const openLightbox = useCallback((src, alt) => {
-    setSelectedItem({ src, alt });
-  }, []);
-  
-  const closeLightbox = useCallback(() => {
-    setSelectedItem(null);
-  }, []);
-
-  const {
-    heading,
-    description,
-    bulletPoints,
-    images,
-    cards,
-    subsections
-  } = section;
+const PageDescription = ({ description }) => {
+  if (!description) return null;
 
   return (
-    <section>
-      {/* Section Heading */}
-      {heading && (
-        <h4 className="text-lg font-medium text-slate-900 mb-2">
-          {heading}
-        </h4>
-      )}
-      
-      {/* Description */}
-      {description && (
-        <p className="text-slate-900 leading-relaxed mb-4">
-          {description}
-        </p>
-      )}
-      
-      {/* Bullet Points */}
-      {bulletPoints?.length > 0 && (
-        <BulletPoints items={bulletPoints} />
-      )}
-      
-      {/* Images */}
-      {images?.length > 0 && (
-        <ImageGrid 
-          images={images} 
-          onImageClick={openLightbox}
-          altPrefix={heading || 'Section'}
-        />
-      )}
-      
-      {/* Cards */}
-      {cards?.length > 0 && (
-        <CardGrid cards={cards} />
-      )}
-      
-      {/* Subsections */}
-      {subsections?.length > 0 && (
-        <SubsectionsList 
-          subsections={subsections}
-          onImageClick={openLightbox}
-        />
-      )}
-
-      {/* Media Overlay */}
-      <MediaOverlay 
-        selectedItem={selectedItem} 
-        onClose={closeLightbox} 
-      />
+    <section className="mb-12">
+      <p className="text-slate-900 text-sm leading-relaxed">
+        {description}
+      </p>
     </section>
   );
-}
+};
 
-// Specialized Components
+// ============================================================================
+// PROJECT SECTION COMPONENTS
+// ============================================================================
+
 const BulletPoints = ({ items }) => (
   <ul className="text-slate-900 mb-8 text-sm leading-relaxed space-y-2">
     {items.map((item, index) => (
@@ -280,7 +224,7 @@ const ImageGrid = ({ images, onImageClick, altPrefix }) => {
     <div className="mb-8">
       <div className={`grid ${gridClass}`}>
         {images.map((image, index) => (
-          <div 
+          <div
             key={index}
             className="relative rounded-xl overflow-hidden cursor-pointer hover:opacity-90 transition-opacity"
             onClick={() => onImageClick(image, `${altPrefix} illustration ${index + 1}`)}
@@ -313,12 +257,12 @@ const SubsectionsList = ({ subsections, onImageClick }) => (
   <div className="space-y-12">
     {subsections.map((subsection, index) => {
       const mediaItems = subsection.images || (subsection.media ? [subsection.media] : []);
-      
+
       return (
         <div key={index} className="mb-12">
           <h4 className="font-medium text-slate-900 text-base">{subsection.title}</h4>
           <p className="text-slate-700 leading-relaxed mb-4">{subsection.description}</p>
-          
+
           {mediaItems.length > 0 && (
             <ImageGrid
               images={mediaItems}
@@ -331,3 +275,151 @@ const SubsectionsList = ({ subsections, onImageClick }) => (
     })}
   </div>
 );
+
+const SectionLayout = ({ section }) => {
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const openLightbox = useCallback((src, alt) => {
+    setSelectedItem({ src, alt });
+  }, []);
+
+  const closeLightbox = useCallback(() => {
+    setSelectedItem(null);
+  }, []);
+
+  const {
+    heading,
+    description,
+    bulletPoints,
+    images,
+    cards,
+    subsections
+  } = section;
+
+  return (
+    <section>
+      {heading && (
+        <h4 className="text-lg font-medium text-slate-900 mb-2">
+          {heading}
+        </h4>
+      )}
+
+      {description && (
+        <p className="text-slate-900 leading-relaxed mb-4">
+          {description}
+        </p>
+      )}
+
+      {bulletPoints?.length > 0 && (
+        <BulletPoints items={bulletPoints} />
+      )}
+
+      {images?.length > 0 && (
+        <ImageGrid
+          images={images}
+          onImageClick={openLightbox}
+          altPrefix={heading || 'Section'}
+        />
+      )}
+
+      {cards?.length > 0 && (
+        <CardGrid cards={cards} />
+      )}
+
+      {subsections?.length > 0 && (
+        <SubsectionsList
+          subsections={subsections}
+          onImageClick={openLightbox}
+        />
+      )}
+
+      <MediaOverlay
+        selectedItem={selectedItem}
+        onClose={closeLightbox}
+      />
+    </section>
+  );
+};
+
+const ProjectSection = ({ project, index, isLast, showProjectTag }) => (
+  <article className={`mb-20 ${!isLast ? 'border-b border-slate-300 border-dashed pb-16' : ''}`}>
+    {showProjectTag && (
+      <h2 className="text-sm font-medium text-slate-500 uppercase tracking-wide mb-4">
+        Project {index + 1}
+      </h2>
+    )}
+
+    <div className="mb-4 flex items-center justify-between gap-4">
+      <h3 className="text-xl font-sans font-bold text-slate-900">
+        {project.title}
+      </h3>
+      {project.link && (
+        <a
+          href={project.link}
+          className="flex items-center gap-1.5 text-xs font-medium text-slate-600 hover:text-slate-900 border border-slate-300 hover:border-slate-400 px-3 py-1.5 rounded-md transition-colors whitespace-nowrap"
+        >
+          View Details
+          <ArrowRight size={14} />
+        </a>
+      )}
+    </div>
+
+    <div className="space-y-12">
+      {project.sections.map((section, sectionIndex) => (
+        <SectionLayout
+          key={sectionIndex}
+          section={section}
+        />
+      ))}
+    </div>
+  </article>
+);
+
+// ============================================================================
+// MAIN COMPONENT
+// ============================================================================
+
+export function CaseStudyPage({ pageData, projects }) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const isDialog = searchParams.get('dialog') === 'true';
+
+  const handleClose = () => {
+    router.back();
+  };
+
+  const content = (
+    <div className="mx-auto max-w-4xl px-8 py-16">
+      <PageHeader pageData={pageData} />
+      <PageDescription description={pageData.description} />
+
+      <main>
+        {projects.map((project, index) => (
+          <ProjectSection
+            key={project.title || index}
+            project={project}
+            index={index}
+            isLast={index === projects.length - 1}
+            showProjectTag={projects.length > 1}
+          />
+        ))}
+      </main>
+    </div>
+  );
+
+  if (isDialog) {
+    return (
+      <DialogWrapper isOpen={true} onClose={handleClose}>
+        {content}
+      </DialogWrapper>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-white">
+      {content}
+    </div>
+  );
+}
+
+export { SectionLayout };

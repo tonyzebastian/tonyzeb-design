@@ -28,7 +28,7 @@ export default function ProjectSummary({
 
   const handlePasswordSuccess = () => {
     setShowPasswordDialog(false);
-    router.push(projectLink);
+    router.push(`${projectLink}?dialog=true`);
   };
 
   if (!projectLink) {
@@ -94,7 +94,7 @@ export default function ProjectSummary({
 
   // For non-password projects, use Link for proper navigation
   return (
-    <Link href={projectLink} className="block">
+    <Link href={`${projectLink}?dialog=true`} className="block">
       <div className="space-y-4 cursor-pointer group">
         <div>
           <div className="flex items-center gap-2">
@@ -104,9 +104,9 @@ export default function ProjectSummary({
           </div>
           <p className="text-slate-600 mt-1 text-xs">{ProjDesc}</p>
         </div>
-        
-        <ProjectMasonryGrid 
-          lightboxImages={MasonryImages} 
+
+        <ProjectMasonryGrid
+          lightboxImages={MasonryImages}
           height={400}
           hoverEffects={hoverEffects}
         />
