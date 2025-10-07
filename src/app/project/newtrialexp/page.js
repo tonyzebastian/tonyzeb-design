@@ -1,12 +1,18 @@
 import { posttrialdata } from './content';
 import { CaseStudyPage } from '@/components/CaseStudyTemplate';
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1.0,
+  maximumScale: 1.0,
+  userScalable: false,
+};
+
 export const metadata = {
   title: 'New Trial Experiences',
   description: 'Redesigning trial experiences at Postman to make them more timely, contextual, and value-driven. Led by Tony Sebastian, Lead Product Designer.',
   keywords: 'trial design, user experience, growth design, Postman, product design',
   author: 'Tony Sebastian',
-  viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
   robots: 'index,follow',
   alternates: {
     canonical: 'https://tonyzeb.design/project/newtrialexp',

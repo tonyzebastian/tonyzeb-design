@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image';
-import { useState, useCallback, useEffect, memo, useMemo } from 'react';
+import { useState, useCallback, useEffect, memo, useMemo, Suspense } from 'react';
 import { X, ArrowRight } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
@@ -394,7 +394,8 @@ const ProjectSection = ({ project, index, isLast, showProjectTag }) => (
 // MAIN COMPONENT
 // ============================================================================
 
-export function CaseStudyPage({ pageData, projects }) {
+// Separate component for search params logic
+function CaseStudyContent({ pageData, projects }) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const isDialog = searchParams.get('dialog') === 'true';
@@ -434,6 +435,15 @@ export function CaseStudyPage({ pageData, projects }) {
     <div className="min-h-screen bg-white">
       {content}
     </div>
+  );
+}
+
+// Wrap in Suspense to fix Next.js build error
+export function CaseStudyPage({ pageData, projects }) {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white" />}>
+      <CaseStudyContent pageData={pageData} projects={projects} />
+    </Suspense>
   );
 }
 

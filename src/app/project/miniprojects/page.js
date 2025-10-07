@@ -1,12 +1,18 @@
 import { postminidata } from './content';
 import { CaseStudyPage } from '@/components/CaseStudyTemplate';
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1.0,
+  maximumScale: 1.0,
+  userScalable: false,
+};
+
 export const metadata = {
   title: 'Mini Projects',
   description: 'A collection of mini projects I worked on during my time at Postman that made a huge impact. Led by Tony Sebastian, Lead Product Designer.',
   keywords: 'product design, Postman, environment usage, design systems, UX improvement',
   author: 'Tony Sebastian',
-  viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
   robots: 'index,follow',
   alternates: {
     canonical: 'https://tonyzeb.design/project/miniprojects',
