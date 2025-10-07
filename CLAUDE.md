@@ -54,10 +54,13 @@ src/
 │   ├── AI/                # AI-related projects
 │   └── musings/           # Blog-style content pages
 ├── components/            # Reusable UI components
-│   ├── NavBar.js          # Bottom navigation with blur effect
+│   ├── DockNavigation.js  # Bottom navigation with blur effect
+│   ├── Hero.js            # Hero section with video
+│   ├── CaseStudyTemplate.js # Reusable case study page template
 │   ├── list/              # List components (ListItem, Title, SubText)
 │   ├── ui/                # UI primitives and utilities
-│   └── fancy/             # Advanced interactive components
+│   ├── fancy/             # Advanced interactive components
+│   └── unused/            # Archived unused components
 ├── lib/                   # Utilities and content
 │   ├── content.js         # All site content and data
 │   └── utils.js           # Utility functions
@@ -82,7 +85,10 @@ src/
 
 ### Performance Optimizations
 - **Next.js Image Optimization**: Automatic image optimization and lazy loading
-- **Client-side Mounting**: Prevents hydration issues with `useState` and `useEffect`
+- **React Memoization**: Extensive use of React.memo(), useMemo(), and useCallback() in client components
+- **Suspense Boundaries**: Proper Suspense wrapping for useSearchParams() to enable static generation
+- **Static Helper Functions**: Helper functions moved outside components to prevent recreation
+- **Client-side Mounting**: Prevents hydration issues with proper SSR handling
 - **ESLint Bypass**: Build optimization (errors ignored during builds)
 
 ## Available Scripts
@@ -207,6 +213,22 @@ All content is exported from `src/lib/content.js`:
 - Consider migrating to a headless CMS for easier updates
 - Implement dynamic content loading for better performance
 
+## Performance Best Practices
+
+### Component Optimization
+- **Server Components by Default**: Most pages are server components for optimal performance
+- **Client Components**: Only use 'use client' when needed for interactivity
+- **React.memo()**: Applied to frequently re-rendered components (CaseStudyTemplate child components, list items)
+- **useMemo()**: Used for expensive calculations and static arrays in client components
+- **useCallback()**: Applied to event handlers passed as props
+- **Static Data**: Helper functions and data arrays moved outside components
+
+### Build Optimizations
+- **Suspense Boundaries**: useSearchParams() wrapped in Suspense for proper static generation
+- **Viewport Export**: Separate viewport export (not in metadata) for Next.js 14 compatibility
+- **Image Optimization**: All images use Next.js Image component with proper sizing
+- **Code Splitting**: Components lazy loaded where appropriate
+
 ## Notes for Development
 
 - The project uses JavaScript instead of TypeScript
@@ -215,3 +237,4 @@ All content is exported from `src/lib/content.js`:
 - Navigation uses client-side routing with Next.js App Router
 - Images are manually optimized and organized by content type
 - The site follows a mobile-first responsive design approach
+- Node.js version: >=22.0.0 (specified in package.json)
