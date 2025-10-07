@@ -1,23 +1,24 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react';
-
+import { useState, useRef, useEffect, useLayoutEffect } from 'react';
 
 const SubText = ({ primaryText, secondaryText, isHovered }) => {
   const [width, setWidth] = useState('auto');
   const textRef = useRef(null);
   const containerRef = useRef(null);
 
-  useEffect(() => {
+  // Use useLayoutEffect for initial measurement to prevent flash
+  useLayoutEffect(() => {
     if (textRef.current) {
       setWidth(textRef.current.offsetWidth);
     }
   }, [primaryText]);
 
+  // Optimize hover effect
   useEffect(() => {
-    if (containerRef.current) {
-      setWidth(isHovered ? containerRef.current.scrollWidth : textRef.current.offsetWidth);
-    }
+    if (!containerRef.current || !textRef.current) return;
+
+    setWidth(isHovered ? containerRef.current.scrollWidth : textRef.current.offsetWidth);
   }, [isHovered]);
 
   return (

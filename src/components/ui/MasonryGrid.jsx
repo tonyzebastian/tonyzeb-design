@@ -1,26 +1,37 @@
 "use client";
 
 import { Masonry } from "react-plock";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { X } from "lucide-react";
+
+// Move outside component to prevent recreation
+const isVideo = (src) => {
+  return /\.(mp4|mov|webm|ogg|avi)$/i.test(src);
+};
 
 export default function MasonryGrid({ items, spotlight = { enabled: true }, className = "m-2", hoverEffects = true, config = { columns: [1, 2, 3], gap: [24, 12, 6], media: [640, 768, 1024] } }) {
   const [selectedItem, setSelectedItem] = useState(null);
 
-  const isVideo = (src) => {
-    return /\.(mp4|mov|webm|ogg|avi)$/i.test(src);
-  };
+  const handleItemClick = useCallback((item) => {
+    if (spotlight.enabled) {
+      setSelectedItem(item);
+    }
+  }, [spotlight.enabled]);
 
-  const renderMediaItem = (item, idx) => {
+  const handleClose = useCallback(() => {
+    setSelectedItem(null);
+  }, []);
+
+  const renderMediaItem = useCallback((item, idx) => {
     const hoverClassName = hoverEffects ? "hover:scale-[99%] hover:rounded-3xl cursor-pointer" : "";
     const baseClassName = `rounded transition-all ease-in-out ${hoverClassName}`;
     const specialClassName = item.specialStyling ? "p-2 shadow" : "";
-    
+
     const commonProps = {
       key: idx,
       className: `${baseClassName} ${specialClassName}`,
       style: { width: "100%", height: "auto" },
-      onClick: () => spotlight.enabled && setSelectedItem(item)
+      onClick: () => handleItemClick(item)
     };
 
     if (isVideo(item.src)) {
@@ -37,13 +48,13 @@ export default function MasonryGrid({ items, spotlight = { enabled: true }, clas
     }
 
     return (
-      <img 
+      <img
         {...commonProps}
         src={item.src}
         alt={item.alt}
       />
     );
-  };
+  }, [hoverEffects, handleItemClick]);
 
   return (
     <>
@@ -57,11 +68,11 @@ export default function MasonryGrid({ items, spotlight = { enabled: true }, clas
 
       {/* Spotlight Overlay */}
       {spotlight.enabled && selectedItem && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/25 backdrop-blur-sm flex items-center justify-center z-50"
-          onClick={() => setSelectedItem(null)}
+          onClick={handleClose}
         >
-          <div 
+          <div
             className="max-w-5xl w-full p-4 relative flex flex-col md:flex-row gap-4 bg-white rounded-xl items-start"
             onClick={(e) => e.stopPropagation()}
           >
@@ -93,10 +104,7 @@ export default function MasonryGrid({ items, spotlight = { enabled: true }, clas
                 <h2>{selectedItem.alt}</h2>
                 <button
                   className="p-2 hover:bg-slate-100 bg-slate-50 rounded-full transition-colors"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setSelectedItem(null);
-                  }}
+                  onClick={handleClose}
                 >
                   <X size={20} className="text-slate-600" />
                 </button>

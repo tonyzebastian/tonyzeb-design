@@ -32,20 +32,17 @@ export default function Hero() {
   };
 
   const handleVideoLoaded = () => {
-    console.log('Video loaded and ready to play');
     setVideoLoaded(true);
     if (videoRef.current) {
       videoRef.current.play().then(() => {
         setIsPlaying(true);
-        console.log('Video started playing');
       }).catch(err => {
-        console.log('Video autoplay failed:', err);
+        // Video autoplay failed - user interaction required
       });
     }
   };
 
   const handleVideoLoadedData = () => {
-    console.log('Video data loaded');
     // Fallback if canplaythrough doesn't fire
     setTimeout(() => {
       if (!videoLoaded) {
@@ -59,7 +56,6 @@ export default function Hero() {
     if (videoRef.current) {
       const video = videoRef.current;
       if (video.readyState >= 3) { // HAVE_FUTURE_DATA or greater
-        console.log('Video already loaded on mount');
         handleVideoLoaded();
       }
     }
@@ -100,7 +96,7 @@ export default function Hero() {
               />
               
               {/* Hero Video - replaces image when loaded */}
-              <video 
+              <video
                 ref={videoRef}
                 src="/hero_video.mp4"
                 className={`w-full h-full object-cover rounded-xl transition-opacity duration-500 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
@@ -109,9 +105,6 @@ export default function Hero() {
                 preload="auto"
                 onCanPlayThrough={handleVideoLoaded}
                 onLoadedData={handleVideoLoadedData}
-                onCanPlay={() => console.log('Video can play')}
-                onLoadStart={() => console.log('Video load started')}
-                onProgress={() => console.log('Video loading progress')}
                 onClick={togglePlay}
               />
               

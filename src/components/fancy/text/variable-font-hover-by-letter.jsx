@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useMemo, useCallback } from "react"
 import { debounce } from "lodash"
 import { motion, stagger, useAnimate } from "motion/react"
 
@@ -21,52 +21,60 @@ const VariableFontHoverByLetter = ({
 }) => {
   const [scope, animate] = useAnimate()
 
-  const mergeTransition = (baseTransition) => ({
-    ...baseTransition,
-    delay: stagger(staggerDuration, {
-      from: staggerFrom,
-    }),
-  })
+  // Memoize split letters
+  const letters = useMemo(() => label.split(""), [label])
 
-  const handleHoverChange = debounce(
-    (hovering) => {
-      animate(
-        ".letter",
-        { 
-          fontVariationSettings: hovering ? toFontVariationSettings : fromFontVariationSettings 
-        },
-        mergeTransition(transition)
-      )
-    },
-    100,
-    { leading: true, trailing: true }
+  const mergeTransition = useCallback(
+    (baseTransition) => ({
+      ...baseTransition,
+      delay: stagger(staggerDuration, {
+        from: staggerFrom,
+      }),
+    }),
+    [staggerDuration, staggerFrom]
+  )
+
+  // Memoize debounced function
+  const handleHoverChange = useMemo(
+    () => debounce(
+      (hovering) => {
+        animate(
+          ".letter",
+          {
+            fontVariationSettings: hovering ? toFontVariationSettings : fromFontVariationSettings
+          },
+          mergeTransition(transition)
+        )
+      },
+      100,
+      { leading: true, trailing: true }
+    ),
+    [animate, toFontVariationSettings, fromFontVariationSettings, mergeTransition, transition]
   )
 
   useEffect(() => {
     handleHoverChange(isHovered)
     return () => handleHoverChange.cancel()
-  }, [isHovered])
+  }, [isHovered, handleHoverChange])
 
   return (
     <motion.span
-      className={`${className}`}
+      className={className}
       ref={scope}
       onClick={onClick}
       {...props}
     >
       <span className="sr-only">{label}</span>
 
-      {label.split("").map((letter, i) => {
-        return (
-          <motion.span
-            key={i}
-            className="inline-block whitespace-pre letter"
-            aria-hidden="true"
-          >
-            {letter}
-          </motion.span>
-        )
-      })}
+      {letters.map((letter, i) => (
+        <motion.span
+          key={i}
+          className="inline-block whitespace-pre letter"
+          aria-hidden="true"
+        >
+          {letter}
+        </motion.span>
+      ))}
     </motion.span>
   )
 }

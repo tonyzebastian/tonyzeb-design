@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Dock, DockIcon, DockItem, DockLabel } from '@/components/ui/dock'
@@ -10,6 +10,25 @@ export default function DockNavigation() {
   const pathname = usePathname()
   const [mounted, setMounted] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
+
+  // Memoize navItems to prevent unnecessary re-renders
+  const navItems = useMemo(() => [
+    {
+      title: 'Home',
+      href: '/',
+      icon: <img src="/images/nav/home.png" alt="Home" className='h-full w-full object-contain' />
+    },
+    {
+      title: 'Craft',
+      href: '/craft',
+      icon: <img src="/images/nav/craft.png" alt="Craft" className='h-full w-full object-contain' />
+    },
+    {
+      title: 'About',
+      href: '/about',
+      icon: <img src="/images/nav/about.png" alt="About" className='h-full w-full object-contain' />
+    }
+  ], [])
 
   useEffect(() => {
     setMounted(true)
@@ -29,25 +48,6 @@ export default function DockNavigation() {
       setIsVisible(true)
     }
   }, [pathname])
-
-  const navItems = [
-    { 
-      title: 'Home', 
-      href: '/', 
-      icon: <img src="/images/nav/home.png" alt="Home" className='h-full w-full object-contain' />
-    },
-    { 
-      title: 'Craft', 
-      href: '/craft', 
-      icon: <img src="/images/nav/craft.png" alt="Craft" className='h-full w-full object-contain' />
-    },
-
-    { 
-      title: 'About', 
-      href: '/about', 
-      icon: <img src="/images/nav/about.png" alt="About" className='h-full w-full object-contain' />
-    }
-  ]
 
   if (!mounted) {
     return null
@@ -72,23 +72,19 @@ export default function DockNavigation() {
 
     <div className='pb-4 '>
       <Dock className='items-end pb-3 z-50 '>
-        {navItems.map((item, idx) => {
-          const isActive = pathname === item.href
-          
-          return (
-            <DockItem
-              key={idx}
-              className={`aspect-square rounded-full`}
-            >
-              <DockLabel>{item.title}</DockLabel>
-              <DockIcon>
-                <Link href={item.href}>
-                  {item.icon}
-                </Link>
-              </DockIcon>
-            </DockItem>
-          )
-        })}
+        {navItems.map((item) => (
+          <DockItem
+            key={item.href}
+            className={`aspect-square rounded-full`}
+          >
+            <DockLabel>{item.title}</DockLabel>
+            <DockIcon>
+              <Link href={item.href}>
+                {item.icon}
+              </Link>
+            </DockIcon>
+          </DockItem>
+        ))}
       </Dock>
     </div>
   </div>

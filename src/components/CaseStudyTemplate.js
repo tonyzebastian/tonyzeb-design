@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image';
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, memo, useMemo } from 'react';
 import { X, ArrowRight } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
@@ -16,9 +16,11 @@ const isGif = (src) => src.endsWith('.gif');
 // MEDIA COMPONENTS
 // ============================================================================
 
-const MediaItem = ({ src, alt, width, height, onClick, className = "" }) => {
-  const baseClasses = "w-full h-auto rounded-xl border border-slate-100";
-  const combinedClasses = `${baseClasses} ${className}`;
+const MediaItem = memo(({ src, alt, width, height, onClick, className = "" }) => {
+  const combinedClasses = useMemo(() =>
+    `w-full h-auto rounded-xl border border-slate-100 ${className}`,
+    [className]
+  );
 
   if (isVideo(src)) {
     return (
@@ -45,9 +47,10 @@ const MediaItem = ({ src, alt, width, height, onClick, className = "" }) => {
       onClick={onClick}
     />
   );
-};
+});
+MediaItem.displayName = 'MediaItem';
 
-const MediaOverlay = ({ selectedItem, onClose }) => {
+const MediaOverlay = memo(({ selectedItem, onClose }) => {
   if (!selectedItem) return null;
 
   return (
@@ -87,13 +90,14 @@ const MediaOverlay = ({ selectedItem, onClose }) => {
       </div>
     </div>
   );
-};
+});
+MediaOverlay.displayName = 'MediaOverlay';
 
 // ============================================================================
 // DIALOG WRAPPER
 // ============================================================================
 
-const DialogWrapper = ({ isOpen, onClose, children }) => {
+const DialogWrapper = memo(({ isOpen, onClose, children }) => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -137,13 +141,14 @@ const DialogWrapper = ({ isOpen, onClose, children }) => {
       </div>
     </div>
   );
-};
+});
+DialogWrapper.displayName = 'DialogWrapper';
 
 // ============================================================================
 // HEADER COMPONENTS
 // ============================================================================
 
-const ProjectDetails = ({ pageData }) => {
+const ProjectDetails = memo(({ pageData }) => {
   if (!(pageData.role || pageData.duration || pageData.company)) {
     return null;
   }
@@ -176,9 +181,10 @@ const ProjectDetails = ({ pageData }) => {
       {pageData.duration && <span>{pageData.duration}</span>}
     </div>
   );
-};
+});
+ProjectDetails.displayName = 'ProjectDetails';
 
-const PageHeader = ({ pageData }) => (
+const PageHeader = memo(({ pageData }) => (
   <header className="mb-8">
     <div className="mb-6">
       <h1 className="text-4xl font-serif font-medium text-slate-900 mb-3">
@@ -187,9 +193,10 @@ const PageHeader = ({ pageData }) => (
       <ProjectDetails pageData={pageData} />
     </div>
   </header>
-);
+));
+PageHeader.displayName = 'PageHeader';
 
-const PageDescription = ({ description }) => {
+const PageDescription = memo(({ description }) => {
   if (!description) return null;
 
   return (
@@ -199,13 +206,14 @@ const PageDescription = ({ description }) => {
       </p>
     </section>
   );
-};
+});
+PageDescription.displayName = 'PageDescription';
 
 // ============================================================================
 // PROJECT SECTION COMPONENTS
 // ============================================================================
 
-const BulletPoints = ({ items }) => (
+const BulletPoints = memo(({ items }) => (
   <ul className="text-slate-900 mb-8 text-sm leading-relaxed space-y-2">
     {items.map((item, index) => (
       <li key={index} className="flex items-start">
@@ -214,11 +222,15 @@ const BulletPoints = ({ items }) => (
       </li>
     ))}
   </ul>
-);
+));
+BulletPoints.displayName = 'BulletPoints';
 
-const ImageGrid = ({ images, onImageClick, altPrefix }) => {
+const ImageGrid = memo(({ images, onImageClick, altPrefix }) => {
   const isMultipleImages = images.length > 1;
-  const gridClass = isMultipleImages ? 'grid-cols-1 md:grid-cols-2 gap-4' : 'grid-cols-1';
+  const gridClass = useMemo(
+    () => isMultipleImages ? 'grid-cols-1 md:grid-cols-2 gap-4' : 'grid-cols-1',
+    [isMultipleImages]
+  );
 
   return (
     <div className="mb-8">
@@ -240,9 +252,10 @@ const ImageGrid = ({ images, onImageClick, altPrefix }) => {
       </div>
     </div>
   );
-};
+});
+ImageGrid.displayName = 'ImageGrid';
 
-const CardGrid = ({ cards }) => (
+const CardGrid = memo(({ cards }) => (
   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
     {cards.map((card, index) => (
       <div key={index} className="bg-slate-50 p-6 rounded-xl">
@@ -251,9 +264,10 @@ const CardGrid = ({ cards }) => (
       </div>
     ))}
   </div>
-);
+));
+CardGrid.displayName = 'CardGrid';
 
-const SubsectionsList = ({ subsections, onImageClick }) => (
+const SubsectionsList = memo(({ subsections, onImageClick }) => (
   <div className="space-y-12">
     {subsections.map((subsection, index) => {
       const mediaItems = subsection.images || (subsection.media ? [subsection.media] : []);
@@ -274,7 +288,8 @@ const SubsectionsList = ({ subsections, onImageClick }) => (
       );
     })}
   </div>
-);
+));
+SubsectionsList.displayName = 'SubsectionsList';
 
 const SectionLayout = ({ section }) => {
   const [selectedItem, setSelectedItem] = useState(null);
