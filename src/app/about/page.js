@@ -1,6 +1,6 @@
 import ImageReveal from '@/components/ui/ImageReveal';
 import HighlightLink from '@/components/ui/HighlightLink';
-import { aboutBio, aboutFunThings, aboutPrinciples, aboutConversation, animation, photography, junymade } from '@/lib/content';
+import { aboutBio, aboutFunThings, aboutPrinciples, aboutConversation, animation, photography, junymade, generativeArt, aiImages } from '@/lib/content';
 import { galleryImages } from './config';
 import MasonryGridLightbox from '@/components/ui/MasonryGridLigthbox';
 
@@ -121,7 +121,25 @@ export default function About() {
                         lightboxImages={galleryImages.animation.lightbox}
                     />
                 </section>
-    
+
+                {/* Generative Art Section */}
+                <section className="mb-8">
+                    <h4 className="mb-2">Generative Art</h4>
+                    <p className="text-slate-700 mb-4">
+                        {generativeArt.map((item, index) => (
+                            <span key={index}>
+                                {renderTextWithLinks(item)}
+                                <br/>
+                            </span>
+                        ))}
+                    </p>
+
+                    <MasonryGridLightbox
+                        lightboxImages={aiImages.map(img => img.src)}
+                        height={390}
+                    />
+                </section>
+
                 {/* Juny made Section */}
                 <section className="mb-8">
                     <h4 className="mb-2">Juny Made - Art studio</h4>

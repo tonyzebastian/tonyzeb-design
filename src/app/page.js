@@ -1,11 +1,10 @@
 import ListItem from '@/components/list/ListItem';
 import Title from '@/components/list/Title';
-import {projects, experience, musings, designAreas, now, aiImages, aiWorkflow } from '@/lib/content';
+import {projects, experience, musings, designAreas, now} from '@/lib/content';
 import HighlightLink from '@/components/ui/HighlightLink';
 import CopyEmailLink from '@/components/ui/CopyEmailLink';
 import Hero from '@/components/Hero';
 import ExperienceWithProjects from '@/components/ui/ExperienceWithProjects';
-import MasonryGridLightbox from '@/components/ui/MasonryGridLigthbox';
 
 export const viewport = {
   width: 'device-width',
@@ -138,27 +137,6 @@ export default function HomePage() {
                 />
               ))}
             </div>
-          </div>
-
-          {/* AI Section */}
-          <div className="my-6">
-            <h2 className="mb-2">Gen AI</h2>
-            <div className="space-y-1 mb-4">
-              {aiWorkflow.map(musing => (
-                <ListItem
-                  key={musing.link}
-                  title={musing.name}
-                  isExternal={false}
-                  primaryText={musing.date}
-                  secondaryText={musing.secondaryText}
-                  href={musing.link}
-                />
-              ))}
-            </div>
-            <MasonryGridLightbox
-              lightboxImages={aiImages.map(img => img.src)}
-              height={390}
-            />
           </div>
 
           {/* Now Section */}

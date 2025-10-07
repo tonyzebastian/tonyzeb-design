@@ -21,28 +21,22 @@ export const metadata = {
 
 export const projects = [
   { 
-    name: 'Resume Builder', 
-    date: 'The simplest resumer builder', 
-    link: 'https://resume-builder-dun-rho.vercel.app/',
-    image: '/icons/resume.png',
-  },
-  { 
     name: 'UI Glow', 
     date: 'Interaction design explorations', 
     link: 'https://www.uiglow.click/',
     image: '/icons/uiglow.png',
   },
   { 
+    name: 'Resume Builder', 
+    date: 'The simplest resumer builder', 
+    link: 'https://resume-builder-dun-rho.vercel.app/',
+    image: '/icons/resume.png',
+  },
+  { 
     name: 'ScriptFlow', 
     date: 'GPT for your words and ElevenLabs for your voice', 
     link: 'https://scriptflow.vercel.app/',
     image: '/icons/scriptflow.png',
-  },
-  { 
-    name: 'Dot Motion', 
-    date: 'A photo dither animation tool', 
-    link: 'https://dither-app-two.vercel.app/',
-    image: '/icons/dotmotion.png',
   },
   { 
     name: 'Figma Recap', 
@@ -138,9 +132,11 @@ export const musings = [
   { name: 'Reviving a legacy system at Infosys', date: 'Nov 2018', link: '/musings/infosys_legacy'}
 ];
 
-export const aiWorkflow = [
-  { name: 'Creative workflow', date: 'Oct 2025', link: '/musings/perceived_wait'},
-  { name: 'Technical workflow for vibe coding', date: 'Oct 2025', link: '/musings/mnemonic_signages' }
+
+export const generativeArt = [
+  {
+    text: "Some of my experiments with generative tools like Midjourney, Veo, Kling and more..",
+  }
 ];
 
 export const aiImages = [
@@ -148,16 +144,12 @@ export const aiImages = [
   { src: '/images/AI/rook.png' },
   { src: '/images/AI/stellar_blends.gif' },
   { src: '/images/AI/Claude.png' },
-  { src: '/images/AI/cyclist.png' },
-  { src: '/images/AI/lovable.png' },
-  { src: '/images/AI/elephant.png' },
   { src: '/images/AI/gemini.png' },
+  { src: '/images/AI/lovable.png' },
+  { src: '/images/AI/cyclist.png' },
+  { src: '/images/AI/elephant.png' },
   { src: '/images/AI/lady.png' },
   { src: '/images/AI/zebra crossing.png' },
-  { src: '/images/AI/writing_1.png' },
-  { src: '/images/AI/snakes.png' },
-  { src: '/images/AI/writing_2.png' },
-  { src: '/images/AI/figma.png' }
 ];
 
 export const bio = {

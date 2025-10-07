@@ -54,18 +54,6 @@ export default function Crafts() {
       projectLink: null
     },
     { 
-      src: '../images/Craft/image_spotlight.mp4', 
-      alt: 'Image Spotlight',
-      description: 'A React Typescript component that creates an engaging spotlight effect on images. The image appears blurred by default, but reveals sharp details in a circular area that follows the users mouse cursor',
-      projectLink: 'https://21st.dev/community/components/tonyzebastian/image-spotlight/default'
-    },
-    { 
-      src: '../images/Craft/omni_bar.gif', 
-      alt: 'Omni Bar',
-      description: 'A sophisticated search and command interface design showcasing seamless user interaction and real-time feedback.',
-      projectLink: null
-    },
-    { 
       src: '../images/Craft/Runner.mp4', 
       alt: 'Runner Onboarding',
       description: 'Engaging onboarding experience animation that guides users through features while maintaining visual interest.',
