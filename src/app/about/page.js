@@ -38,25 +38,27 @@ export const metadata = {
   },
 };
 
+// Move helper function outside component to prevent recreation on every render
+const renderTextWithLinks = (item) => {
+  if (!item.links) return item.text;
+
+  let result = item.text;
+  item.links.forEach(link => {
+    result = result.replace(link.text, `<LINK>${link.text}<LINK>`);
+  });
+
+  const parts = result.split('<LINK>');
+  return parts.map((part, index) => {
+    const link = item.links.find(l => l.text === part);
+    return link ? (
+      <HighlightLink key={index} href={link.href}>
+        {link.text}
+      </HighlightLink>
+    ) : part;
+  });
+};
+
 export default function About() {
-    const renderTextWithLinks = (item) => {
-        if (!item.links) return item.text;
-
-        let result = item.text;
-        item.links.forEach(link => {
-            result = result.replace(link.text, `<LINK>${link.text}<LINK>`);
-        });
-
-        const parts = result.split('<LINK>');
-        return parts.map((part, index) => {
-            const link = item.links.find(l => l.text === part);
-            return link ? (
-                <HighlightLink key={index} href={link.href}>
-                    {link.text}
-                </HighlightLink>
-            ) : part;
-        });
-    };
 
     return (
         <div className="flex flex-col items-center justify-center mx-auto max-w-2xl px-8 mb-16">
