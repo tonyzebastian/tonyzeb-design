@@ -58,7 +58,15 @@ export const projects = [
   },
 ];
 
+
 export const experience = [
+  {
+    name: 'Sundial',
+    date: 'Designer',
+    link: 'https://sundial.so/',
+    image: '/icons/sundial.png',
+    secondaryText: "Oct'25 - Present",
+  },
   {
     name: 'Postman',
     date: 'Senior Product Designer',

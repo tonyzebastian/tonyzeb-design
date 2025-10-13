@@ -22,7 +22,7 @@ export default function CopyEmailLink() {
           href="#" 
           onClick={handleCopy}
         >
-          tonyzeb.design@gmail.com
+          email
         </HighlightLink>
       </span>
 

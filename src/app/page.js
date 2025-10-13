@@ -1,6 +1,6 @@
 import ListItem from '@/components/list/ListItem';
 import Title from '@/components/list/Title';
-import {projects, experience, musings, designAreas, now} from '@/lib/content';
+import {projects, experience, musings, designAreas, now, experience_small} from '@/lib/content';
 import HighlightLink from '@/components/ui/HighlightLink';
 import CopyEmailLink from '@/components/ui/CopyEmailLink';
 import Hero from '@/components/Hero';
@@ -88,7 +88,7 @@ export default function HomePage() {
           {/* Experience Section */}
           <div className="my-6">
             <h2 className="mb-4">Experience</h2>
-            <div className="">
+            <div>
               {experience.map(exp => (
                 <ExperienceWithProjects
                   key={exp.link}
@@ -165,7 +165,7 @@ export default function HomePage() {
           <div className="mt-6 mb-8">
             <h2 className="mb-2">Contact</h2>
             <div className="text-slate-700 font-sans text-sm">
-            Reach me at <HighlightLink href='https://www.linkedin.com/in/tonyzebastian/'> @tonyzebastian </HighlightLink> or{' '}
+            Reach me on <HighlightLink href='https://x.com/tonyzeb_design'> twitter </HighlightLink> or{' '}
             <CopyEmailLink />
             </div>
           </div>

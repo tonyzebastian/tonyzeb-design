@@ -25,10 +25,10 @@ export default function ExperienceWithProjects({
         onMouseEnter={() => setIsLinkHovered(true)}
         onMouseLeave={() => setIsLinkHovered(false)}
       >
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 rounded -mx-4 px-4 group">
-          <Title 
-            image={image} 
-            title={name} 
+        <div className={`flex flex-col md:flex-row items-start md:items-center gap-4 rounded -mx-4 px-4 group ${projects.length === 0 ? 'pb-6' : ''}`}>
+          <Title
+            image={image}
+            title={name}
             isExternal={true}
             fromFontWeight={600}
             isHovered={isLinkHovered}
